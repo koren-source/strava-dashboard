@@ -1,6 +1,6 @@
 {
-  "workout_name": "Zwift FTP Builder Session",
-  "reasoning": "This workout targets both FTP and VO2 Max improvements by capitalizing on <strong>threshold efforts</strong> that have a significant aerobic component. Given the athlete's training state and recent Zwift session focused on aerobic builds, this session is well-timed to <strong>challenge their aerobic capacity</strong> and stimulate growth by working just below FTP.",
+  "workout_name": "Intensive Sweet Spot Intervals",
+  "reasoning": "This workout targets <strong>FTP improvement</strong> by stressing aerobic capacity with intervals just below threshold. Given their last ride was aerobic, this will push the limits without overstraining, aligning with their <strong>increase FTP</strong> and <strong>build aerobic base</strong> goals.",
   "focus": "Build FTP",
   "duration_minutes": 65,
   "target_power": {
@@ -39,6 +39,6 @@
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-02-26T14:20:05.524278+00:00",
+  "generated_at": "2026-02-26T14:43:48.842130+00:00",
   "based_on_ride": 17496676819
 }
