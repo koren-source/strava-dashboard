@@ -1,0 +1,56 @@
+{
+  "athlete": {
+    "name": "Koren Saida",
+    "ftp": 237,
+    "vo2max": 48,
+    "max_hr": 194,
+    "resting_hr": 46
+  },
+  "rides": [
+    {
+      "id": 17496676819,
+      "name": "Zwift - Aerobic Builds on Ocean Lava Cliffside Loop in Watopia",
+      "date": "2026-02-23",
+      "dist_mi": 24.1,
+      "moving_mins": 82,
+      "elev_ft": 1030,
+      "avg_speed_mph": 17.5,
+      "avg_watts": 163,
+      "max_watts": 378,
+      "avg_hr": 150,
+      "max_hr": 171,
+      "suffer_score": 104,
+      "strava_url": "https://www.strava.com/activities/17496676819"
+    },
+    {
+      "id": 17379985614,
+      "name": "Zwift - SST (Med) on Roule Ma Poule in France",
+      "date": "2026-02-13",
+      "dist_mi": 25.6,
+      "moving_mins": 85,
+      "elev_ft": 1014,
+      "avg_speed_mph": 18.0,
+      "avg_watts": 180,
+      "max_watts": 534,
+      "avg_hr": 147,
+      "max_hr": 169,
+      "suffer_score": 101,
+      "strava_url": "https://www.strava.com/activities/17379985614"
+    },
+    {
+      "id": 17355211089,
+      "name": "Zwift - #1 Find Your Rhythm - Long on Temple Trek in Watopia",
+      "date": "2026-02-10",
+      "dist_mi": 24.4,
+      "moving_mins": 75,
+      "elev_ft": 771,
+      "avg_speed_mph": 19.3,
+      "avg_watts": 180,
+      "max_watts": 261,
+      "avg_hr": 148,
+      "max_hr": 172,
+      "suffer_score": 88,
+      "strava_url": "https://www.strava.com/activities/17355211089"
+    }
+  ]
+}
