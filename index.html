@@ -181,6 +181,19 @@
     .zone-track { height: 10px; background: rgba(74,94,140,0.10); border-radius: 999px; overflow: hidden; border: 1px solid rgba(74,94,140,0.12); position: relative; }
     .zone-fill { height: 100%; border-radius: 999px; transition: width 500ms ease; }
     .zone-footer { margin-top: 8px; display: flex; justify-content: space-between; color: var(--muted); font-size: 0.74rem; }
+    .ride-link {
+      position: relative;
+      z-index: 1;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 14px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #FC4C02;
+      text-decoration: none;
+    }
+    .ride-link:hover { text-decoration: underline; }
 
     /* Workout Cards */
     .workout-cards {
@@ -445,16 +458,16 @@
         loadJSON('data/recommendation.json'),
       ]);
 
-      const athlete = athleteData || FALLBACK_ATHLETE;
-      const rides   = ridesData   || FALLBACK_RIDES;
-      const aiRec   = recData;  // may be null
+      const athlete = (athleteData && typeof athleteData === 'object') ? athleteData : FALLBACK_ATHLETE;
+      const rides   = Array.isArray(ridesData) && ridesData.length ? ridesData : FALLBACK_RIDES;
+      const aiRec   = (recData && typeof recData === 'object') ? recData : null;  // may be null
 
       const ftp = athlete.ftp || 237;
 
       // ── Render Header ──────────────────────────────────────────────────────
       document.getElementById('athlete-name').textContent = athlete.name || 'Koren Saida';
       if (rides.length > 0) {
-        document.getElementById('last-ride-date').textContent = formatDate(rides[0].date);
+        document.getElementById('last-ride-date').textContent = formatDate(rides[0].date || rides[0].start_date_local);
       }
       document.getElementById('rides-subtitle').textContent = `Power zone intensity from average watts vs FTP (${ftp}W)`;
       document.getElementById('rec-subtitle').textContent = `Personalized based on your last ride \u00b7 FTP ${ftp}W`;
@@ -466,6 +479,9 @@
         { label: 'VO2 Max', icon: 'blue-accent', value: athlete.vo2max || 48, unit: '', emoji: '\ud83d\udca8' },
         { label: 'Max HR', icon: 'blue-accent-bright', value: athlete.max_hr || 194, unit: 'bpm', emoji: '\u2764\ufe0f' },
         { label: 'Resting HR', icon: 'blue-accent', value: athlete.resting_hr || 46, unit: 'bpm', emoji: '\ud83d\udc93' },
+        { label: 'YTD Miles', icon: 'blue-accent', value: formatStatValue(athlete.ytd_miles, 1, 157.7), unit: 'mi', emoji: '\ud83d\udccd' },
+        { label: 'YTD Rides', icon: 'silver', value: formatStatValue(athlete.ytd_rides, 0, 9), unit: '', emoji: '\ud83d\udeb4' },
+        { label: 'YTD Hours', icon: 'blue-accent-bright', value: formatStatValue(athlete.ytd_hours, 1, 9.8), unit: 'h', emoji: '\u23f1\ufe0f' },
       ];
       statsRow.innerHTML = stats.map((s, i) => `
         <article class="stat-card" style="animation-delay:${40 + i*40}ms">
@@ -483,6 +499,9 @@
         const hrs = Math.floor(r.moving_mins / 60);
         const mins = r.moving_mins % 60;
         const timeStr = hrs > 0 ? `${hrs}h ${mins}m` : `${mins}m`;
+        const stravaUrl = (typeof r.strava_url === 'string' && r.strava_url.startsWith('http'))
+          ? r.strava_url
+          : (r.id ? `https://www.strava.com/activities/${r.id}` : '#');
         return `
           <article class="ride-card${i === 0 ? ' recent' : ''}" style="animation-delay:${200 + i*60}ms">
             <div class="ride-top">
@@ -502,6 +521,7 @@
               <div class="zone-track"><div class="zone-fill" style="width:${intensityPct}%;background:linear-gradient(90deg,#FC4C02,#E03B00);box-shadow:0 0 18px rgba(252,76,2,.55)"></div></div>
               <div class="zone-footer"><span>Avg ${r.avg_watts || '—'}W</span><span>FTP ${ftp}W</span></div>
             </div>
+            <a class="ride-link" href="${stravaUrl}" target="_blank" rel="noopener noreferrer">View on Strava ↗</a>
           </article>`;
       }).join('');
 
@@ -516,15 +536,15 @@
       let isAI = false;
 
       // Check if AI recommendation is available and not stale (>48hrs)
-      if (aiRec && aiRec.suggested_sets && aiRec.suggested_sets.length > 0) {
+      if (aiRec && Array.isArray(aiRec.suggested_sets) && aiRec.suggested_sets.length > 0) {
         const genTime = aiRec.generated_at ? new Date(aiRec.generated_at) : null;
         const staleHours = genTime ? (Date.now() - genTime) / 3600000 : 999;
         if (staleHours < 48) {
           const loW = aiRec.target_power ? aiRec.target_power.low : Math.round(ftp * 0.9);
           const hiW = aiRec.target_power ? aiRec.target_power.high : Math.round(ftp * 0.95);
           growthBase = {
-            title: aiRec.workout_name,
-            reasoning: aiRec.reasoning,
+            title: aiRec.workout_name || 'AI Recommendation',
+            reasoning: aiRec.reasoning || 'AI recommendation generated from recent training data.',
             focus: aiRec.focus || 'Build FTP',
             targetPower: `${loW}\u2013${hiW} W`,
             hrZone: aiRec.hr_zone || 'Zone 4',
@@ -719,8 +739,15 @@ ${blocks}  </workout>
       // ── Format Helpers ─────────────────────────────────────────────────────
       function formatDate(dateStr) {
         if (!dateStr) return '—';
-        const d = new Date(dateStr + 'T00:00:00');
+        const d = dateStr.includes('T') ? new Date(dateStr) : new Date(dateStr + 'T00:00:00');
+        if (Number.isNaN(d.getTime())) return '—';
         return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+      }
+
+      function formatStatValue(value, decimals, fallback) {
+        const n = Number(value);
+        if (!Number.isFinite(n)) return fallback;
+        return decimals > 0 ? n.toFixed(decimals) : Math.round(n);
       }
 
       function formatSetsText(sets) {
