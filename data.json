@@ -4,7 +4,8 @@
     "ftp": 237,
     "vo2max": 48,
     "max_hr": 194,
-    "resting_hr": 46
+    "resting_hr": 46,
+    "goals": ["Increase FTP", "Build aerobic base", "Improve VO2 Max", "Get faster on Zwift"]
   },
   "rides": [
     {
