@@ -19,7 +19,7 @@ jobs:
           python-version: '3.12'
 
       - name: Install dependencies
-        run: pip install requests anthropic
+        run: pip install requests openai
 
       - name: Fetch Strava data
         env:
@@ -30,7 +30,7 @@ jobs:
 
       - name: Generate AI recommendation
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: python scripts/generate-recommendation.py
 
       - name: Commit and push if changed

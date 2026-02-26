@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-Generate AI-powered workout recommendation using Claude API.
+Generate AI-powered workout recommendation using OpenAI GPT API.
 Reads data/rides.json + data/athlete.json, writes data/recommendation.json.
 
-Required env var: ANTHROPIC_API_KEY
+Required env var: OPENAI_API_KEY
 """
 import json
 import os
@@ -13,8 +13,8 @@ from pathlib import Path
 
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 
-# Only import anthropic if we have the key — allows graceful fallback
-HAS_API_KEY = bool(os.environ.get("ANTHROPIC_API_KEY"))
+# Only import openai if we have the key — allows graceful fallback
+HAS_API_KEY = bool(os.environ.get("OPENAI_API_KEY"))
 
 
 def load_data():
@@ -73,9 +73,9 @@ def compute_context(rides, athlete):
     }
 
 
-def generate_with_claude(rides, athlete, context):
-    """Call Claude API to generate workout recommendation."""
-    import anthropic
+def generate_with_gpt(rides, athlete, context):
+    """Call OpenAI GPT API to generate workout recommendation."""
+    from openai import OpenAI
 
     last = rides[0]
     ftp = athlete.get("ftp", 237)
@@ -128,14 +128,14 @@ Return ONLY valid JSON (no markdown, no backticks) in this exact format:
   ]
 }}"""
 
-    client = anthropic.Anthropic()
-    response = client.messages.create(
-        model="claude-sonnet-4-6-20250514",
+    client = OpenAI()
+    response = client.chat.completions.create(
+        model="gpt-4o",
         max_tokens=1024,
         messages=[{"role": "user", "content": prompt}],
     )
 
-    text = response.content[0].text.strip()
+    text = response.choices[0].message.content.strip()
     # Parse the JSON response
     return json.loads(text)
 
@@ -205,16 +205,16 @@ def main():
 
     if HAS_API_KEY:
         try:
-            rec = generate_with_claude(rides, athlete, context)
+            rec = generate_with_gpt(rides, athlete, context)
             rec["source"] = "ai"
-            rec["model"] = "claude-sonnet-4-6"
+            rec["model"] = "gpt-4o"
             print(f"AI recommendation: {rec['workout_name']}")
         except Exception as e:
             print(f"AI generation failed ({e}), using rule-based fallback.")
             rec = generate_fallback(rides, athlete, context)
             rec["source"] = "rule-based"
     else:
-        print("No ANTHROPIC_API_KEY set. Using rule-based fallback.")
+        print("No OPENAI_API_KEY set. Using rule-based fallback.")
         rec = generate_fallback(rides, athlete, context)
         rec["source"] = "rule-based"
 
