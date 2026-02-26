@@ -533,7 +533,6 @@
     // ── Stabilizer Ride (always endurance base) ───────────────────────────────
     const stabLo = Math.round(ftp * 0.65);
     const stabHi = Math.round(ftp * 0.75);
-    const sst    = Math.round(ftp * 0.80);
 
     const stabilizer = {
       title: "Endurance Base",
@@ -618,9 +617,20 @@
       const a    = document.createElement('a');
       a.href     = url;
       a.download = filename;
+      a.style.display = 'none';
+      document.body.appendChild(a);
       a.click();
-      URL.revokeObjectURL(url);
+      setTimeout(() => {
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      }, 100);
     }
+
+    // ── Workout registry (avoids stuffing XML into HTML attributes) ────────
+    const workouts = {
+      growth:     { xml: growth.zwoXml,     filename: growth.zwoName.toLowerCase().replace(/[^a-z0-9]+/g, '-') + '.zwo' },
+      stabilizer: { xml: stabilizer.zwoXml, filename: stabilizer.zwoName.toLowerCase().replace(/[^a-z0-9]+/g, '-') + '.zwo' }
+    };
 
     // ── Render cards ───────────────────────────────────────────────────────────
     function renderCard(data, kind) {
@@ -628,7 +638,6 @@
       const label   = kind === 'growth' ? 'Growth Ride' : 'Stabilizer Ride';
       const sub     = kind === 'growth' ? 'Push your limits — build fitness' : 'Maintain your base — stay sharp';
       const btnText = kind === 'growth' ? '⬇ Download Growth Workout (.zwo)' : '⬇ Download Stabilizer Workout (.zwo)';
-      const fname   = data.zwoName.toLowerCase().replace(/[^a-z0-9]+/g, '-') + '.zwo';
 
       return `
         <article class="workout-card ${kind}">
@@ -648,7 +657,7 @@
               <div class="rec-metric"><div class="k">HR Zone</div><div class="v">${data.hrZone}</div></div>
               <div class="rec-metric" style="grid-column:1/-1"><div class="k">Suggested Set</div><div class="v">${data.suggestedSet}</div></div>
             </div>
-            <button class="download-btn" data-xml="${encodeURIComponent(data.zwoXml)}" data-filename="${fname}">${btnText}</button>
+            <button class="download-btn" data-kind="${kind}">${btnText}</button>
           </div>
         </article>`;
     }
@@ -659,9 +668,8 @@
     container.addEventListener('click', e => {
       const btn = e.target.closest('.download-btn');
       if (!btn) return;
-      const xml      = decodeURIComponent(btn.dataset.xml);
-      const filename = btn.dataset.filename;
-      downloadZwo(xml, filename);
+      const w = workouts[btn.dataset.kind];
+      if (w) downloadZwo(w.xml, w.filename);
     });
   </script>
 </body>
