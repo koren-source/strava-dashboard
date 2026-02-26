@@ -20,7 +20,13 @@ DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 
 
 def refresh_token():
-    """Exchange refresh token for a fresh access token."""
+    """Exchange refresh token for a fresh access token.
+
+    Note: Strava rotates refresh tokens — the response includes a new refresh_token.
+    In GitHub Actions we can't persist the new token back to secrets, but Strava's
+    rotation is graceful (old tokens remain valid for an extended period). If syncs
+    start failing with 401, the STRAVA_REFRESH_TOKEN secret needs manual update.
+    """
     data = urllib.parse.urlencode({
         "client_id": os.environ["STRAVA_CLIENT_ID"],
         "client_secret": os.environ["STRAVA_CLIENT_SECRET"],
@@ -69,12 +75,26 @@ def fetch_athlete_stats(token, athlete_id):
 
 
 def fetch_rides(token, count=10):
-    """Fetch recent ride activities."""
+    """Fetch recent ride activities.
+
+    The list endpoint usually includes HR and power data, but occasionally
+    HR fields are null even when has_heartrate=True. In that case we fetch
+    the individual activity detail as a fallback.
+    """
     activities = api_get("/athlete/activities", token, {"per_page": count})
     rides = []
     for a in activities:
         if a.get("type") not in ("Ride", "VirtualRide"):
             continue
+
+        # Fallback: if HR data missing from summary, fetch detailed activity
+        if a.get("has_heartrate") and not a.get("average_heartrate"):
+            try:
+                detail = api_get(f"/activities/{a['id']}", token)
+                a.update({k: detail[k] for k in ("average_heartrate", "max_heartrate", "calories") if k in detail})
+            except Exception as e:
+                print(f"Warning: could not fetch detail for activity {a['id']}: {e}")
+
         rides.append({
             "id": a["id"],
             "name": a.get("name", "Ride"),
@@ -88,6 +108,7 @@ def fetch_rides(token, count=10):
             "avg_speed_mph": round(a.get("average_speed", 0) * 2.23694, 1),
             "max_speed_mph": round(a.get("max_speed", 0) * 2.23694, 1),
             "avg_watts": a.get("average_watts"),
+            "normalized_watts": a.get("weighted_average_watts"),
             "max_watts": a.get("max_watts"),
             "avg_hr": a.get("average_heartrate"),
             "max_hr": a.get("max_heartrate"),
