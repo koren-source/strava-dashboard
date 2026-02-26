@@ -1,0 +1,17 @@
+{
+  "workout_name": "Threshold Intervals",
+  "reasoning": "Your last ride was aerobic base work (69% FTP — Zone 2). With 2 days of rest and a stable training load, your body is primed for a threshold stimulus. <strong>Time at 90-95% FTP is the most direct path to raising your power ceiling.</strong> This session targets the metabolic threshold that limits your Zwift performance.",
+  "focus": "Build FTP",
+  "duration_minutes": 70,
+  "target_power": {"low": 213, "high": 225},
+  "hr_zone": "Zone 4",
+  "suggested_sets": [
+    {"name": "Warmup", "duration_minutes": 10, "power_pct_ftp": [50, 75], "description": "Easy spin building to tempo"},
+    {"name": "Main Set", "duration_minutes": 45, "power_pct_ftp": [90, 95], "description": "3x10 min @ 213-225W, 5 min easy recovery"},
+    {"name": "Cooldown", "duration_minutes": 10, "power_pct_ftp": [50, 60], "description": "Easy spin"}
+  ],
+  "source": "ai",
+  "model": "claude-sonnet-4-6",
+  "generated_at": "2026-02-25T19:15:00+00:00",
+  "based_on_ride": 17496676819
+}

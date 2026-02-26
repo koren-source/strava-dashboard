@@ -182,7 +182,7 @@
     .zone-fill { height: 100%; border-radius: 999px; transition: width 500ms ease; }
     .zone-footer { margin-top: 8px; display: flex; justify-content: space-between; color: var(--muted); font-size: 0.74rem; }
 
-    /* ── Workout Cards (dual next-ride) ── */
+    /* Workout Cards */
     .workout-cards {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -239,6 +239,20 @@
 
     .workout-reasoning strong { color: var(--text); }
 
+    .ai-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.68rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 3px 8px;
+      border-radius: 6px;
+      background: rgba(255,255,255,0.25);
+      margin-left: auto;
+    }
+
     .rec-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -256,6 +270,45 @@
     .rec-metric:hover { transform: translateY(-2px); background: #ECEFF4; }
     .rec-metric .k { color: var(--muted); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px; }
     .rec-metric .v { font-size: 0.96rem; font-weight: 700; letter-spacing: -0.02em; color: var(--blue-accent-bright); }
+
+    /* Time Window Toggle */
+    .time-toggle {
+      display: flex;
+      gap: 0;
+      background: #F3F4F7;
+      border-radius: 10px;
+      padding: 3px;
+      border: 1px solid rgba(74,94,140,0.10);
+    }
+
+    .time-toggle button {
+      flex: 1;
+      padding: 8px 14px;
+      border: none;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      background: transparent;
+      color: var(--muted);
+      transition: all 180ms ease;
+    }
+
+    .time-toggle button:hover { color: var(--text); }
+
+    .time-toggle button.active {
+      color: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+
+    .workout-card.growth .time-toggle button.active {
+      background: linear-gradient(135deg, #ff4a4a, #ff8c00);
+    }
+
+    .workout-card.stabilizer .time-toggle button.active {
+      background: linear-gradient(135deg, #1a5cff, #00b4d8);
+    }
 
     .download-btn {
       display: block;
@@ -322,355 +375,440 @@
           </svg>
         </div>
         <div class="title-wrap">
-          <h1>Koren Saida</h1>
+          <h1 id="athlete-name">Koren Saida</h1>
           <p>Cycling Performance Dashboard</p>
         </div>
       </div>
       <div class="header-date">
         <div class="label">Last Ride Date</div>
-        <div class="value">Feb 23, 2026</div>
+        <div class="value" id="last-ride-date">Loading...</div>
       </div>
     </section>
 
-    <!-- Athlete Stats -->
-    <section class="stats-row" aria-label="Athlete summary stats">
-      <article class="stat-card" style="animation-delay:40ms">
-        <div class="stat-label"><span class="dot" style="background:var(--silver)"></span> FTP ⚡</div>
-        <div class="stat-value">237<span class="stat-unit">W</span></div>
-      </article>
-      <article class="stat-card" style="animation-delay:80ms">
-        <div class="stat-label"><span class="dot" style="background:var(--blue-accent)"></span> VO2 Max 💨</div>
-        <div class="stat-value">48</div>
-      </article>
-      <article class="stat-card" style="animation-delay:120ms">
-        <div class="stat-label"><span class="dot" style="background:var(--blue-accent-bright)"></span> Max HR ❤️</div>
-        <div class="stat-value">194<span class="stat-unit">bpm</span></div>
-      </article>
-      <article class="stat-card" style="animation-delay:160ms">
-        <div class="stat-label"><span class="dot" style="background:var(--blue-accent)"></span> Resting HR 💓</div>
-        <div class="stat-value">46<span class="stat-unit">bpm</span></div>
-      </article>
+    <!-- Athlete Stats (populated by JS) -->
+    <section class="stats-row" aria-label="Athlete summary stats" id="stats-row">
     </section>
 
     <!-- Last 3 Rides -->
     <section>
       <div class="section-head">
         <h2>Last 3 Rides</h2>
-        <p>Power zone intensity from average watts vs FTP (237W)</p>
+        <p id="rides-subtitle">Power zone intensity from average watts vs FTP</p>
       </div>
     </section>
 
-    <section class="rides-grid" aria-label="Recent rides">
-      <article class="ride-card recent" style="animation-delay:200ms">
-        <div class="ride-top">
-          <h3>Zwift - Aerobic Builds on Ocean Lava Cliffside Loop in Watopia</h3>
-          <div class="ride-date">Feb 23, 2026</div>
-        </div>
-        <div class="ride-metrics">
-          <div class="metric"><div class="k">Distance</div><div class="v">24.1 mi</div></div>
-          <div class="metric"><div class="k">Time</div><div class="v">1h 22m</div></div>
-          <div class="metric"><div class="k">Elev</div><div class="v">1,030 ft</div></div>
-          <div class="metric"><div class="k">Speed</div><div class="v">17.5 mph</div></div>
-          <div class="metric"><div class="k">Power</div><div class="v">163 W</div></div>
-          <div class="metric"><div class="k">HR / Suffer</div><div class="v">150 bpm / 104</div></div>
-        </div>
-        <div class="zone-wrap">
-          <div class="zone-label"><span>Power Zone Intensity</span><strong style="color:#FC4C02;font-weight:700">69% FTP • Zone 2</strong></div>
-          <div class="zone-track"><div class="zone-fill" style="width:69%;background:linear-gradient(90deg,#FC4C02,#E03B00);box-shadow:0 0 18px rgba(252,76,2,.55)"></div></div>
-          <div class="zone-footer"><span>Avg 163W</span><span>FTP 237W</span></div>
-        </div>
-      </article>
-
-      <article class="ride-card" style="animation-delay:260ms">
-        <div class="ride-top">
-          <h3>Zwift - SST (Med) on Roule Ma Poule in France</h3>
-          <div class="ride-date">Feb 13, 2026</div>
-        </div>
-        <div class="ride-metrics">
-          <div class="metric"><div class="k">Distance</div><div class="v">25.6 mi</div></div>
-          <div class="metric"><div class="k">Time</div><div class="v">1h 25m</div></div>
-          <div class="metric"><div class="k">Elev</div><div class="v">1,014 ft</div></div>
-          <div class="metric"><div class="k">Speed</div><div class="v">18.0 mph</div></div>
-          <div class="metric"><div class="k">Power</div><div class="v">180 W</div></div>
-          <div class="metric"><div class="k">HR / Suffer</div><div class="v">147 bpm / 101</div></div>
-        </div>
-        <div class="zone-wrap">
-          <div class="zone-label"><span>Power Zone Intensity</span><strong style="color:#FC4C02;font-weight:700">76% FTP • Zone 3</strong></div>
-          <div class="zone-track"><div class="zone-fill" style="width:76%;background:linear-gradient(90deg,#FC4C02,#E03B00);box-shadow:0 0 18px rgba(252,76,2,.55)"></div></div>
-          <div class="zone-footer"><span>Avg 180W</span><span>FTP 237W</span></div>
-        </div>
-      </article>
-
-      <article class="ride-card" style="animation-delay:320ms">
-        <div class="ride-top">
-          <h3>Zwift - #1 Find Your Rhythm - Long on Temple Trek in Watopia</h3>
-          <div class="ride-date">Feb 10, 2026</div>
-        </div>
-        <div class="ride-metrics">
-          <div class="metric"><div class="k">Distance</div><div class="v">24.4 mi</div></div>
-          <div class="metric"><div class="k">Time</div><div class="v">1h 15m</div></div>
-          <div class="metric"><div class="k">Elev</div><div class="v">771 ft</div></div>
-          <div class="metric"><div class="k">Speed</div><div class="v">19.3 mph</div></div>
-          <div class="metric"><div class="k">Power</div><div class="v">180 W</div></div>
-          <div class="metric"><div class="k">HR / Suffer</div><div class="v">148 bpm / 88</div></div>
-        </div>
-        <div class="zone-wrap">
-          <div class="zone-label"><span>Power Zone Intensity</span><strong style="color:#FC4C02;font-weight:700">76% FTP • Zone 3</strong></div>
-          <div class="zone-track"><div class="zone-fill" style="width:76%;background:linear-gradient(90deg,#FC4C02,#E03B00);box-shadow:0 0 18px rgba(252,76,2,.55)"></div></div>
-          <div class="zone-footer"><span>Avg 180W</span><span>FTP 237W</span></div>
-        </div>
-      </article>
+    <section class="rides-grid" aria-label="Recent rides" id="rides-grid">
     </section>
 
     <!-- Dual Workout Recommendations -->
     <section>
       <div class="section-head">
         <h2>Next Ride Recommendations</h2>
-        <p>Personalized based on your last ride · FTP 237W</p>
+        <p id="rec-subtitle">Personalized based on your last ride</p>
       </div>
     </section>
 
     <section class="workout-cards" aria-label="Next ride recommendations" id="workout-cards">
-      <!-- Populated by JS below -->
     </section>
 
   </main>
 
   <script>
-    // ── Athlete data (mirrors data.json) ──────────────────────────────────────
-    const athlete = {
-      ftp: 237,
-      vo2max: 48,
-      max_hr: 194,
-      resting_hr: 46,
+    // ── Data Loading ─────────────────────────────────────────────────────────────
+    // Load from data/ JSON files (written by GitHub Actions) with inline fallback
+    async function loadJSON(path) {
+      try {
+        const resp = await fetch(path);
+        if (!resp.ok) throw new Error(resp.status);
+        return await resp.json();
+      } catch {
+        return null;
+      }
+    }
+
+    // Inline fallback data (used if JSON files don't exist yet)
+    const FALLBACK_ATHLETE = {
+      name: "Koren Saida", ftp: 237, vo2max: 48, max_hr: 194, resting_hr: 46,
       goals: ["Increase FTP", "Build aerobic base", "Improve VO2 Max", "Get faster on Zwift"]
     };
 
-    const rides = [
-      {
-        name: "Zwift - Aerobic Builds on Ocean Lava Cliffside Loop in Watopia",
-        date: "2026-02-23",
-        avg_watts: 163,
-        suffer_score: 104
-      },
-      {
-        name: "Zwift - SST (Med) on Roule Ma Poule in France",
-        date: "2026-02-13",
-        avg_watts: 180,
-        suffer_score: 101
-      },
-      {
-        name: "Zwift - #1 Find Your Rhythm - Long on Temple Trek in Watopia",
-        date: "2026-02-10",
-        avg_watts: 180,
-        suffer_score: 88
-      }
+    const FALLBACK_RIDES = [
+      { id: 17496676819, name: "Zwift - Aerobic Builds on Ocean Lava Cliffside Loop in Watopia", date: "2026-02-23", dist_mi: 24.1, moving_mins: 82, elev_ft: 1030, avg_speed_mph: 17.5, avg_watts: 163, max_watts: 378, avg_hr: 150, max_hr: 171, suffer_score: 104, strava_url: "https://www.strava.com/activities/17496676819" },
+      { id: 17379985614, name: "Zwift - SST (Med) on Roule Ma Poule in France", date: "2026-02-13", dist_mi: 25.6, moving_mins: 85, elev_ft: 1014, avg_speed_mph: 18.0, avg_watts: 180, max_watts: 534, avg_hr: 147, max_hr: 169, suffer_score: 101, strava_url: "https://www.strava.com/activities/17379985614" },
+      { id: 17355211089, name: "Zwift - #1 Find Your Rhythm - Long on Temple Trek in Watopia", date: "2026-02-10", dist_mi: 24.4, moving_mins: 75, elev_ft: 771, avg_speed_mph: 19.3, avg_watts: 180, max_watts: 261, avg_hr: 148, max_hr: 172, suffer_score: 88, strava_url: "https://www.strava.com/activities/17355211089" }
     ];
 
-    // ── Derive Growth Ride from last ride ─────────────────────────────────────
-    const lastRide      = rides[0];
-    const ftp           = athlete.ftp;
-    const intensity     = lastRide.avg_watts / ftp;           // e.g. 0.688
-    const lastRideDate  = new Date(lastRide.date);
-    const daysSince     = Math.floor((Date.now() - lastRideDate) / 86400000);
-    const tooFatigued   = lastRide.suffer_score > 120 || daysSince <= 1;
+    (async function init() {
+      const [athleteData, ridesData, recData] = await Promise.all([
+        loadJSON('data/athlete.json'),
+        loadJSON('data/rides.json'),
+        loadJSON('data/recommendation.json'),
+      ]);
 
-    let growth;
-    if (intensity < 0.75) {
-      // Zone 2 → prescribe Threshold to directly grow FTP
-      const lo = Math.round(ftp * 0.90);
-      const hi = Math.round(ftp * 0.95);
-      growth = {
-        title: "Threshold Intervals",
-        reasoning: `Your last ride was aerobic base work (${Math.round(intensity*100)}% FTP — Zone 2). <strong>To grow your FTP, you need time at threshold.</strong> This is the most direct path to getting stronger on Zwift.`,
-        focus: "Build FTP",
-        duration: "65–75 min",
-        targetPower: `${lo}–${hi} W`,
-        hrZone: "Zone 4",
-        suggestedSet: `3 × 10 min @ ${lo}–${hi}W, 5 min easy recovery`,
-        zwoName: "Growth-Threshold-Intervals",
-        zwoDesc: `3x10 min @ 90-95% FTP (${lo}-${hi}W) to build power`,
-        zwoXml: buildThresholdZwo(ftp, lo, hi)
-      };
-    } else if (intensity < 0.90) {
-      // Zone 3 Sweet Spot → push VO2 Max now
-      const lo = Math.round(ftp * 1.06);
-      const hi = Math.round(ftp * 1.20);
-      growth = {
-        title: "VO₂ Max Intervals",
-        reasoning: `Your last ride hit sweet spot (${Math.round(intensity*100)}% FTP). <strong>You're primed to spike VO₂ Max now</strong> — short hard efforts will push your ceiling and accelerate adaptation.`,
-        focus: "Raise VO₂ Max",
-        duration: "55–65 min",
-        targetPower: `${lo}–${hi} W`,
-        hrZone: "Zone 5",
-        suggestedSet: `5 × 3 min @ ${lo}–${hi}W, 3 min easy recovery`,
-        zwoName: "Growth-VO2Max-Intervals",
-        zwoDesc: `5x3 min @ 106-120% FTP (${lo}-${hi}W) to raise VO2 Max`,
-        zwoXml: buildVO2Zwo(ftp, lo, hi)
-      };
-    } else {
-      // Hard effort → Sweet Spot consolidation
-      const lo = Math.round(ftp * 0.88);
-      const hi = Math.round(ftp * 0.93);
-      growth = {
-        title: "Sweet Spot",
-        reasoning: `You pushed hard last ride (${Math.round(intensity*100)}% FTP). <strong>Sweet spot now locks in those gains</strong> without over-reaching — this is where adaptation actually happens.`,
-        focus: "Lock in gains",
-        duration: "70–80 min",
-        targetPower: `${lo}–${hi} W`,
-        hrZone: "Zone 3–4",
-        suggestedSet: `2 × 20 min @ ${lo}–${hi}W, 5 min recovery`,
-        zwoName: "Growth-SweetSpot",
-        zwoDesc: `2x20 min @ 88-93% FTP (${lo}-${hi}W) to consolidate gains`,
-        zwoXml: buildSweetSpotZwo(ftp, lo, hi)
-      };
-    }
+      const athlete = athleteData || FALLBACK_ATHLETE;
+      const rides   = ridesData   || FALLBACK_RIDES;
+      const aiRec   = recData;  // may be null
 
-    if (tooFatigued) {
-      growth.reasoning += ' <em>(Your suffer score was high or you rode very recently — consider adding a rest day first.)</em>';
-    }
+      const ftp = athlete.ftp || 237;
 
-    // ── Stabilizer Ride (always endurance base) ───────────────────────────────
-    const stabLo = Math.round(ftp * 0.65);
-    const stabHi = Math.round(ftp * 0.75);
+      // ── Render Header ──────────────────────────────────────────────────────
+      document.getElementById('athlete-name').textContent = athlete.name || 'Koren Saida';
+      if (rides.length > 0) {
+        document.getElementById('last-ride-date').textContent = formatDate(rides[0].date);
+      }
+      document.getElementById('rides-subtitle').textContent = `Power zone intensity from average watts vs FTP (${ftp}W)`;
+      document.getElementById('rec-subtitle').textContent = `Personalized based on your last ride \u00b7 FTP ${ftp}W`;
 
-    const stabilizer = {
-      title: "Endurance Base",
-      reasoning: `Keeps your aerobic engine humming between hard efforts. <strong>This ride maintains your base without adding fatigue</strong> — so your next hard session actually sticks.`,
-      focus: "Maintain aerobic base",
-      duration: "60 min",
-      targetPower: `${stabLo}–${stabHi} W`,
-      hrZone: "Zone 2",
-      suggestedSet: `10 min warm-up, 40 min @ ${stabLo}–${stabHi}W, 10 min cool-down`,
-      zwoName: "Stabilizer-Endurance-Base",
-      zwoDesc: `60 min steady endurance @ 65-75% FTP (${stabLo}-${stabHi}W)`,
-      zwoXml: buildEnduranceZwo(ftp, stabLo, stabHi)
-    };
+      // ── Render Stats ───────────────────────────────────────────────────────
+      const statsRow = document.getElementById('stats-row');
+      const stats = [
+        { label: 'FTP', icon: 'silver', value: ftp, unit: 'W', emoji: '\u26a1' },
+        { label: 'VO2 Max', icon: 'blue-accent', value: athlete.vo2max || 48, unit: '', emoji: '\ud83d\udca8' },
+        { label: 'Max HR', icon: 'blue-accent-bright', value: athlete.max_hr || 194, unit: 'bpm', emoji: '\u2764\ufe0f' },
+        { label: 'Resting HR', icon: 'blue-accent', value: athlete.resting_hr || 46, unit: 'bpm', emoji: '\ud83d\udc93' },
+      ];
+      statsRow.innerHTML = stats.map((s, i) => `
+        <article class="stat-card" style="animation-delay:${40 + i*40}ms">
+          <div class="stat-label"><span class="dot" style="background:var(--${s.icon})"></span> ${s.label} ${s.emoji}</div>
+          <div class="stat-value">${s.value}${s.unit ? `<span class="stat-unit">${s.unit}</span>` : ''}</div>
+        </article>
+      `).join('');
 
-    // ── .zwo XML builders ─────────────────────────────────────────────────────
-    function buildThresholdZwo(ftp, lo, hi) {
-      const loP = (lo/ftp).toFixed(3);
-      const hiP = (hi/ftp).toFixed(3);
-      return `<workout_file>
-  <author>Q Dashboard</author>
-  <name>Growth: Threshold Intervals</name>
-  <description>${(lo+hi)/2|0}W avg threshold — 3x10 min to grow FTP</description>
-  <sportType>bike</sportType>
-  <tags/>
-  <workout>
-    <Warmup Duration="600" PowerLow="0.500" PowerHigh="0.750"/>
-    <IntervalsT Repeat="3" OnDuration="600" OffDuration="300" OnPower="${((lo+hi)/2/ftp).toFixed(3)}" OffPower="0.500"/>
-    <Cooldown Duration="600" PowerLow="0.750" PowerHigh="0.500"/>
-  </workout>
-</workout_file>`;
-    }
-
-    function buildVO2Zwo(ftp, lo, hi) {
-      return `<workout_file>
-  <author>Q Dashboard</author>
-  <name>Growth: VO2 Max Intervals</name>
-  <description>${(lo+hi)/2|0}W VO2 max effort — 5x3 min to raise ceiling</description>
-  <sportType>bike</sportType>
-  <tags/>
-  <workout>
-    <Warmup Duration="600" PowerLow="0.500" PowerHigh="0.750"/>
-    <IntervalsT Repeat="5" OnDuration="180" OffDuration="180" OnPower="${((lo+hi)/2/ftp).toFixed(3)}" OffPower="0.550"/>
-    <Cooldown Duration="600" PowerLow="0.750" PowerHigh="0.500"/>
-  </workout>
-</workout_file>`;
-    }
-
-    function buildSweetSpotZwo(ftp, lo, hi) {
-      return `<workout_file>
-  <author>Q Dashboard</author>
-  <name>Growth: Sweet Spot</name>
-  <description>${(lo+hi)/2|0}W sweet spot — 2x20 min to lock in gains</description>
-  <sportType>bike</sportType>
-  <tags/>
-  <workout>
-    <Warmup Duration="600" PowerLow="0.500" PowerHigh="0.750"/>
-    <IntervalsT Repeat="2" OnDuration="1200" OffDuration="300" OnPower="${((lo+hi)/2/ftp).toFixed(3)}" OffPower="0.550"/>
-    <Cooldown Duration="600" PowerLow="0.750" PowerHigh="0.500"/>
-  </workout>
-</workout_file>`;
-    }
-
-    function buildEnduranceZwo(ftp, lo, hi) {
-      return `<workout_file>
-  <author>Q Dashboard</author>
-  <name>Stabilizer: Endurance Base</name>
-  <description>${(lo+hi)/2|0}W steady endurance — 60 min aerobic maintenance</description>
-  <sportType>bike</sportType>
-  <tags/>
-  <workout>
-    <Warmup Duration="600" PowerLow="0.500" PowerHigh="0.650"/>
-    <SteadyState Duration="2400" Power="${((lo+hi)/2/ftp).toFixed(3)}"/>
-    <Cooldown Duration="600" PowerLow="0.650" PowerHigh="0.500"/>
-  </workout>
-</workout_file>`;
-    }
-
-    // ── Download helper ────────────────────────────────────────────────────────
-    function downloadZwo(xml, filename) {
-      const blob = new Blob([xml], { type: 'text/xml' });
-      const url  = URL.createObjectURL(blob);
-      const a    = document.createElement('a');
-      a.href     = url;
-      a.download = filename;
-      a.style.display = 'none';
-      document.body.appendChild(a);
-      a.click();
-      setTimeout(() => {
-        document.body.removeChild(a);
-        URL.revokeObjectURL(url);
-      }, 100);
-    }
-
-    // ── Workout registry (avoids stuffing XML into HTML attributes) ────────
-    const workouts = {
-      growth:     { xml: growth.zwoXml,     filename: growth.zwoName.toLowerCase().replace(/[^a-z0-9]+/g, '-') + '.zwo' },
-      stabilizer: { xml: stabilizer.zwoXml, filename: stabilizer.zwoName.toLowerCase().replace(/[^a-z0-9]+/g, '-') + '.zwo' }
-    };
-
-    // ── Render cards ───────────────────────────────────────────────────────────
-    function renderCard(data, kind) {
-      const icon    = kind === 'growth' ? '🔥' : '💪';
-      const label   = kind === 'growth' ? 'Growth Ride' : 'Stabilizer Ride';
-      const sub     = kind === 'growth' ? 'Push your limits — build fitness' : 'Maintain your base — stay sharp';
-      const btnText = kind === 'growth' ? '⬇ Download Growth Workout (.zwo)' : '⬇ Download Stabilizer Workout (.zwo)';
-
-      return `
-        <article class="workout-card ${kind}">
-          <div class="workout-card-header">
-            <div class="workout-icon">${icon}</div>
-            <div>
-              <div class="workout-type">${label}</div>
-              <div class="workout-subtitle">${sub}</div>
+      // ── Render Rides ───────────────────────────────────────────────────────
+      const ridesGrid = document.getElementById('rides-grid');
+      const displayRides = rides.slice(0, 3);
+      ridesGrid.innerHTML = displayRides.map((r, i) => {
+        const intensityPct = r.avg_watts ? Math.round((r.avg_watts / ftp) * 100) : 0;
+        const zone = intensityPct < 56 ? 'Zone 1' : intensityPct < 76 ? 'Zone 2' : intensityPct < 91 ? 'Zone 3' : intensityPct < 106 ? 'Zone 4' : 'Zone 5';
+        const hrs = Math.floor(r.moving_mins / 60);
+        const mins = r.moving_mins % 60;
+        const timeStr = hrs > 0 ? `${hrs}h ${mins}m` : `${mins}m`;
+        return `
+          <article class="ride-card${i === 0 ? ' recent' : ''}" style="animation-delay:${200 + i*60}ms">
+            <div class="ride-top">
+              <h3>${r.name}</h3>
+              <div class="ride-date">${formatDate(r.date)}</div>
             </div>
-          </div>
-          <div class="workout-body">
-            <div class="workout-reasoning">${data.reasoning}</div>
-            <div class="rec-grid">
-              <div class="rec-metric"><div class="k">Focus</div><div class="v">${data.focus}</div></div>
-              <div class="rec-metric"><div class="k">Duration</div><div class="v">${data.duration}</div></div>
-              <div class="rec-metric"><div class="k">Target Power</div><div class="v">${data.targetPower}</div></div>
-              <div class="rec-metric"><div class="k">HR Zone</div><div class="v">${data.hrZone}</div></div>
-              <div class="rec-metric" style="grid-column:1/-1"><div class="k">Suggested Set</div><div class="v">${data.suggestedSet}</div></div>
+            <div class="ride-metrics">
+              <div class="metric"><div class="k">Distance</div><div class="v">${r.dist_mi} mi</div></div>
+              <div class="metric"><div class="k">Time</div><div class="v">${timeStr}</div></div>
+              <div class="metric"><div class="k">Elev</div><div class="v">${r.elev_ft ? r.elev_ft.toLocaleString() : '—'} ft</div></div>
+              <div class="metric"><div class="k">Speed</div><div class="v">${r.avg_speed_mph} mph</div></div>
+              <div class="metric"><div class="k">Power</div><div class="v">${r.avg_watts || '—'} W</div></div>
+              <div class="metric"><div class="k">HR / Suffer</div><div class="v">${r.avg_hr || '—'} bpm / ${r.suffer_score || '—'}</div></div>
             </div>
-            <button class="download-btn" data-kind="${kind}">${btnText}</button>
-          </div>
-        </article>`;
-    }
+            <div class="zone-wrap">
+              <div class="zone-label"><span>Power Zone Intensity</span><strong style="color:#FC4C02;font-weight:700">${intensityPct}% FTP \u2022 ${zone}</strong></div>
+              <div class="zone-track"><div class="zone-fill" style="width:${intensityPct}%;background:linear-gradient(90deg,#FC4C02,#E03B00);box-shadow:0 0 18px rgba(252,76,2,.55)"></div></div>
+              <div class="zone-footer"><span>Avg ${r.avg_watts || '—'}W</span><span>FTP ${ftp}W</span></div>
+            </div>
+          </article>`;
+      }).join('');
 
-    const container = document.getElementById('workout-cards');
-    container.innerHTML = renderCard(growth, 'growth') + renderCard(stabilizer, 'stabilizer');
+      // ── Build Growth Ride Data ─────────────────────────────────────────────
+      // Use AI recommendation if available and fresh; else rule-based fallback
+      const lastRide = rides[0] || {};
+      const intensity = (lastRide.avg_watts || 0) / ftp;
+      const daysSince = lastRide.date ? Math.floor((Date.now() - new Date(lastRide.date)) / 86400000) : 99;
+      const tooFatigued = (lastRide.suffer_score || 0) > 120 || daysSince <= 1;
 
-    container.addEventListener('click', e => {
-      const btn = e.target.closest('.download-btn');
-      if (!btn) return;
-      const w = workouts[btn.dataset.kind];
-      if (w) downloadZwo(w.xml, w.filename);
-    });
+      let growthBase;  // base 60-min template
+      let isAI = false;
+
+      // Check if AI recommendation is available and not stale (>48hrs)
+      if (aiRec && aiRec.suggested_sets && aiRec.suggested_sets.length > 0) {
+        const genTime = aiRec.generated_at ? new Date(aiRec.generated_at) : null;
+        const staleHours = genTime ? (Date.now() - genTime) / 3600000 : 999;
+        if (staleHours < 48) {
+          const loW = aiRec.target_power ? aiRec.target_power.low : Math.round(ftp * 0.9);
+          const hiW = aiRec.target_power ? aiRec.target_power.high : Math.round(ftp * 0.95);
+          growthBase = {
+            title: aiRec.workout_name,
+            reasoning: aiRec.reasoning,
+            focus: aiRec.focus || 'Build FTP',
+            targetPower: `${loW}\u2013${hiW} W`,
+            hrZone: aiRec.hr_zone || 'Zone 4',
+            sets: aiRec.suggested_sets,
+            loFtp: loW / ftp,
+            hiFtp: hiW / ftp,
+          };
+          isAI = true;
+        }
+      }
+
+      // Rule-based fallback
+      if (!growthBase) {
+        if (intensity < 0.75) {
+          const lo = Math.round(ftp * 0.90), hi = Math.round(ftp * 0.95);
+          growthBase = {
+            title: "Threshold Intervals",
+            reasoning: `Your last ride was aerobic base work (${Math.round(intensity*100)}% FTP \u2014 Zone 2). <strong>To grow your FTP, you need time at threshold.</strong> This is the most direct path to getting stronger on Zwift.`,
+            focus: "Build FTP", targetPower: `${lo}\u2013${hi} W`, hrZone: "Zone 4",
+            sets: [
+              { name: "Warmup", duration_minutes: 10, power_pct_ftp: [50, 75], description: "Easy spin to tempo" },
+              { name: "Main Set", duration_minutes: 45, power_pct_ftp: [90, 95], description: `3\u00d710 min @ ${lo}\u2013${hi}W, 5 min recovery` },
+              { name: "Cooldown", duration_minutes: 10, power_pct_ftp: [50, 60], description: "Easy spin" },
+            ],
+            loFtp: 0.90, hiFtp: 0.95,
+          };
+        } else if (intensity < 0.90) {
+          const lo = Math.round(ftp * 1.06), hi = Math.round(ftp * 1.20);
+          growthBase = {
+            title: "VO\u2082 Max Intervals",
+            reasoning: `Your last ride hit sweet spot (${Math.round(intensity*100)}% FTP). <strong>You're primed to spike VO\u2082 Max now</strong> \u2014 short hard efforts will push your ceiling.`,
+            focus: "Raise VO\u2082 Max", targetPower: `${lo}\u2013${hi} W`, hrZone: "Zone 5",
+            sets: [
+              { name: "Warmup", duration_minutes: 10, power_pct_ftp: [50, 75], description: "Easy spin to tempo" },
+              { name: "Main Set", duration_minutes: 33, power_pct_ftp: [106, 120], description: `5\u00d73 min @ ${lo}\u2013${hi}W, 3 min recovery` },
+              { name: "Cooldown", duration_minutes: 10, power_pct_ftp: [50, 60], description: "Easy spin" },
+            ],
+            loFtp: 1.06, hiFtp: 1.20,
+          };
+        } else {
+          const lo = Math.round(ftp * 0.88), hi = Math.round(ftp * 0.93);
+          growthBase = {
+            title: "Sweet Spot",
+            reasoning: `You pushed hard last ride (${Math.round(intensity*100)}% FTP). <strong>Sweet spot now locks in those gains</strong> without over-reaching.`,
+            focus: "Lock in gains", targetPower: `${lo}\u2013${hi} W`, hrZone: "Zone 3\u20134",
+            sets: [
+              { name: "Warmup", duration_minutes: 10, power_pct_ftp: [50, 75], description: "Easy spin to tempo" },
+              { name: "Main Set", duration_minutes: 45, power_pct_ftp: [88, 93], description: `2\u00d720 min @ ${lo}\u2013${hi}W, 5 min recovery` },
+              { name: "Cooldown", duration_minutes: 10, power_pct_ftp: [50, 60], description: "Easy spin" },
+            ],
+            loFtp: 0.88, hiFtp: 0.93,
+          };
+        }
+      }
+
+      if (tooFatigued) {
+        growthBase.reasoning += ' <em>(Your suffer score was high or you rode very recently \u2014 consider adding a rest day first.)</em>';
+      }
+
+      // Stabilizer base
+      const stabLo = Math.round(ftp * 0.65), stabHi = Math.round(ftp * 0.75);
+      const stabilizerBase = {
+        title: "Endurance Base",
+        reasoning: `Keeps your aerobic engine humming between hard efforts. <strong>This ride maintains your base without adding fatigue</strong> \u2014 so your next hard session actually sticks.`,
+        focus: "Maintain aerobic base", targetPower: `${stabLo}\u2013${stabHi} W`, hrZone: "Zone 2",
+        sets: [
+          { name: "Warmup", duration_minutes: 10, power_pct_ftp: [50, 65], description: "Easy spin" },
+          { name: "Steady State", duration_minutes: 40, power_pct_ftp: [65, 75], description: `Steady @ ${stabLo}\u2013${stabHi}W` },
+          { name: "Cooldown", duration_minutes: 10, power_pct_ftp: [50, 60], description: "Easy spin" },
+        ],
+        loFtp: 0.65, hiFtp: 0.75,
+      };
+
+      // ── Time Window Scaling ────────────────────────────────────────────────
+      // Scale a workout to a target duration (45, 60, 90 min)
+      // Warmup/cooldown scale proportionally, main set adjusts interval count
+      function scaleWorkout(base, targetMin) {
+        const baseTotal = base.sets.reduce((s, x) => s + (x.duration_minutes || 0), 0);
+        if (baseTotal === 0) return { sets: base.sets, totalMin: targetMin };
+
+        // Find warmup, cooldown, and main set(s)
+        const warmup = base.sets.find(s => s.name.toLowerCase().includes('warmup') || s.name.toLowerCase().includes('warm'));
+        const cooldown = base.sets.find(s => s.name.toLowerCase().includes('cooldown') || s.name.toLowerCase().includes('cool'));
+        const mainSets = base.sets.filter(s => s !== warmup && s !== cooldown);
+
+        const warmupBase = warmup ? warmup.duration_minutes : 0;
+        const cooldownBase = cooldown ? cooldown.duration_minutes : 0;
+        const mainBase = mainSets.reduce((s, x) => s + (x.duration_minutes || 0), 0);
+
+        // Scale warmup/cooldown proportionally (min 5 min, max 15 min)
+        const ratio = targetMin / baseTotal;
+        const warmupNew = warmup ? Math.max(5, Math.min(15, Math.round(warmupBase * ratio))) : 0;
+        const cooldownNew = cooldown ? Math.max(5, Math.min(15, Math.round(cooldownBase * ratio))) : 0;
+        const mainNew = targetMin - warmupNew - cooldownNew;
+
+        // Scale main set descriptions based on duration
+        const scaledSets = [];
+        if (warmup) scaledSets.push({ ...warmup, duration_minutes: warmupNew });
+
+        for (const ms of mainSets) {
+          const scaledDur = mainSets.length === 1 ? mainNew : Math.round(mainNew * (ms.duration_minutes / mainBase));
+          // Generate a new description based on the scaled duration
+          const desc = scaleMainSetDescription(ms, scaledDur, ftp, base.loFtp, base.hiFtp);
+          scaledSets.push({ ...ms, duration_minutes: scaledDur, description: desc });
+        }
+
+        if (cooldown) scaledSets.push({ ...cooldown, duration_minutes: cooldownNew });
+
+        return { sets: scaledSets, totalMin: targetMin };
+      }
+
+      function scaleMainSetDescription(set, durMin, ftp, loFtp, hiFtp) {
+        const lo = Math.round(ftp * loFtp);
+        const hi = Math.round(ftp * hiFtp);
+        const pctLo = Math.round(loFtp * 100);
+        const pctHi = Math.round(hiFtp * 100);
+
+        // Determine interval structure based on intensity and duration
+        if (hiFtp >= 1.05) {
+          // VO2 max: short intervals (2-4 min on, equal rest)
+          const onDur = 3;  // min
+          const offDur = 3;
+          const reps = Math.max(2, Math.floor(durMin / (onDur + offDur)));
+          return `${reps}\u00d7${onDur} min @ ${lo}\u2013${hi}W, ${offDur} min recovery`;
+        } else if (loFtp >= 0.85) {
+          // Threshold/sweet spot: medium intervals (8-12 min on, 5 min rest)
+          const onDur = 10;
+          const offDur = 5;
+          const reps = Math.max(2, Math.floor(durMin / (onDur + offDur)));
+          return `${reps}\u00d7${onDur} min @ ${lo}\u2013${hi}W, ${offDur} min recovery`;
+        } else {
+          // Endurance: steady state
+          return `${durMin} min steady @ ${lo}\u2013${hi}W`;
+        }
+      }
+
+      // ── .zwo XML Generation ────────────────────────────────────────────────
+      function buildZwoXml(workoutName, desc, sets, ftp) {
+        let blocks = '';
+        for (const s of sets) {
+          const dur = (s.duration_minutes || 10) * 60;
+          const loP = ((s.power_pct_ftp ? s.power_pct_ftp[0] : 50) / 100).toFixed(3);
+          const hiP = ((s.power_pct_ftp ? s.power_pct_ftp[1] : 70) / 100).toFixed(3);
+
+          if (s.name.toLowerCase().includes('warmup') || s.name.toLowerCase().includes('warm')) {
+            blocks += `    <Warmup Duration="${dur}" PowerLow="${loP}" PowerHigh="${hiP}"/>\n`;
+          } else if (s.name.toLowerCase().includes('cooldown') || s.name.toLowerCase().includes('cool')) {
+            blocks += `    <Cooldown Duration="${dur}" PowerLow="${hiP}" PowerHigh="${loP}"/>\n`;
+          } else if (parseFloat(hiP) >= 1.05) {
+            // VO2 intervals
+            const onDur = 180, offDur = 180;
+            const reps = Math.max(2, Math.floor(dur / (onDur + offDur)));
+            const avgP = ((parseFloat(loP) + parseFloat(hiP)) / 2).toFixed(3);
+            blocks += `    <IntervalsT Repeat="${reps}" OnDuration="${onDur}" OffDuration="${offDur}" OnPower="${avgP}" OffPower="0.500"/>\n`;
+          } else if (parseFloat(loP) >= 0.85) {
+            // Threshold intervals
+            const onDur = 600, offDur = 300;
+            const reps = Math.max(2, Math.floor(dur / (onDur + offDur)));
+            const avgP = ((parseFloat(loP) + parseFloat(hiP)) / 2).toFixed(3);
+            blocks += `    <IntervalsT Repeat="${reps}" OnDuration="${onDur}" OffDuration="${offDur}" OnPower="${avgP}" OffPower="0.500"/>\n`;
+          } else {
+            // Steady state
+            const avgP = ((parseFloat(loP) + parseFloat(hiP)) / 2).toFixed(3);
+            blocks += `    <SteadyState Duration="${dur}" Power="${avgP}"/>\n`;
+          }
+        }
+
+        return `<workout_file>
+  <author>Q Dashboard</author>
+  <name>${workoutName}</name>
+  <description>${desc}</description>
+  <sportType>bike</sportType>
+  <tags/>
+  <workout>
+${blocks}  </workout>
+</workout_file>`;
+      }
+
+      // ── Download helper ────────────────────────────────────────────────────
+      function downloadZwo(xml, filename) {
+        const blob = new Blob([xml], { type: 'text/xml' });
+        const url  = URL.createObjectURL(blob);
+        const a    = document.createElement('a');
+        a.href     = url;
+        a.download = filename;
+        a.style.display = 'none';
+        document.body.appendChild(a);
+        a.click();
+        setTimeout(() => { document.body.removeChild(a); URL.revokeObjectURL(url); }, 100);
+      }
+
+      // ── Format Helpers ─────────────────────────────────────────────────────
+      function formatDate(dateStr) {
+        if (!dateStr) return '—';
+        const d = new Date(dateStr + 'T00:00:00');
+        return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+      }
+
+      function formatSetsText(sets) {
+        return sets.map(s => `${s.name}: ${s.description} (${s.duration_minutes} min)`).join(' \u2192 ');
+      }
+
+      // ── Render Workout Cards ───────────────────────────────────────────────
+      const container = document.getElementById('workout-cards');
+
+      // Track current time selection per card
+      const state = { growth: 60, stabilizer: 60 };
+
+      function renderCards() {
+        const growthScaled = scaleWorkout(growthBase, state.growth);
+        const stabScaled   = scaleWorkout(stabilizerBase, state.stabilizer);
+
+        container.innerHTML =
+          renderWorkoutCard('growth', growthBase, growthScaled, isAI) +
+          renderWorkoutCard('stabilizer', stabilizerBase, stabScaled, false);
+
+        // Bind toggle and download events
+        container.querySelectorAll('.time-toggle button').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const kind = btn.closest('.workout-card').classList.contains('growth') ? 'growth' : 'stabilizer';
+            state[kind] = parseInt(btn.dataset.mins);
+            renderCards();
+          });
+        });
+
+        container.querySelectorAll('.download-btn').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const kind = btn.dataset.kind;
+            const base = kind === 'growth' ? growthBase : stabilizerBase;
+            const scaled = scaleWorkout(base, state[kind]);
+            const label = kind === 'growth' ? 'Growth' : 'Stabilizer';
+            const name = `${label}: ${base.title}`;
+            const desc = `${state[kind]} min ${base.title.toLowerCase()} workout`;
+            const xml = buildZwoXml(name, desc, scaled.sets, ftp);
+            const filename = `${label.toLowerCase()}-${base.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}-${state[kind]}min.zwo`;
+            downloadZwo(xml, filename);
+          });
+        });
+      }
+
+      function renderWorkoutCard(kind, base, scaled, showAI) {
+        const icon = kind === 'growth' ? '\ud83d\udd25' : '\ud83d\udcaa';
+        const label = kind === 'growth' ? 'Growth Ride' : 'Stabilizer Ride';
+        const sub = kind === 'growth' ? 'Push your limits \u2014 build fitness' : 'Maintain your base \u2014 stay sharp';
+        const btnText = kind === 'growth' ? '\u2b07 Download Growth Workout (.zwo)' : '\u2b07 Download Stabilizer Workout (.zwo)';
+        const selectedMin = state[kind];
+
+        const aiBadge = showAI
+          ? `<span class="ai-badge">\u2728 AI-generated</span>`
+          : '';
+
+        const toggleBtns = [45, 60, 90].map(m =>
+          `<button data-mins="${m}" class="${m === selectedMin ? 'active' : ''}">${m} min</button>`
+        ).join('');
+
+        const setsText = formatSetsText(scaled.sets);
+
+        return `
+          <article class="workout-card ${kind}">
+            <div class="workout-card-header">
+              <div class="workout-icon">${icon}</div>
+              <div>
+                <div class="workout-type">${label}: ${base.title}</div>
+                <div class="workout-subtitle">${sub}</div>
+              </div>
+              ${aiBadge}
+            </div>
+            <div class="workout-body">
+              <div class="workout-reasoning">${base.reasoning}</div>
+              <div class="time-toggle">${toggleBtns}</div>
+              <div class="rec-grid">
+                <div class="rec-metric"><div class="k">Focus</div><div class="v">${base.focus}</div></div>
+                <div class="rec-metric"><div class="k">Duration</div><div class="v">${selectedMin} min</div></div>
+                <div class="rec-metric"><div class="k">Target Power</div><div class="v">${base.targetPower}</div></div>
+                <div class="rec-metric"><div class="k">HR Zone</div><div class="v">${base.hrZone}</div></div>
+                <div class="rec-metric" style="grid-column:1/-1"><div class="k">Suggested Set</div><div class="v">${setsText}</div></div>
+              </div>
+              <button class="download-btn" data-kind="${kind}">${btnText}</button>
+            </div>
+          </article>`;
+      }
+
+      renderCards();
+    })();
   </script>
 </body>
 </html>
