@@ -919,6 +919,7 @@ ${blocks}  </workout>
         btn.textContent = '⏳ Generating…';
         if (status) { status.style.display = ''; }
 
+        _apiBase = null; // always re-fetch the config on each click
         try {
           const base = await getApiBase();
           if (!base) throw new Error('API not available (Mac mini may be offline)');
