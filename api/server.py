@@ -202,7 +202,7 @@ def recommend():
 
         increment_rate(rate_state)
 
-        remaining = MAX_CALLS_PER_WEEK - rate_state["calls"] - 1
+        remaining = MAX_CALLS_PER_WEEK - rate_state["calls"]  # calls already incremented
         return jsonify({
             "success": True,
             "growth": recs["growth"],

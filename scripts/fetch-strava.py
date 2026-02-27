@@ -132,12 +132,12 @@ def main():
     rides = fetch_rides(token, count=10)
     print(f"Fetched {len(rides)} rides")
 
-    # Compute days since last ride
+    # Compute days since last ride (UTC-based to match JS Date.now())
     days_since_last_ride = None
     if rides:
         try:
-            last_date = datetime.fromisoformat(rides[0]["date"])
-            days_since_last_ride = (datetime.now() - last_date).days
+            last_date = datetime.fromisoformat(rides[0]["date"]).replace(tzinfo=timezone.utc)
+            days_since_last_ride = (datetime.now(timezone.utc) - last_date).days
         except Exception:
             pass
 

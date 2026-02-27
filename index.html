@@ -512,11 +512,11 @@
         { label: 'YTD Miles', icon: 'blue-accent', value: formatStatValue(athlete.ytd_miles, 1, 157.7), unit: 'mi', emoji: '\ud83d\udccd' },
         { label: 'YTD Rides', icon: 'silver', value: formatStatValue(athlete.ytd_rides, 0, 9), unit: '', emoji: '\ud83d\udeb4' },
         { label: 'YTD Hours', icon: 'blue-accent-bright', value: formatStatValue(athlete.ytd_hours, 1, 9.8), unit: 'h', emoji: '\u23f1\ufe0f' },
-        { label: 'Days Since Last Ride', icon: 'orange', value: athlete.days_since_last_ride != null ? athlete.days_since_last_ride : (rides[0] && rides[0].date ? Math.floor((Date.now() - new Date(rides[0].date)) / 86400000) : '—'), unit: 'd', emoji: '\ud83d\udcc5' },
+        { label: 'Days Since Last Ride', icon: 'blue-accent-bright', value: athlete.days_since_last_ride != null ? athlete.days_since_last_ride : (rides[0] && rides[0].date ? Math.floor((Date.now() - new Date(rides[0].date)) / 86400000) : '—'), unit: 'd', emoji: '\ud83d\udcc5', dotColor: '#FC4C02' },
       ];
       statsRow.innerHTML = stats.map((s, i) => `
         <article class="stat-card" style="animation-delay:${40 + i*40}ms">
-          <div class="stat-label"><span class="dot" style="background:var(--${s.icon})"></span> ${s.label} ${s.emoji}</div>
+          <div class="stat-label"><span class="dot" style="background:${s.dotColor || 'var(--' + s.icon + ')'}"></span> ${s.label} ${s.emoji}</div>
           <div class="stat-value">${s.value}${s.unit ? `<span class="stat-unit">${s.unit}</span>` : ''}</div>
         </article>
       `).join('');
@@ -925,7 +925,7 @@ ${blocks}  </workout>
           const data = await resp.json();
 
           if (data.rate_limited) {
-            alert('Weekly limit reached (10 calls/week). Resets Monday.');
+            alert('Weekly limit reached (30 calls/week). Resets Monday.');
             btn.disabled = false;
             btn.textContent = '🤖 Recommend My Rides';
             if (status) status.style.display = 'none';
