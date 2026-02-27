@@ -1,6 +1,6 @@
 {
-  "workout_name": "Stamina Booster: Sweet Spot Intervals",
-  "reasoning": "This workout targets both <strong>FTP improvement</strong> and aerobic endurance by focusing on Sweet Spot intervals. After a moderate last ride, the athlete is ready for a <strong>progressive challenge</strong> in Zone 4 to enhance adaptation towards their FTP and VO2 Max goals.",
+  "workout_name": "Zwift FTP Builder",
+  "reasoning": "This workout targets the <strong>Increase FTP</strong> and <strong>Improve VO2 Max</strong> goals by stressing the athlete's aerobic system. Given the athlete's recent session and the maintaining training trend, it's time to introduce a higher intensity ride to stimulate adaptation.",
   "focus": "Build FTP",
   "duration_minutes": 65,
   "target_power": {
@@ -39,6 +39,6 @@
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-02-26T19:58:00.524647+00:00",
+  "generated_at": "2026-02-27T05:07:26.680674+00:00",
   "based_on_ride": 17496676819
 }
