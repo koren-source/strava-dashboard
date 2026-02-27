@@ -18,7 +18,7 @@ CORS(app)  # allow GitHub Pages origin
 
 DATA_DIR = Path(__file__).parent.parent / "data"
 RATE_FILE = Path(__file__).parent / "rate_limit.json"
-MAX_CALLS_PER_WEEK = 10
+MAX_CALLS_PER_WEEK = 30
 
 OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY", "")
 

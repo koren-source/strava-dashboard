@@ -10,7 +10,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 DATA_DIR = Path(__file__).parent.parent / "data"
-MAX_CALLS_PER_WEEK = 10
+MAX_CALLS_PER_WEEK = 30
 
 # In-memory rate limit (Vercel is stateless — upgrade to KV if needed)
 _rate_store: dict = {}
