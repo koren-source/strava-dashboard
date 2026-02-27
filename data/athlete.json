@@ -1,7 +1,8 @@
 {
   "name": "Koren Saida",
   "ftp": 237,
-  "weight_kg": 83.9146,
+  "weight_kg": 81.6,
+  "weight_lbs": 180,
   "athlete_id": 107150754,
   "ytd_miles": 157.7,
   "ytd_rides": 9,
@@ -9,12 +10,31 @@
   "vo2max": 48,
   "max_hr": 194,
   "resting_hr": 46,
+  "target_ftp": 260,
+  "rides_per_week": 4,
+  "training_phase": "build",
+  "terrain_focus": "climbing",
   "goals": [
-    "Increase FTP",
-    "Build aerobic base",
-    "Improve VO2 Max",
-    "Get faster on Zwift"
+    "Crush the Alpine Loop (40 miles, 4200 ft elevation gain) — Utah classic",
+    "Dominate Emigration Canyon climbs in SLC",
+    "Build power-to-weight for sustained 2-hour uphill efforts",
+    "Raise FTP from 237W to 260W",
+    "Be fast and efficient on long climbs at 6-7% gradient"
   ],
-  "last_updated": "2026-02-27T19:49:04.747816+00:00",
+  "target_events": [
+    {
+      "name": "Alpine Loop",
+      "location": "Provo Canyon / American Fork Canyon, Utah",
+      "distance_miles": 40,
+      "elevation_ft": 4200,
+      "key_segment": "Sundance to Cascade Springs — 8.5 miles at 6% avg"
+    },
+    {
+      "name": "Emigration Canyon",
+      "location": "Salt Lake City, Utah",
+      "type": "regular training climb"
+    }
+  ],
+  "last_updated": "2026-02-27T23:54:00Z",
   "days_since_last_ride": 4
 }

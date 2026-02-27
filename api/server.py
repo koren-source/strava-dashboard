@@ -105,36 +105,53 @@ def generate_recommendations(rides, athlete, context):
     last = rides[0]
     intensity_pct = round((last.get("avg_watts", 0) / ftp) * 100) if last.get("avg_watts") else 0
 
-    prompt = f"""You are an elite cycling coach. Generate exactly TWO workout recommendations for this rider.
+    weight_kg = athlete.get('weight_kg', 81.6)
+    target_ftp = athlete.get('target_ftp', 260)
+    watts_per_kg = round(ftp / weight_kg, 2)
+    target_wpk = round(target_ftp / weight_kg, 2)
 
-ATHLETE PROFILE:
-- FTP: {ftp}W
-- Weight: {athlete.get('weight_kg', 80)}kg
+    prompt = f"""You are an elite cycling coach specializing in climbing and sustained power output.
+
+ATHLETE: Koren Saida, 26yo, Utah-based cyclist
+- FTP: {ftp}W (target: {target_ftp}W)
+- Weight: {weight_kg}kg ({athlete.get('weight_lbs', 180)}lbs)
+- Power-to-weight: {watts_per_kg} W/kg (target: {target_wpk} W/kg)
 - VO2 Max (est): {athlete.get('vo2max', 48)}
-- Max HR: {athlete.get('max_hr', 194)} bpm
-- Resting HR: {athlete.get('resting_hr', 46)} bpm
-- Goals: {json.dumps(athlete.get('goals', []))}
+- Max HR: {athlete.get('max_hr', 194)} bpm | Resting HR: {athlete.get('resting_hr', 46)} bpm
+- Weekly ride target: {athlete.get('rides_per_week', 4)} days/week
+- Training phase: {athlete.get('training_phase', 'build')}
+
+TARGET EVENTS (what we're training FOR):
+- Alpine Loop, Utah: 40 miles, 4,200 ft elevation gain, key segment 8.5 mi at 6% avg grade
+- Emigration Canyon, SLC: regular training climb
+- Goal: Be fast and comfortable on 2-hour sustained climbing efforts
+
+ATHLETE GOALS:
+{chr(10).join(f'- {g}' for g in athlete.get('goals', []))}
 
 LAST RIDE:
 - Name: {last.get('name')}
 - Date: {last.get('date')}
-- Duration: {last.get('moving_mins')} min
-- Avg Power: {last.get('avg_watts')}W ({intensity_pct}% FTP)
-- Max Power: {last.get('max_watts')}W
-- Avg HR: {last.get('avg_hr')} bpm
-- Suffer Score: {last.get('suffer_score')}
-- Distance: {last.get('dist_mi')} mi
+- Duration: {last.get('moving_mins')} min | Distance: {last.get('dist_mi')} mi
+- Avg Power: {last.get('avg_watts')}W ({intensity_pct}% FTP) | Max Power: {last.get('max_watts')}W
+- Avg HR: {last.get('avg_hr')} bpm | Suffer Score: {last.get('suffer_score')}
 
 TRAINING CONTEXT:
 - Days since last ride: {context['days_since_last_ride']}
 - 7-day avg TSS: {context['recent_tss_avg']}
 - Training trend: {context['trend']}
 
-Generate TWO recommendations:
-1. GROWTH RIDE — the hard/progressive session to build FTP or VO2 Max
-2. STABILIZER RIDE — Zone 2 endurance to maintain base without fatigue
+COACHING PHILOSOPHY:
+- Growth rides should build sustained climbing power — sweet spot (88-95% FTP) and over-unders work best for Alpine Loop prep
+- Stabilizer rides should be pure Zone 2 — building the aerobic engine that powers long climbs
+- Always reference the target climbs when relevant (Alpine Loop, Emigration Canyon)
+- Adjust intensity based on days since last ride and training trend
 
-IMPORTANT: If days_since_last_ride >= 5, note this prominently in both reasoning fields and adjust intensity accordingly.
+Generate TWO recommendations:
+1. GROWTH RIDE — FTP/climbing-focused. Design for someone who wants to dominate Utah climbs.
+2. STABILIZER RIDE — Zone 2 aerobic base. Essential for 2-hour climbing endurance.
+
+IMPORTANT: If days_since_last_ride >= 5, ease into intensity. If trend is "overreaching", prioritize recovery.
 
 Return ONLY valid JSON (no markdown) in this exact format:
 {{
