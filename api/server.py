@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/opt/homebrew/bin/python3
 """
 Strava Dashboard — Local recommendation API server
 Runs on Mac mini, exposed via Cloudflare Tunnel to the static dashboard.

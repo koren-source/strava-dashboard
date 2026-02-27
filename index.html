@@ -890,14 +890,25 @@ ${blocks}  </workout>
       renderCards();
 
       // ── Live Recommendation Button ─────────────────────────────────────────
-      const REC_API = 'https://dc270f75dd4a92.lhr.life/recommend';
-      const RATE_API = 'https://dc270f75dd4a92.lhr.life/rate-status';
+      let _apiBase = null;
+
+      async function getApiBase() {
+        if (_apiBase) return _apiBase;
+        try {
+          const cfg = await loadJSON('data/api-config.json');
+          if (cfg && cfg.url) { _apiBase = cfg.url; return _apiBase; }
+        } catch {}
+        return null;
+      }
 
       // Show remaining calls on load
-      fetch(RATE_API).then(r => r.json()).then(d => {
-        const label = document.getElementById('rec-rate-label');
-        if (label) label.textContent = `${d.remaining} of ${d.limit} fresh recs left this week`;
-      }).catch(() => {});
+      getApiBase().then(base => {
+        if (!base) return;
+        fetch(base + '/rate-status').then(r => r.json()).then(d => {
+          const label = document.getElementById('rec-rate-label');
+          if (label) label.textContent = `${d.remaining} of ${d.limit} fresh recs left this week`;
+        }).catch(() => {});
+      });
 
       window.fetchLiveRec = async function() {
         const btn = document.getElementById('rec-btn');
@@ -908,7 +919,9 @@ ${blocks}  </workout>
         if (status) { status.style.display = ''; }
 
         try {
-          const resp = await fetch(REC_API, { method: 'POST' });
+          const base = await getApiBase();
+          if (!base) throw new Error('API not available (Mac mini may be offline)');
+          const resp = await fetch(base + '/recommend', { method: 'POST' });
           const data = await resp.json();
 
           if (data.rate_limited) {
@@ -955,7 +968,7 @@ ${blocks}  </workout>
             setTimeout(() => c.style.boxShadow = '', 1200);
           });
 
-          if (rateLabel) rateLabel.textContent = `${data.rate_remaining} of 10 fresh recs left this week`;
+          if (rateLabel && data.rate_remaining != null) rateLabel.textContent = `${data.rate_remaining} of 10 fresh recs left this week`;
           if (status) status.style.display = 'none';
 
           btn.textContent = '✅ Updated!';
