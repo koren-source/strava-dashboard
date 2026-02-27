@@ -1,5 +1,8 @@
 {
   "name": "Koren Saida",
+  "age": 26,
+  "height_cm": 177.8,
+  "height_ft": "5'10\"",
   "ftp": 237,
   "weight_kg": 81.6,
   "weight_lbs": 180,
@@ -12,14 +15,27 @@
   "resting_hr": 46,
   "target_ftp": 260,
   "rides_per_week": 4,
+  "training_hours_per_week": "6-8",
   "training_phase": "build",
   "terrain_focus": "climbing",
+  "trainer": "Wahoo Kickr Core (ERG mode)",
+  "platforms": ["Zwift", "Garmin"],
+  "power_curve": {
+    "5s_watts": 932,
+    "5s_wpkg": 11.3,
+    "1min_watts": 368,
+    "1min_wpkg": 4.4,
+    "5min_watts": 270,
+    "5min_wpkg": 3.3,
+    "20min_watts": 245,
+    "20min_wpkg": 3.0
+  },
   "goals": [
-    "Crush the Alpine Loop (40 miles, 4200 ft elevation gain) — Utah classic",
+    "Crush the Alpine Loop (40 miles, 4,200 ft gain — 8.5 mi at 6% avg grade)",
     "Dominate Emigration Canyon climbs in SLC",
-    "Build power-to-weight for sustained 2-hour uphill efforts",
-    "Raise FTP from 237W to 260W",
-    "Be fast and efficient on long climbs at 6-7% gradient"
+    "Be fast and comfortable on 2-hour sustained climbing efforts",
+    "Raise FTP from 237W to 260W (2.9 → 3.19 W/kg)",
+    "Close the gap between 5-min power (270W) and 20-min power (245W) — improve pacing on long climbs"
   ],
   "target_events": [
     {
@@ -27,7 +43,7 @@
       "location": "Provo Canyon / American Fork Canyon, Utah",
       "distance_miles": 40,
       "elevation_ft": 4200,
-      "key_segment": "Sundance to Cascade Springs — 8.5 miles at 6% avg"
+      "key_segment": "Sundance to Cascade Springs — 8.5 miles at 6% avg grade"
     },
     {
       "name": "Emigration Canyon",
@@ -35,6 +51,7 @@
       "type": "regular training climb"
     }
   ],
-  "last_updated": "2026-02-27T23:54:00Z",
+  "coaching_notes": "Strong sprint/1-min power relative to FTP suggests good fast-twitch. Key limitiation: 5-min to 20-min power drop (270→245W) indicates pacing issues on sustained climbs. Training should focus on threshold endurance and pacing discipline for 20-40 min efforts at 88-95% FTP.",
+  "last_updated": "2026-02-27T23:58:00Z",
   "days_since_last_ride": 4
 }
