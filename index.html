@@ -440,6 +440,14 @@
         <h2>Next Ride Recommendations</h2>
         <p id="rec-subtitle">Personalized based on your last ride</p>
       </div>
+      <div style="margin-top:10px;display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+        <button id="rec-btn" onclick="fetchLiveRec()" style="background:linear-gradient(135deg,#FC4C02,#E03B00);color:#fff;border:none;border-radius:10px;padding:10px 20px;font-size:0.9rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:8px;box-shadow:0 4px 14px rgba(252,76,2,.4);transition:opacity .2s">
+          🤖 Recommend My Rides
+        </button>
+        <span id="rec-rate-label" style="font-size:0.78rem;color:var(--muted)"></span>
+      </div>
+      <div id="rec-live-status" style="display:none;margin-top:8px;font-size:0.85rem;color:var(--muted);font-style:italic">Generating fresh recommendations…</div>
+      </div>
     </section>
 
     <section class="workout-cards" aria-label="Next ride recommendations" id="workout-cards">
@@ -880,6 +888,91 @@ ${blocks}  </workout>
       }
 
       renderCards();
+
+      // ── Live Recommendation Button ─────────────────────────────────────────
+      const REC_API = 'https://dc270f75dd4a92.lhr.life/recommend';
+      const RATE_API = 'https://dc270f75dd4a92.lhr.life/rate-status';
+
+      // Show remaining calls on load
+      fetch(RATE_API).then(r => r.json()).then(d => {
+        const label = document.getElementById('rec-rate-label');
+        if (label) label.textContent = `${d.remaining} of ${d.limit} fresh recs left this week`;
+      }).catch(() => {});
+
+      window.fetchLiveRec = async function() {
+        const btn = document.getElementById('rec-btn');
+        const status = document.getElementById('rec-live-status');
+        const rateLabel = document.getElementById('rec-rate-label');
+        btn.disabled = true;
+        btn.textContent = '⏳ Generating…';
+        if (status) { status.style.display = ''; }
+
+        try {
+          const resp = await fetch(REC_API, { method: 'POST' });
+          const data = await resp.json();
+
+          if (data.rate_limited) {
+            alert('Weekly limit reached (10 calls/week). Resets Monday.');
+            btn.disabled = false;
+            btn.textContent = '🤖 Recommend My Rides';
+            if (status) status.style.display = 'none';
+            return;
+          }
+
+          if (!data.success) throw new Error(data.error || 'Unknown error');
+
+          // Update growth card from live response
+          const g = data.growth;
+          const s = data.stabilizer;
+
+          // Re-render cards with live data
+          const loG = g.target_power ? g.target_power.low : Math.round(ftp * 0.9);
+          const hiG = g.target_power ? g.target_power.high : Math.round(ftp * 0.95);
+          growthBase = {
+            title: g.workout_name,
+            reasoning: g.reasoning,
+            focus: g.focus,
+            targetPower: `${loG}–${hiG} W`,
+            hrZone: g.hr_zone,
+            sets: g.suggested_sets,
+            loFtp: loG / ftp,
+            hiFtp: hiG / ftp,
+          };
+          const loS = s.target_power ? s.target_power.low : Math.round(ftp * 0.65);
+          const hiS = s.target_power ? s.target_power.high : Math.round(ftp * 0.75);
+          stabilizerBase.title = s.workout_name;
+          stabilizerBase.reasoning = s.reasoning;
+          stabilizerBase.focus = s.focus;
+          stabilizerBase.targetPower = `${loS}–${hiS} W`;
+          stabilizerBase.sets = s.suggested_sets;
+
+          renderCards();
+
+          // Flash the cards to signal fresh data
+          document.querySelectorAll('.workout-card').forEach(c => {
+            c.style.transition = 'box-shadow .3s';
+            c.style.boxShadow = '0 0 0 2px #FC4C02';
+            setTimeout(() => c.style.boxShadow = '', 1200);
+          });
+
+          if (rateLabel) rateLabel.textContent = `${data.rate_remaining} of 10 fresh recs left this week`;
+          if (status) status.style.display = 'none';
+
+          btn.textContent = '✅ Updated!';
+          setTimeout(() => {
+            btn.textContent = '🤖 Recommend My Rides';
+            btn.disabled = false;
+          }, 2500);
+
+        } catch (err) {
+          console.error(err);
+          alert('Could not reach the recommendation server. The Mac mini may be asleep.');
+          btn.disabled = false;
+          btn.textContent = '🤖 Recommend My Rides';
+          if (status) status.style.display = 'none';
+        }
+      };
+
     })();
   </script>
 </body>
