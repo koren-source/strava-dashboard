@@ -1,0 +1,44 @@
+[
+  {
+    "rides": 1,
+    "miles": 24.1,
+    "week": "2026-W08",
+    "label": "Feb 23 \u2013 Mar 1",
+    "hours": 1.4
+  },
+  {
+    "rides": 3,
+    "miles": 50.0,
+    "week": "2026-W06",
+    "label": "Feb 9-15",
+    "hours": 3.8
+  },
+  {
+    "rides": 2,
+    "miles": 29.2,
+    "week": "2026-W05",
+    "label": "Feb 2-8",
+    "hours": 1.6
+  },
+  {
+    "rides": 2,
+    "miles": 33.6,
+    "week": "2026-W04",
+    "label": "Jan 26 \u2013 Feb 1",
+    "hours": 2.0
+  },
+  {
+    "rides": 1,
+    "miles": 20.8,
+    "week": "2026-W03",
+    "label": "Jan 19-25",
+    "hours": 1.0
+  },
+  {
+    "rides": 1,
+    "miles": 20.7,
+    "week": "2025-W50",
+    "label": "Dec 15-21",
+    "hours": 1.0
+  }
+]

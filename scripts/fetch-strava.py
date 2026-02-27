@@ -13,7 +13,7 @@ import os
 import sys
 import urllib.request
 import urllib.parse
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
@@ -132,6 +132,15 @@ def main():
     rides = fetch_rides(token, count=10)
     print(f"Fetched {len(rides)} rides")
 
+    # Compute days since last ride
+    days_since_last_ride = None
+    if rides:
+        try:
+            last_date = datetime.fromisoformat(rides[0]["date"])
+            days_since_last_ride = (datetime.now() - last_date).days
+        except Exception:
+            pass
+
     # Merge athlete + stats + goals
     athlete_data = {
         **athlete,
@@ -140,14 +149,46 @@ def main():
         "max_hr": 194,         # Manual
         "resting_hr": 46,      # Manual
         "goals": ["Increase FTP", "Build aerobic base", "Improve VO2 Max", "Get faster on Zwift"],
+        "days_since_last_ride": days_since_last_ride,
         "last_updated": datetime.now(timezone.utc).isoformat(),
     }
+
+    # Compute weekly totals from rides
+    from collections import defaultdict
+    week_map = defaultdict(lambda: {"rides": 0, "miles": 0.0, "mins": 0})
+    for r in rides:
+        try:
+            d = datetime.fromisoformat(r["date"])
+            week_key = d.strftime("%Y-W%W")
+            # Build label like "Feb 17-23"
+            week_start = d - timedelta(days=d.weekday())
+            week_end = week_start + timedelta(days=6)
+            if week_start.month == week_end.month:
+                label = f"{week_start.strftime('%b %-d')}-{week_end.strftime('%-d')}"
+            else:
+                label = f"{week_start.strftime('%b %-d')} – {week_end.strftime('%b %-d')}"
+            wk = week_map[week_key]
+            wk["week"] = week_key
+            wk["label"] = label
+            wk["rides"] += 1
+            wk["miles"] = round(wk["miles"] + r.get("dist_mi", 0), 1)
+            wk["mins"] += r.get("moving_mins", 0)
+        except Exception:
+            pass
+    weekly = sorted(week_map.values(), key=lambda x: x["week"], reverse=True)
+    for w in weekly:
+        w["hours"] = round(w["mins"] / 60, 1)
+        del w["mins"]
+    weekly = weekly[:8]
 
     DATA_DIR.mkdir(exist_ok=True)
     (DATA_DIR / "athlete.json").write_text(json.dumps(athlete_data, indent=2))
     (DATA_DIR / "rides.json").write_text(json.dumps(rides, indent=2))
+    (DATA_DIR / "weekly.json").write_text(json.dumps(weekly, indent=2))
 
-    print(f"Wrote data/athlete.json and data/rides.json")
+    print(f"Wrote data/athlete.json, data/rides.json, data/weekly.json")
+    if days_since_last_ride is not None:
+        print(f"Days since last ride: {days_since_last_ride}")
 
 
 if __name__ == "__main__":

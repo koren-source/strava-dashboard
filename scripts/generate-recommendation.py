@@ -146,12 +146,21 @@ def generate_fallback(rides, athlete, context):
     last = rides[0] if rides else {}
     avg_watts = last.get("avg_watts", 0)
     intensity = avg_watts / ftp if ftp else 0
+    days_since = context.get("days_since_last_ride", 0)
+
+    # Build days-since prefix for reasoning
+    if days_since >= 5:
+        days_prefix = f"<strong>{days_since} days since your last ride</strong> — start with a controlled effort to reconnect with your legs before pushing hard. "
+    elif days_since >= 3:
+        days_prefix = f"{days_since} days off the bike means some freshness to work with. "
+    else:
+        days_prefix = ""
 
     if intensity < 0.75:
         lo, hi = round(ftp * 0.90), round(ftp * 0.95)
         return {
             "workout_name": "Threshold Intervals",
-            "reasoning": f"Your last ride was aerobic base work ({round(intensity*100)}% FTP — Zone 2). <strong>To grow your FTP, you need time at threshold.</strong> This is the most direct path to getting stronger.",
+            "reasoning": days_prefix + f"Your last ride was aerobic base work ({round(intensity*100)}% FTP — Zone 2). <strong>To grow your FTP, you need time at threshold.</strong> This is the most direct path to getting stronger.",
             "focus": "Build FTP",
             "duration_minutes": 70,
             "target_power": {"low": lo, "high": hi},
@@ -166,7 +175,7 @@ def generate_fallback(rides, athlete, context):
         lo, hi = round(ftp * 1.06), round(ftp * 1.20)
         return {
             "workout_name": "VO2 Max Intervals",
-            "reasoning": f"Your last ride hit sweet spot ({round(intensity*100)}% FTP). <strong>You're primed to spike VO2 Max now</strong> — short hard efforts will push your ceiling.",
+            "reasoning": days_prefix + f"Your last ride hit sweet spot ({round(intensity*100)}% FTP). <strong>You're primed to spike VO2 Max now</strong> — short hard efforts will push your ceiling.",
             "focus": "Raise VO2 Max",
             "duration_minutes": 60,
             "target_power": {"low": lo, "high": hi},
@@ -181,7 +190,7 @@ def generate_fallback(rides, athlete, context):
         lo, hi = round(ftp * 0.88), round(ftp * 0.93)
         return {
             "workout_name": "Sweet Spot",
-            "reasoning": f"You pushed hard last ride ({round(intensity*100)}% FTP). <strong>Sweet spot now locks in those gains</strong> without over-reaching.",
+            "reasoning": days_prefix + f"You pushed hard last ride ({round(intensity*100)}% FTP). <strong>Sweet spot now locks in those gains</strong> without over-reaching.",
             "focus": "Lock in gains",
             "duration_minutes": 75,
             "target_power": {"low": lo, "high": hi},

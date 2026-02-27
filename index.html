@@ -402,6 +402,27 @@
     <section class="stats-row" aria-label="Athlete summary stats" id="stats-row">
     </section>
 
+    <!-- Weekly Summary -->
+    <section id="weekly-summary-section" style="display:none">
+      <div class="section-head">
+        <h2>Weekly Summary</h2>
+        <p>Miles, rides &amp; hours by week</p>
+      </div>
+      <div style="overflow-x:auto;margin-top:12px">
+        <table id="weekly-table" style="width:100%;border-collapse:collapse;font-size:0.88rem">
+          <thead>
+            <tr style="color:var(--muted);text-transform:uppercase;font-size:0.75rem;letter-spacing:0.05em">
+              <th style="text-align:left;padding:6px 12px 6px 0;border-bottom:1px solid var(--border)">Week</th>
+              <th style="text-align:right;padding:6px 8px;border-bottom:1px solid var(--border)">Rides</th>
+              <th style="text-align:right;padding:6px 8px;border-bottom:1px solid var(--border)">Miles</th>
+              <th style="text-align:right;padding:6px 8px 6px 0;border-bottom:1px solid var(--border)">Hours</th>
+            </tr>
+          </thead>
+          <tbody id="weekly-tbody"></tbody>
+        </table>
+      </div>
+    </section>
+
     <!-- Last 3 Rides -->
     <section>
       <div class="section-head">
@@ -452,10 +473,11 @@
     ];
 
     (async function init() {
-      const [athleteData, ridesData, recData] = await Promise.all([
+      const [athleteData, ridesData, recData, weeklyData] = await Promise.all([
         loadJSON('data/athlete.json'),
         loadJSON('data/rides.json'),
         loadJSON('data/recommendation.json'),
+        loadJSON('data/weekly.json'),
       ]);
 
       const athlete = (athleteData && typeof athleteData === 'object') ? athleteData : FALLBACK_ATHLETE;
@@ -482,6 +504,7 @@
         { label: 'YTD Miles', icon: 'blue-accent', value: formatStatValue(athlete.ytd_miles, 1, 157.7), unit: 'mi', emoji: '\ud83d\udccd' },
         { label: 'YTD Rides', icon: 'silver', value: formatStatValue(athlete.ytd_rides, 0, 9), unit: '', emoji: '\ud83d\udeb4' },
         { label: 'YTD Hours', icon: 'blue-accent-bright', value: formatStatValue(athlete.ytd_hours, 1, 9.8), unit: 'h', emoji: '\u23f1\ufe0f' },
+        { label: 'Days Since Last Ride', icon: 'orange', value: athlete.days_since_last_ride != null ? athlete.days_since_last_ride : (rides[0] && rides[0].date ? Math.floor((Date.now() - new Date(rides[0].date)) / 86400000) : '—'), unit: 'd', emoji: '\ud83d\udcc5' },
       ];
       statsRow.innerHTML = stats.map((s, i) => `
         <article class="stat-card" style="animation-delay:${40 + i*40}ms">
@@ -489,6 +512,23 @@
           <div class="stat-value">${s.value}${s.unit ? `<span class="stat-unit">${s.unit}</span>` : ''}</div>
         </article>
       `).join('');
+
+      // ── Render Weekly Summary ──────────────────────────────────────────────
+      if (Array.isArray(weeklyData) && weeklyData.length > 0) {
+        const weeklySection = document.getElementById('weekly-summary-section');
+        const weeklyTbody = document.getElementById('weekly-tbody');
+        weeklySection.style.display = '';
+        const weekRows = weeklyData.slice(0, 4);
+        weeklyTbody.innerHTML = weekRows.map((w, i) => {
+          const isThis = i === 0;
+          return `<tr style="${isThis ? 'font-weight:600' : ''}">
+            <td style="padding:8px 12px 8px 0;border-bottom:1px solid var(--border);color:${isThis ? 'var(--text)' : 'var(--muted)'}">${w.label || w.week}</td>
+            <td style="text-align:right;padding:8px;border-bottom:1px solid var(--border)">${w.rides}</td>
+            <td style="text-align:right;padding:8px;border-bottom:1px solid var(--border)">${w.miles} mi</td>
+            <td style="text-align:right;padding:8px 0 8px 8px;border-bottom:1px solid var(--border)">${w.hours}h</td>
+          </tr>`;
+        }).join('');
+      }
 
       // ── Render Rides ───────────────────────────────────────────────────────
       const ridesGrid = document.getElementById('rides-grid');
@@ -558,11 +598,16 @@
 
       // Rule-based fallback
       if (!growthBase) {
+        const daysPrefix = daysSince >= 5
+          ? `<strong>${daysSince} days since your last ride</strong> \u2014 start with a controlled effort to reconnect with your legs. `
+          : daysSince >= 3
+          ? `${daysSince} days off the bike means some freshness to work with. `
+          : '';
         if (intensity < 0.75) {
           const lo = Math.round(ftp * 0.90), hi = Math.round(ftp * 0.95);
           growthBase = {
             title: "Threshold Intervals",
-            reasoning: `Your last ride was aerobic base work (${Math.round(intensity*100)}% FTP \u2014 Zone 2). <strong>To grow your FTP, you need time at threshold.</strong> This is the most direct path to getting stronger on Zwift.`,
+            reasoning: daysPrefix + `Your last ride was aerobic base work (${Math.round(intensity*100)}% FTP \u2014 Zone 2). <strong>To grow your FTP, you need time at threshold.</strong> This is the most direct path to getting stronger on Zwift.`,
             focus: "Build FTP", targetPower: `${lo}\u2013${hi} W`, hrZone: "Zone 4",
             sets: [
               { name: "Warmup", duration_minutes: 10, power_pct_ftp: [50, 75], description: "Easy spin to tempo" },
@@ -575,7 +620,7 @@
           const lo = Math.round(ftp * 1.06), hi = Math.round(ftp * 1.20);
           growthBase = {
             title: "VO\u2082 Max Intervals",
-            reasoning: `Your last ride hit sweet spot (${Math.round(intensity*100)}% FTP). <strong>You're primed to spike VO\u2082 Max now</strong> \u2014 short hard efforts will push your ceiling.`,
+            reasoning: daysPrefix + `Your last ride hit sweet spot (${Math.round(intensity*100)}% FTP). <strong>You're primed to spike VO\u2082 Max now</strong> \u2014 short hard efforts will push your ceiling.`,
             focus: "Raise VO\u2082 Max", targetPower: `${lo}\u2013${hi} W`, hrZone: "Zone 5",
             sets: [
               { name: "Warmup", duration_minutes: 10, power_pct_ftp: [50, 75], description: "Easy spin to tempo" },
@@ -588,7 +633,7 @@
           const lo = Math.round(ftp * 0.88), hi = Math.round(ftp * 0.93);
           growthBase = {
             title: "Sweet Spot",
-            reasoning: `You pushed hard last ride (${Math.round(intensity*100)}% FTP). <strong>Sweet spot now locks in those gains</strong> without over-reaching.`,
+            reasoning: daysPrefix + `You pushed hard last ride (${Math.round(intensity*100)}% FTP). <strong>Sweet spot now locks in those gains</strong> without over-reaching.`,
             focus: "Lock in gains", targetPower: `${lo}\u2013${hi} W`, hrZone: "Zone 3\u20134",
             sets: [
               { name: "Warmup", duration_minutes: 10, power_pct_ftp: [50, 75], description: "Easy spin to tempo" },
