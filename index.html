@@ -458,9 +458,10 @@
   <script>
     // ── Data Loading ─────────────────────────────────────────────────────────────
     // Load from data/ JSON files (written by GitHub Actions) with inline fallback
-    async function loadJSON(path) {
+    async function loadJSON(path, bustCache = false) {
       try {
-        const resp = await fetch(path);
+        const url = bustCache ? `${path}?v=${Date.now()}` : path;
+        const resp = await fetch(url);
         if (!resp.ok) throw new Error(resp.status);
         return await resp.json();
       } catch {
@@ -895,7 +896,7 @@ ${blocks}  </workout>
       async function getApiBase() {
         if (_apiBase) return _apiBase;
         try {
-          const cfg = await loadJSON('data/api-config.json');
+          const cfg = await loadJSON('data/api-config.json', true);
           if (cfg && cfg.url) { _apiBase = cfg.url; return _apiBase; }
         } catch {}
         return null;
