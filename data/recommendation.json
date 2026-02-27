@@ -1,11 +1,11 @@
 {
-  "workout_name": "Tempo Intervals for FTP and VO2 Boost",
-  "reasoning": "This workout is designed to stimulate both your FTP and VO2 Max, aligning with your goals to get faster on Zwift and build aerobic base. Given your training context and recent ride, this challenging but manageable session will progressively overload your aerobic system. <strong>Focus on maintaining quality during the intervals and full recovery during rests.</strong>",
+  "workout_name": "FTP Builder Intervals",
+  "reasoning": "This workout is designed to <strong>increase FTP and build aerobic base</strong> by focusing on sustained efforts just below threshold, which is crucial as suggested by the athlete's goals. The intensity fits their training state, considering their 4-day rest period and average TSS, allowing them to push hard without excessive fatigue.",
   "focus": "Build FTP",
   "duration_minutes": 65,
   "target_power": {
-    "low": 210,
-    "high": 240
+    "low": 209,
+    "high": 225
   },
   "hr_zone": "Zone 4",
   "suggested_sets": [
@@ -39,6 +39,6 @@
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-02-27T08:01:10.671071+00:00",
+  "generated_at": "2026-02-27T14:11:16.858178+00:00",
   "based_on_ride": 17496676819
 }
