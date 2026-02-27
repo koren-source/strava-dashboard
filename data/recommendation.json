@@ -1,11 +1,11 @@
 {
   "workout_name": "FTP Builder Intervals",
-  "reasoning": "This workout is designed to <strong>increase FTP and build aerobic base</strong> by focusing on sustained efforts just below threshold, which is crucial as suggested by the athlete's goals. The intensity fits their training state, considering their 4-day rest period and average TSS, allowing them to push hard without excessive fatigue.",
+  "reasoning": "This workout is designed to <strong>increase FTP</strong> and <strong>improve aerobic capacity</strong> by targeting efforts just below the FTP level. Considering the rider's recent sub-threshold ride and <strong>maintaining trend</strong>, these intervals will provide the necessary stimulus for adaptation while balancing recovery needs.",
   "focus": "Build FTP",
   "duration_minutes": 65,
   "target_power": {
-    "low": 209,
-    "high": 225
+    "low": 210,
+    "high": 240
   },
   "hr_zone": "Zone 4",
   "suggested_sets": [
@@ -39,6 +39,6 @@
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-02-27T14:11:16.858178+00:00",
+  "generated_at": "2026-02-27T19:49:09.572314+00:00",
   "based_on_ride": 17496676819
 }
