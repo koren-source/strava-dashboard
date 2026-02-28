@@ -146,7 +146,12 @@ Return ONLY valid JSON (no markdown):
     )
 
     text = response.choices[0].message.content.strip()
-    # Parse the JSON response
+    # Strip markdown code fences if GPT wraps the response
+    if text.startswith("```"):
+        text = text.split("```", 2)[1]
+        if text.startswith("json"):
+            text = text[4:]
+        text = text.rsplit("```", 1)[0].strip()
     return json.loads(text)
 
 

@@ -1,31 +1,31 @@
 {
-  "workout_name": "FTP Builder Intervals",
-  "reasoning": "This workout is designed to <strong>increase FTP</strong> and <strong>improve aerobic capacity</strong> by targeting efforts just below the FTP level. Considering the rider's recent sub-threshold ride and <strong>maintaining trend</strong>, these intervals will provide the necessary stimulus for adaptation while balancing recovery needs.",
-  "focus": "Build FTP",
-  "duration_minutes": 65,
+  "workout_name": "Alpine Loop Over-Unders",
+  "reasoning": "<strong>The primary limiter</strong> we're addressing is poor lactate clearance, as seen in the 9.3% decline in your power curve. Given your last ride, it's crucial to focus on building aerobic capacity to help with fatigue resistance. This workout will prepare you for the rigors of the sustained effort required on the <strong>Alpine Loop</strong> climb.",
+  "focus": "Lactate Clearance",
+  "duration_minutes": 75,
   "target_power": {
-    "low": 210,
-    "high": 240
+    "low": 209,
+    "high": 249
   },
   "hr_zone": "Zone 4",
   "suggested_sets": [
     {
       "name": "Warmup",
-      "duration_minutes": 10,
+      "duration_minutes": 15,
       "power_pct_ftp": [
         50,
-        70
+        75
       ],
       "description": "Easy spin building to tempo"
     },
     {
       "name": "Main Set",
-      "duration_minutes": 40,
+      "duration_minutes": 45,
       "power_pct_ftp": [
         88,
-        95
+        108
       ],
-      "description": "3x10 min @ 88-95% FTP, 5 min recovery"
+      "description": "Over-Unders: 4 sets of 7 min at 242-256W (over) / 2 min at 201-218W (under) to target lactate clearance"
     },
     {
       "name": "Cooldown",
@@ -39,6 +39,7 @@
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-02-27T19:49:09.572314+00:00",
-  "based_on_ride": 17496676819
+  "generated_at": "2026-02-28T01:07:21.935772+00:00",
+  "based_on_ride": 17496676819,
+  "weekly_focus": "This week: controlled return \u2014 rebuild aerobic base before pushing threshold again."
 }
