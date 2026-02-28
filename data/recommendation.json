@@ -1,11 +1,11 @@
 {
-  "workout_name": "Alpine Loop Over-Unders",
-  "reasoning": "This workout targets your <strong>lactate clearance limiter</strong> by incorporating over-under intervals. Your last ride on the Ocean Lava Cliffside Loop was a moderate aerobic effort. Today's focus will help improve your ability to maintain power on sustained climbs like the key segment in the Alpine Loop.",
-  "focus": "Lactate Clearance",
+  "workout_name": "Cascade Springs Over-Under Attack",
+  "reasoning": "<strong>Koren,</strong> to tackle your <strong>lactate clearance</strong> limiter, we're focusing on over-under intervals. Your last ride emphasized aerobic capacity but lacked the intensity to enhance your lactate threshold. This workout mimics the demands of the <strong>Alpine Loop's main climb</strong> and aims to build your ability to handle sustained efforts with varying intensity.",
+  "focus": "Over-Under Intervals",
   "duration_minutes": 75,
   "target_power": {
     "low": 209,
-    "high": 249
+    "high": 256
   },
   "hr_zone": "Zone 4",
   "suggested_sets": [
@@ -25,7 +25,7 @@
         88,
         108
       ],
-      "description": "Perform 4x 8-min over-unders: 6 mins at 209-218W, 2 mins at 242-256W with 2-min easy spin between sets."
+      "description": "Perform 5 sets of 6-minute over-under intervals: 2 minutes at 201-218W, 2 minutes at 242-256W, repeat. 2-minute recovery between sets at 60% FTP."
     },
     {
       "name": "Cooldown",
@@ -34,12 +34,12 @@
         40,
         55
       ],
-      "description": "Easy spin"
+      "description": "Easy spin to aid recovery"
     }
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-02-28T07:16:52.898244+00:00",
+  "generated_at": "2026-02-28T13:49:32.109831+00:00",
   "based_on_ride": 17496676819,
   "weekly_focus": "This week: controlled return \u2014 rebuild aerobic base before pushing threshold again."
 }
