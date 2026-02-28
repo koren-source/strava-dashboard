@@ -3,3 +3,4 @@ __pycache__/
 *.pyc
 api/.env
 api/rate_limit.json
+data/api-config.json

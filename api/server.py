@@ -2,7 +2,7 @@
 """
 Strava Dashboard — Local recommendation API server
 Runs on Mac mini, exposed via Cloudflare Tunnel to the static dashboard.
-Rate limited to 10 calls/week per the OpenAI key policy.
+Rate limited to 30 calls/week.
 """
 import json
 import os
@@ -233,7 +233,8 @@ def recommend():
 
         increment_rate(rate_state)
 
-        remaining = MAX_CALLS_PER_WEEK - rate_state["calls"]  # calls already incremented
+        # increment_rate already bumped calls by 1, so this gives correct remaining
+        remaining = MAX_CALLS_PER_WEEK - rate_state["calls"]
         return jsonify({
             "success": True,
             "growth": recs["growth"],
@@ -244,7 +245,8 @@ def recommend():
         })
 
     except Exception as e:
-        return jsonify({"error": str(e)}), 500
+        print(f"ERROR /recommend: {e}")
+        return jsonify({"error": "Internal error generating recommendation. Check server logs."}), 500
 
 
 @app.route("/rate-status")
