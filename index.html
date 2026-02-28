@@ -440,6 +440,7 @@
       <div class="section-head">
         <h2>Next Ride Recommendations</h2>
         <p id="rec-subtitle">Personalized based on your last ride</p>
+        <p id="weekly-focus" style="margin:4px 0 0;font-size:0.82rem;color:var(--accent,#FC4C02);font-style:italic;display:none"></p>
       </div>
       <div style="margin-top:10px;display:flex;align-items:center;gap:12px;flex-wrap:wrap">
         <button id="rec-btn" onclick="fetchLiveRec()" style="background:linear-gradient(135deg,#FC4C02,#E03B00);color:#fff;border:none;border-radius:10px;padding:10px 20px;font-size:0.9rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:8px;box-shadow:0 4px 14px rgba(252,76,2,.4);transition:opacity .2s">
@@ -503,6 +504,13 @@
       }
       document.getElementById('rides-subtitle').textContent = `Power zone intensity from average watts vs FTP (${ftp}W)`;
       document.getElementById('rec-subtitle').textContent = `Personalized based on your last ride \u00b7 FTP ${ftp}W`;
+      // Show weekly focus if available
+      const weeklyFocusEl = document.getElementById('weekly-focus');
+      const weeklyFocusText = aiRec && aiRec.weekly_focus;
+      if (weeklyFocusText && weeklyFocusEl) {
+        weeklyFocusEl.textContent = weeklyFocusText;
+        weeklyFocusEl.style.display = '';
+      }
 
       // ── Render Stats ───────────────────────────────────────────────────────
       const statsRow = document.getElementById('stats-row');

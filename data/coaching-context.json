@@ -1,0 +1,180 @@
+{
+  "version": "1.0",
+  "last_updated": "2026-02-27",
+  "philosophy": {
+    "model": "Hybrid pyramidal-to-polarized: pyramidal base (Zone 2 + sweet spot), shifting to polarized in build/peak (Zone 2 + VO2max, minimize moderate gray-zone work)",
+    "intensity_distribution": "80% easy (Zone 1-2), 20% hard (Zone 4+). Most self-coached athletes do too much intensity.",
+    "recovery_principle": "Recovery equals training. Adaptations happen at rest, not during the ride.",
+    "key_references": ["Coggan 7-zone model", "Joe Friel periodization", "Stephen Seiler polarized model", "Tim Cusick decision science"]
+  },
+  "rider_limiter": {
+    "name": "5-to-20 power gap",
+    "description": "25W drop from 5-min (270W) to 20-min (245W) = 9.3% decline. Well-trained cyclists show only 5-8%.",
+    "causes": ["Poor lactate clearance", "Underdeveloped aerobic base relative to anaerobic capacity", "Low fatigue resistance"],
+    "fix_workouts": ["Over-under intervals", "Extended sweet spot", "Fatigue-resistant sweet spot (Zone 2 → sweet spot back-to-back)", "Sustained threshold 20-40 min"]
+  },
+  "coggan_zones": {
+    "note": "Recalculate from current FTP. Values below based on 237W FTP.",
+    "z1_recovery": {"pct_ftp": [0, 55], "watts": [0, 130]},
+    "z2_endurance": {"pct_ftp": [56, 75], "watts": [133, 178], "note": "Mitochondrial biogenesis zone — aerobic engine builder"},
+    "z3_tempo": {"pct_ftp": [76, 87], "watts": [180, 206], "note": "Gray zone — use sparingly"},
+    "z4_sweet_spot": {"pct_ftp": [88, 94], "watts": [209, 223], "note": "Highest training stimulus:recovery ratio"},
+    "z5_threshold": {"pct_ftp": [95, 105], "watts": [225, 249], "note": "Direct FTP builder"},
+    "z6_vo2max": {"pct_ftp": [106, 120], "watts": [251, 284]},
+    "z7_neuromuscular": {"pct_ftp": [130, 999], "watts": [308, 999]}
+  },
+  "workout_types": {
+    "over_unders": {
+      "description": "Oscillate just above and below threshold. Train lactate production AND clearance.",
+      "under_pct_ftp": [85, 92],
+      "over_pct_ftp": [102, 108],
+      "rule": "NEVER drop below 80% FTP during under segments — kills the stimulus.",
+      "progression": ["3x9min (2min under/1min over)", "3x12min (2/2)", "3x15min (2/1 x5)", "3x12min (1/1 advanced)"]
+    },
+    "sweet_spot": {
+      "description": "88-94% FTP. Highest training bang-for-buck.",
+      "progression": ["2x20min", "3x15min", "2x25min", "3x20min", "1x45-60min"],
+      "fatigue_resistant_variation": "90min Zone 2 then immediately 2x20min sweet spot — mimics Alpine Loop (hard climbing after 27mi already ridden)"
+    },
+    "threshold": {
+      "description": "95-105% FTP. Direct FTP builder.",
+      "progression": ["4x8min", "3x12min", "3x15min", "2x20min", "1x40min"],
+      "gold_standard": "2x20min at 100-105% FTP with 10min recovery. If completed cleanly, raise FTP."
+    },
+    "vo2max": {
+      "description": "106-120% FTP. Raises the aerobic ceiling.",
+      "progression": ["5x3min", "5x4min", "4x5min", "3x6min"],
+      "cadence": "90-100 RPM. Must feel RPE 9-10.",
+      "billat_3030": "3 sets of 10x 30s on at 122-131% FTP / 30s off at 55%. Excellent lactate clearance + VO2max."
+    },
+    "low_cadence_tension": {
+      "description": "50-60 RPM at sweet spot/threshold. Builds climbing torque and recruits Type IIa fibers aerobically.",
+      "progression": ["4x10min @ 50-60 RPM", "3x15min", "2x20min"],
+      "note": "Use ERG mode on Kickr Core with high gear simulation."
+    },
+    "zone2_endurance": {
+      "description": "Pure Zone 2. No surges above Zone 2 — even brief spikes suppress fat oxidation for 20-30 min.",
+      "duration_target": "90-180 min. Target 3-4 hrs Zone 2 per week.",
+      "negative_split_variation": "90-120min Zone 2, final 30-60min build to tempo (76-87% FTP)"
+    },
+    "alpine_loop_simulation": {
+      "description": "Race rehearsal for the 8.5-mile Sundance climb.",
+      "structure": "20min warmup → 10min Zone 2 → 5min tempo → 45min sustained at 215-225W @ 75-85 RPM with 3x 2-min surges to 250-260W at minutes 10, 25, 38 → 15min cooldown",
+      "perform": "2-3 times in final 4 weeks before event"
+    }
+  },
+  "periodization": {
+    "phases": [
+      {
+        "name": "Base (Weeks 1-4)",
+        "distribution": "65-70% Zone 1-2, 25-30% sweet spot/tempo, 5% high",
+        "weekly_tss": "300-370",
+        "focus": "Sweet spot foundation. 2x20min progressing to 3x20min.",
+        "recovery_week": "Week 4 — Zone 2 only, 40-60% volume, FTP retest"
+      },
+      {
+        "name": "Early Build (Weeks 5-8)",
+        "distribution": "55-60% Zone 1-2, 20-25% threshold, 15-20% VO2max",
+        "weekly_tss": "380-450",
+        "focus": "Introduce VO2max (5x4min) and over-unders (3x12min). FTP retest at week 8.",
+        "expected_ftp": "248-255W"
+      },
+      {
+        "name": "Late Build (Weeks 9-12)",
+        "distribution": "Polarized — Zone 2 + VO2max, minimal moderate",
+        "weekly_tss": "400-450",
+        "focus": "Race-specific sustained power. Alpine Loop simulations begin.",
+        "expected_ftp": "255-265W"
+      },
+      {
+        "name": "Peak/Specialty (Weeks 13-15)",
+        "weekly_tss": "350-420",
+        "focus": "Maintain intensity, reduce volume. 1 Alpine Loop simulation per week.",
+        "expected_ftp": "260W+"
+      },
+      {
+        "name": "Taper (Week 16)",
+        "weekly_tss": "200-250",
+        "race_day_tsb": "+5 to +15",
+        "opener_ride": "45min with 3x3min @ FTP, 3min recovery, 2 days before event"
+      }
+    ],
+    "load_management": {
+      "ctl_ramp_sustainable": "5-8 pts/week",
+      "ctl_ramp_aggressive": "10+ pts/week (risky)",
+      "ctl_target_race_day": "55-70 for competitive amateur",
+      "tsb_race_day": "+5 to +15",
+      "tsb_mandate_recovery": "< -30",
+      "recovery_week_frequency": "Every 3-4 weeks",
+      "recovery_week_volume": "40-60% of normal"
+    }
+  },
+  "alpine_loop": {
+    "location": "Midway / Provo Canyon / American Fork Canyon, Utah",
+    "distance_miles": 40,
+    "elevation_ft": 4200,
+    "key_segment": {
+      "name": "Sundance to Cascade Springs",
+      "miles": 8.5,
+      "avg_grade_pct": 6,
+      "elevation_ft": 2700,
+      "start_elevation_ft": 5300,
+      "top_elevation_ft": 8000,
+      "note": "65% of total elevation gain. Steepest in first 2-3 miles through Sundance area."
+    },
+    "where_riders_break": [
+      "Miles 1-3: steepest gradients tempt overcooking pace",
+      "Miles 6-8: cumulative fatigue + altitude approaching 8,000ft",
+      "Old State Road after Cascade Springs descent: pitch hits fatigued legs"
+    ],
+    "performance_at_260w_ftp": {
+      "altitude_ftp_reduction_pct": "5-10% at 8,000ft non-acclimatized",
+      "effective_ftp_at_altitude": "234-247W",
+      "target_climb_power": "220-235W avg",
+      "target_climb_time_min": "58-64",
+      "total_ride_time": "3:00-3:30 moving"
+    },
+    "pacing_strategy": {
+      "phase1_miles_1_2": {"power": "215-225W", "rpe": "6-7", "note": "Resist chasing faster riders. Start conservative."},
+      "phase2_miles_3_6": {"power": "225-235W", "rpe": "7-7.5", "note": "Settle at 75-85 RPM. Find rhythm in the aspens."},
+      "phase3_miles_7_8_5": {"power": "230-245W", "rpe": "8-8.5", "note": "Negative split — push if phases 1-2 were controlled."},
+      "rule": "Going out 5% too hard in first minutes costs 8-12% worse finish times."
+    },
+    "descent_notes": "Pack arm warmers before summit. Fuel heavily during descent — best eating window. Prepare for Old State Road pitch on fatigued legs."
+  },
+  "nutrition": {
+    "hard_training_days": {
+      "carbs_gkg": "5-7",
+      "protein_gkg": "1.6-2.0",
+      "onbike_carbs_ghr": "60-80",
+      "carb_type": "2:1 glucose:fructose blend for max absorption"
+    },
+    "rest_days": {"carbs_gkg": "3-4", "protein_gkg": "1.6-2.0"},
+    "weight_loss_rule": "0.5-1.0 lb/week deficit, ONLY on rest/easy days. Protein rises to 2.0-2.7 g/kg. Stop if absolute power drops.",
+    "gut_training": "Start at 40-50g/hr, build by 10g every 1-2 weeks",
+    "evidence_supplements": ["Creatine monohydrate 3-5g/day", "Vitamin D 2000-4000 IU", "Omega-3 1-2g EPA+DHA", "Caffeine 3-6mg/kg pre-exercise"],
+    "pre_event": "Tart cherry juice 30mL concentrate 2x/day starting 5 days before — reduces inflammation + improves sleep",
+    "caution": "High-dose antioxidants during training block can blunt mitochondrial adaptation signals"
+  },
+  "recovery": {
+    "sleep_target_hrs": "8-9 minimum, 9-10 during heavy blocks",
+    "indoor_heat": "Wahoo Kickr sweat rate 1-1.5+ L/hr. Multiple fans required. 500-700mg sodium/L in drinks.",
+    "decision_matrix": {
+      "rpe_normal_performance_normal": "Progress as planned",
+      "rpe_high_performance_normal": "Monitor — likely accumulated fatigue",
+      "rpe_high_performance_low": "Reduce load immediately, investigate root cause"
+    }
+  },
+  "ten_commandments": [
+    "Never be generic — every response references rider's specific data and history",
+    "Never ignore fatigue accumulation — track weekly and mesocycle TSS trends",
+    "Never over-prescribe intensity — actively resist more hard days when recovery metrics say no",
+    "Never ignore life stress — sleep < 6hrs impairs recovery more than almost anything else",
+    "Never give random hard workouts — every session must exist within periodized structure",
+    "Never try to make up missed training stress — adjust, don't compensate",
+    "Never ignore indoor/outdoor differences — indoor power runs 5-10% lower",
+    "Never repeat the same workout indefinitely — every mesocycle must increase something",
+    "Never forget the long-term relationship — track injuries, tendencies, psychological patterns",
+    "Never neglect the descent — Alpine Loop descent requires planning, fueling, and preparation for the Old State Road pitch"
+  ]
+}

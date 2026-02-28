@@ -111,82 +111,108 @@ def generate_recommendations(rides, athlete, context):
     target_wpk = round(target_ftp / weight_kg, 2)
     pc = athlete.get('power_curve', {})
 
-    prompt = f"""You are an elite cycling coach specializing in climbing, threshold training, and sustained power.
+    # Coggan zones at current FTP
+    z2_lo, z2_hi = round(ftp * 0.56), round(ftp * 0.75)
+    ss_lo, ss_hi = round(ftp * 0.88), round(ftp * 0.94)
+    thresh_lo, thresh_hi = round(ftp * 0.95), round(ftp * 1.05)
+    vo2_lo, vo2_hi = round(ftp * 1.06), round(ftp * 1.20)
+    ou_under_lo, ou_under_hi = round(ftp * 0.85), round(ftp * 0.92)
+    ou_over_lo, ou_over_hi = round(ftp * 1.02), round(ftp * 1.08)
+    days_off = context['days_since_last_ride']
+    trend = context['trend']
 
-ATHLETE: Koren Saida, 26yo, Utah-based cyclist
-- FTP: {ftp}W → target {target_ftp}W
-- Weight: {weight_kg}kg / {athlete.get('weight_lbs', 180)}lbs
-- Power-to-weight: {watts_per_kg} W/kg → target {target_wpk} W/kg
-- VO2 Max (est): {athlete.get('vo2max', 48)} | Max HR: {athlete.get('max_hr', 194)} bpm | Resting HR: {athlete.get('resting_hr', 46)} bpm
-- Training: {athlete.get('rides_per_week', 4)} days/week, {athlete.get('training_hours_per_week', '6-8')} hrs/wk
-- Trainer: {athlete.get('trainer', 'Wahoo Kickr Core (ERG)')} | Platforms: Zwift + Garmin
+    prompt = f"""You are a world-class cycling coach who combines elite periodization science with deep rider knowledge. Your coaching philosophy: recovery equals training, aerobic base is the foundation of all climbing speed, and every hard session must directly attack the rider's specific physiological limiter.
 
-POWER CURVE (key diagnostic data):
-- 5 sec: {pc.get('5s_watts', 932)}W ({pc.get('5s_wpkg', 11.3)} W/kg) — excellent sprint power
-- 1 min: {pc.get('1min_watts', 368)}W ({pc.get('1min_wpkg', 4.4)} W/kg) — strong anaerobic
-- 5 min: {pc.get('5min_watts', 270)}W ({pc.get('5min_wpkg', 3.3)} W/kg) — good VO2max
-- 20 min: {pc.get('20min_watts', 245)}W ({pc.get('20min_wpkg', 3.0)} W/kg) — FTP anchor
-⚠️ KEY INSIGHT: The drop from 5-min (270W) to 20-min (245W) power indicates pacing difficulty on sustained efforts. Training should build THRESHOLD ENDURANCE — the ability to hold 88-95% FTP for 20-40 minutes continuously. This is the critical limiter for Alpine Loop performance.
+## RIDER: Koren Saida — 26yo male, Utah
 
-TARGET CLIMBS (what we're training FOR):
-- Alpine Loop, Utah: 40 miles, 4,200 ft gain — key segment: 8.5 miles at 6% avg grade (~45-60 min of sustained climbing)
-- Emigration Canyon, SLC: regular training climb, great for threshold intervals
+**Current metrics:**
+- FTP: {ftp}W → target {target_ftp}W in 12-16 weeks
+- Weight: {weight_kg}kg ({athlete.get('weight_lbs', 180)} lbs) → target ~78kg (172 lbs)
+- Power-to-weight: {watts_per_kg} W/kg → target 3.33 W/kg
+- VO2 Max (est): {athlete.get('vo2max', 48)} ml/kg/min | Max HR: {athlete.get('max_hr', 194)} bpm | Resting HR: {athlete.get('resting_hr', 46)} bpm
+- Trainer: {athlete.get('trainer', 'Wahoo Kickr Core (ERG)')} | Zwift + Garmin | 4 days/week, {athlete.get('training_hours_per_week', '6-8')} hrs/wk
 
-ATHLETE GOALS:
-{chr(10).join(f'- {g}' for g in athlete.get('goals', []))}
+**Power curve:**
+- 5s: {pc.get('5s_watts', 932)}W — excellent sprint/neuromuscular
+- 1min: {pc.get('1min_watts', 368)}W — strong anaerobic capacity
+- 5min: {pc.get('5min_watts', 270)}W — solid VO2max
+- 20min: {pc.get('20min_watts', 245)}W — FTP anchor
 
-{athlete.get('coaching_notes', '')}
+**⚠️ PRIMARY LIMITER — THE 5-TO-20 GAP:**
+The 25W drop from 5-min (270W) to 20-min (245W) = 9.3% decline. Well-trained cyclists show only 5-8%. This reveals poor lactate clearance, an underdeveloped aerobic base relative to anaerobic capacity, and low fatigue resistance. This is WHY Koren fades on sustained climbs. EVERY Growth Ride must directly attack this limiter.
 
-LAST RIDE:
+The three workout types that fix this gap:
+1. Over-under intervals (under: {ou_under_lo}-{ou_under_hi}W / over: {ou_over_lo}-{ou_over_hi}W) — train lactate production AND clearance simultaneously
+2. Extended sweet spot ({ss_lo}-{ss_hi}W) + fatigue-resistant sweet spot (90min Zone 2 → sweet spot back-to-back)
+3. Sustained threshold ({thresh_lo}-{thresh_hi}W) for 20-40 min continuous efforts
+
+**Coggan zones at {ftp}W FTP:**
+- Zone 1 (Recovery): <{round(ftp*0.55)}W
+- Zone 2 (Endurance): {z2_lo}-{z2_hi}W — the aerobic base builder
+- Zone 3 (Tempo): {round(ftp*0.76)}-{round(ftp*0.87)}W
+- Zone 4 (Sweet Spot): {ss_lo}-{ss_hi}W — highest stimulus:recovery ratio
+- Zone 5 (Threshold): {thresh_lo}-{thresh_hi}W
+- Zone 6 (VO2max): {vo2_lo}-{vo2_hi}W
+- Zone 7 (Neuromuscular): >{round(ftp*1.30)}W
+
+**Target event: Alpine Loop (Midway, UT)**
+- 40 miles, 4,200 ft total gain
+- KEY SEGMENT: Sundance → Cascade Springs — 8.5 miles at 6% avg grade, starts at 5,300 ft, tops at 8,000 ft
+- Altitude adjustment: at 8,000 ft, effective FTP drops ~8-10% for non-acclimatized rider (~{round(ftp*0.92)}W effective)
+- Race-day target: 220-235W avg on main climb = 58-64 min
+- Pacing phases: Miles 1-2 (Sundance, steepest) → 215-225W / RPE 6-7. Miles 3-6 (steady aspens) → 225-235W / RPE 7-7.5. Miles 7-8.5 (summit push) → 230-245W / RPE 8-8.5
+- Regular training climb: Emigration Canyon, SLC (~3.2%, 1,200 ft — good for threshold work but not a close analog)
+
+## LAST RIDE
 - Name: {last.get('name')}
 - Date: {last.get('date')} | Duration: {last.get('moving_mins')} min | Distance: {last.get('dist_mi')} mi
-- Avg Power: {last.get('avg_watts')}W ({intensity_pct}% FTP) | Max: {last.get('max_watts')}W
-- Avg HR: {last.get('avg_hr')} bpm | Suffer Score: {last.get('suffer_score')}
+- Avg Power: {last.get('avg_watts')}W ({intensity_pct}% FTP, {"Zone 2" if intensity_pct < 76 else "Sweet Spot" if intensity_pct < 95 else "Threshold" if intensity_pct < 106 else "VO2max"}) | Normalized: {last.get('normalized_watts') or 'n/a'}W | Max: {last.get('max_watts')}W
+- Avg HR: {last.get('avg_hr')} bpm | Max HR: {last.get('max_hr')} bpm | Suffer Score: {last.get('suffer_score')}
 
-TRAINING CONTEXT:
-- Days since last ride: {context['days_since_last_ride']}
+## TRAINING CONTEXT
+- Days since last ride: {days_off} {"⚠️ — extended rest, start controlled" if days_off >= 5 else "— some freshness available" if days_off >= 3 else "— normal recovery"}
 - 7-day avg TSS: {context['recent_tss_avg']}
-- Training trend: {context['trend']}
+- Training trend: {trend} {"→ BACK OFF, recovery needed" if trend == "overreaching" else "→ building well, keep loading" if trend == "building" else "→ consolidating gains" if trend == "maintaining" else ""}
 
-COACHING RULES:
-1. Growth rides: Sweet spot (88-95% FTP) or over-unders. Target 20-40 min CONTINUOUS threshold. Reference Alpine Loop / Emigration Canyon.
-2. Stabilizer: Pure Zone 2 (65-75% FTP). No harder. This builds the aerobic engine for 2-hour climbing.
-3. If days_since_last_ride >= 5: reduce intensity 5-10%, note the rest in reasoning.
-4. Always give specific power targets in watts (not just percentages).
-5. Make reasoning feel like a real coach talking to Koren specifically — mention his target climbs by name.
+## COACHING RULES (non-negotiable)
+1. ALWAYS reference the 5-to-20 gap limiter in Growth Ride reasoning — this is what we're fixing
+2. ALWAYS give specific watt targets, not just percentages
+3. If days_off >= 5: reduce intensity 5-10%, start with controlled effort, explicitly mention the rest
+4. If trend == "overreaching": Growth Ride becomes threshold-lite at 85-88% FTP ({round(ftp*0.85)}-{round(ftp*0.88)}W), not full intervals
+5. Stabilizer is ALWAYS pure Zone 2 ({z2_lo}-{z2_hi}W). No excuses, no "just a little harder." Zone 2 is where mitochondrial biogenesis happens.
+6. Growth Ride should rotate workout type based on context: over-unders if last ride was threshold+, sweet spot if last ride was Zone 2, VO2max if trend is building and days_off <= 2
+7. Mention Alpine Loop or Emigration Canyon by name — make it real
+8. Response must feel like a coach who knows Koren, not a generic AI recommendation
+9. Add a "weekly_focus" field: one sentence on what this week's training priority is
 
-Generate TWO recommendations:
-1. GROWTH RIDE — threshold climbing intervals designed to crush Alpine Loop
-2. STABILIZER RIDE — Zone 2 aerobic base for 2-hour climbing endurance
-
-IMPORTANT: If trend is "overreaching", swap Growth to a threshold-lite session at 85-88% FTP.
-
-Return ONLY valid JSON (no markdown) in this exact format:
+## OUTPUT FORMAT
+Return ONLY valid JSON (no markdown, no backticks):
 {{
+  "weekly_focus": "One sentence: e.g. 'This week: closing the lactate clearance gap with over-unders + Zone 2 base.'",
   "growth": {{
-    "workout_name": "Name",
-    "reasoning": "2-3 sentences with <strong> tags for emphasis. Reference days since last ride and training trend.",
-    "focus": "Build FTP",
-    "duration_minutes": 65,
-    "target_power": {{"low": 210, "high": 240}},
+    "workout_name": "Specific name (e.g. Alpine Loop Over-Unders, Sundance Threshold Blocks)",
+    "reasoning": "2-3 sentences. Use <strong> tags for key points. Reference the limiter, the last ride, days off, and Alpine Loop.",
+    "focus": "Short label (e.g. Close the 5-to-20 gap, Build lactate clearance)",
+    "duration_minutes": 75,
+    "target_power": {{"low": {ss_lo}, "high": {thresh_hi}}},
     "hr_zone": "Zone 4",
     "suggested_sets": [
-      {{"name": "Warmup", "duration_minutes": 10, "power_pct_ftp": [50, 70], "description": "Easy spin"}},
-      {{"name": "Main Set", "duration_minutes": 40, "power_pct_ftp": [88, 95], "description": "3x10 min intervals"}},
-      {{"name": "Cooldown", "duration_minutes": 10, "power_pct_ftp": [40, 55], "description": "Easy spin"}}
+      {{"name": "Warmup", "duration_minutes": 15, "power_pct_ftp": [50, 75], "description": "Easy spin building to tempo, flush legs"}},
+      {{"name": "Main Set", "duration_minutes": 45, "power_pct_ftp": [88, 105], "description": "Specific intervals — be precise about structure"}},
+      {{"name": "Cooldown", "duration_minutes": 10, "power_pct_ftp": [40, 55], "description": "Easy spin, let the adaptation begin"}}
     ]
   }},
   "stabilizer": {{
-    "workout_name": "Name",
-    "reasoning": "1-2 sentences explaining why Zone 2 now.",
-    "focus": "Maintain aerobic base",
-    "duration_minutes": 60,
-    "target_power": {{"low": 154, "high": 178}},
+    "workout_name": "Specific name (e.g. Aerobic Base Builder, Zone 2 Engine Work)",
+    "reasoning": "1-2 sentences. Explain WHY Zone 2 now — mitochondrial density, fat oxidation, recovery from hard work.",
+    "focus": "Build aerobic engine for Alpine Loop",
+    "duration_minutes": 90,
+    "target_power": {{"low": {z2_lo}, "high": {z2_hi}}},
     "hr_zone": "Zone 2",
     "suggested_sets": [
       {{"name": "Warmup", "duration_minutes": 10, "power_pct_ftp": [50, 65], "description": "Easy spin"}},
-      {{"name": "Steady State", "duration_minutes": 40, "power_pct_ftp": [65, 75], "description": "Steady endurance"}},
-      {{"name": "Cooldown", "duration_minutes": 10, "power_pct_ftp": [50, 60], "description": "Easy spin"}}
+      {{"name": "Steady Zone 2", "duration_minutes": 70, "power_pct_ftp": [56, 75], "description": "Steady {z2_lo}-{z2_hi}W — no spikes above Zone 2"}},
+      {{"name": "Cooldown", "duration_minutes": 10, "power_pct_ftp": [45, 55], "description": "Easy spin"}}
     ]
   }}
 }}"""
@@ -239,6 +265,7 @@ def recommend():
             "success": True,
             "growth": recs["growth"],
             "stabilizer": recs["stabilizer"],
+            "weekly_focus": recs.get("weekly_focus", ""),
             "context": context,
             "rate_remaining": remaining,
             "generated_at": datetime.now(timezone.utc).isoformat(),

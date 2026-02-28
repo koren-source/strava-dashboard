@@ -81,49 +81,59 @@ def generate_with_gpt(rides, athlete, context):
     ftp = athlete.get("ftp", 237)
     intensity_pct = round((last.get("avg_watts", 0) / ftp) * 100) if last.get("avg_watts") else 0
 
-    prompt = f"""You are an elite cycling coach analyzing a rider's data to prescribe their next Growth Ride.
+    pc = athlete.get("power_curve", {})
+    ss_lo, ss_hi = round(ftp * 0.88), round(ftp * 0.94)
+    z2_lo, z2_hi = round(ftp * 0.56), round(ftp * 0.75)
+    thresh_lo, thresh_hi = round(ftp * 0.95), round(ftp * 1.05)
+    ou_under_lo, ou_under_hi = round(ftp * 0.85), round(ftp * 0.92)
+    ou_over_lo, ou_over_hi = round(ftp * 1.02), round(ftp * 1.08)
+    days_off = context['days_since_last_ride']
 
-ATHLETE PROFILE:
-- FTP: {ftp}W
-- Weight: {athlete.get('weight_kg', 80)}kg
-- VO2 Max (est): {athlete.get('vo2max', 48)}
-- Max HR: {athlete.get('max_hr', 194)} bpm
-- Resting HR: {athlete.get('resting_hr', 46)} bpm
-- Goals: {json.dumps(athlete.get('goals', []))}
+    prompt = f"""You are a world-class cycling coach. Your athlete has one primary physiological limiter you must directly address in every Growth Ride recommendation.
 
-LAST RIDE:
-- Name: {last.get('name')}
-- Date: {last.get('date')}
-- Duration: {last.get('moving_mins')} min
-- Avg Power: {last.get('avg_watts')}W ({intensity_pct}% FTP)
-- Max Power: {last.get('max_watts')}W
-- Avg HR: {last.get('avg_hr')} bpm
-- Max HR: {last.get('max_hr')} bpm
-- Suffer Score: {last.get('suffer_score')}
-- Distance: {last.get('dist_mi')} mi
-- Elevation: {last.get('elev_ft')} ft
+## RIDER: Koren Saida, 26yo, Utah
+- FTP: {ftp}W → target {athlete.get('target_ftp', 260)}W
+- Weight: {athlete.get('weight_kg', 83)}kg | VO2 Max (est): {athlete.get('vo2max', 48)} | Max HR: {athlete.get('max_hr', 194)} bpm
+- Trainer: Wahoo Kickr Core (ERG) | Zwift + Garmin | 4 days/week
 
-TRAINING CONTEXT:
-- Days since last ride: {context['days_since_last_ride']}
-- 7-day average estimated TSS: {context['recent_tss_avg']}
-- Training trend: {context['trend']}
+## POWER CURVE
+- 5s: {pc.get('5s_watts', 932)}W | 1min: {pc.get('1min_watts', 368)}W | 5min: {pc.get('5min_watts', 270)}W | 20min: {pc.get('20min_watts', 245)}W
 
-INSTRUCTIONS:
-Prescribe ONE Growth Ride. This is the hard/progressive session — not recovery.
-Consider the athlete's fatigue, training trend, and goals.
-The workout should push adaptation toward higher FTP and VO2 Max.
+## ⚠️ THE LIMITER (reference this every time)
+25W drop from 5-min (270W) to 20-min (245W) = 9.3% decline vs 5-8% for trained cyclists.
+This means: poor lactate clearance, underdeveloped aerobic base, low fatigue resistance.
+Fix with: over-unders ({ou_under_lo}-{ou_under_hi}W / {ou_over_lo}-{ou_over_hi}W), extended sweet spot ({ss_lo}-{ss_hi}W), fatigue-resistant sweet spot (Zone 2 → sweet spot back-to-back).
 
-Return ONLY valid JSON (no markdown, no backticks) in this exact format:
+## TARGET EVENT
+Alpine Loop (Midway, UT): 40 miles, 4,200 ft. Key segment: Sundance → Cascade Springs, 8.5 miles @ 6% avg grade.
+Race target: 220-235W avg on main climb = 58-64 min.
+Regular training climb: Emigration Canyon, SLC.
+
+## LAST RIDE
+- {last.get('name')} | {last.get('date')} | {last.get('moving_mins')} min | {last.get('avg_watts')}W ({intensity_pct}% FTP) | HR: {last.get('avg_hr')} bpm | Suffer: {last.get('suffer_score')}
+
+## CONTEXT
+- Days since last ride: {days_off} {"⚠️ extended rest — reduce intensity 5-10%, start controlled" if days_off >= 5 else ""}
+- 7-day avg TSS: {context['recent_tss_avg']} | Trend: {context['trend']}
+
+## RULES
+1. Prescribe ONE Growth Ride that attacks the lactate clearance limiter
+2. Give specific watt targets (not just %)
+3. Mention Alpine Loop or Emigration Canyon by name
+4. If trend = overreaching: use 85-88% FTP ({round(ftp*0.85)}-{round(ftp*0.88)}W), not full intervals
+5. Response must feel like a real coach talking to Koren
+
+Return ONLY valid JSON (no markdown):
 {{
-  "workout_name": "Name of workout",
-  "reasoning": "2-3 sentences explaining why this workout right now, referencing their last ride and training state. Use <strong> tags for emphasis.",
-  "focus": "Short focus label (e.g. Build FTP, Raise VO2 Max)",
-  "duration_minutes": 65,
-  "target_power": {{"low": 210, "high": 240}},
+  "workout_name": "Specific name (e.g. Alpine Loop Over-Unders)",
+  "reasoning": "2-3 sentences with <strong> tags. Name the limiter, reference the last ride, connect to Alpine Loop.",
+  "focus": "Short label",
+  "duration_minutes": 75,
+  "target_power": {{"low": {ss_lo}, "high": {thresh_hi}}},
   "hr_zone": "Zone 4",
   "suggested_sets": [
-    {{"name": "Warmup", "duration_minutes": 10, "power_pct_ftp": [50, 70], "description": "Easy spin building to tempo"}},
-    {{"name": "Main Set", "duration_minutes": 40, "power_pct_ftp": [88, 95], "description": "3x10 min @ 88-95% FTP, 5 min recovery"}},
+    {{"name": "Warmup", "duration_minutes": 15, "power_pct_ftp": [50, 75], "description": "Easy spin building to tempo"}},
+    {{"name": "Main Set", "duration_minutes": 45, "power_pct_ftp": [88, 108], "description": "Specific structure with watt targets"}},
     {{"name": "Cooldown", "duration_minutes": 10, "power_pct_ftp": [40, 55], "description": "Easy spin"}}
   ]
 }}"""
@@ -229,6 +239,16 @@ def main():
 
     rec["generated_at"] = datetime.now(timezone.utc).isoformat()
     rec["based_on_ride"] = rides[0].get("id") if rides else None
+    # Add weekly_focus if not already set by AI
+    if not rec.get("weekly_focus"):
+        days_off = context.get("days_since_last_ride", 0)
+        trend = context.get("trend", "unknown")
+        if trend == "building":
+            rec["weekly_focus"] = "This week: progressive loading — keep attacking the lactate clearance gap."
+        elif trend == "recovering" or days_off >= 5:
+            rec["weekly_focus"] = "This week: controlled return — rebuild aerobic base before pushing threshold again."
+        else:
+            rec["weekly_focus"] = "This week: close the 5-to-20 gap with over-unders and Zone 2 base work."
 
     DATA_DIR.mkdir(exist_ok=True)
     (DATA_DIR / "recommendation.json").write_text(json.dumps(rec, indent=2))
