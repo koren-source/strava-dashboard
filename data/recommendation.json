@@ -1,6 +1,6 @@
 {
-  "workout_name": "Alpine Loop Over-Unders",
-  "reasoning": "<strong>The primary limiter</strong> we're addressing is poor lactate clearance, as seen in the 9.3% decline in your power curve. Given your last ride, it's crucial to focus on building aerobic capacity to help with fatigue resistance. This workout will prepare you for the rigors of the sustained effort required on the <strong>Alpine Loop</strong> climb.",
+  "workout_name": "Alpine Loop Lactate Builders",
+  "reasoning": "Focus on <strong>lactate clearance</strong>, given the 25W drop from 5 to 20 min power. Last ride showed extended rest, requiring a measured start. Work specifically on clearing lactate to improve your performance on the <strong>Alpine Loop</strong> climb.",
   "focus": "Lactate Clearance",
   "duration_minutes": 75,
   "target_power": {
@@ -22,10 +22,10 @@
       "name": "Main Set",
       "duration_minutes": 45,
       "power_pct_ftp": [
-        88,
+        85,
         108
       ],
-      "description": "Over-Unders: 4 sets of 7 min at 242-256W (over) / 2 min at 201-218W (under) to target lactate clearance"
+      "description": "4 sets of 10 min: 6 min at 209W, 2 min at 242W, 2 min at 218W"
     },
     {
       "name": "Cooldown",
@@ -39,7 +39,7 @@
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-02-28T01:07:21.935772+00:00",
+  "generated_at": "2026-02-28T04:36:29.679425+00:00",
   "based_on_ride": 17496676819,
   "weekly_focus": "This week: controlled return \u2014 rebuild aerobic base before pushing threshold again."
 }
