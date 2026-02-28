@@ -198,6 +198,12 @@ Return ONLY valid JSON (no markdown) in this exact format:
     )
 
     text = response.choices[0].message.content.strip()
+    # Strip markdown code fences if GPT-4o wraps the response
+    if text.startswith("```"):
+        text = text.split("```", 2)[1]
+        if text.startswith("json"):
+            text = text[4:]
+        text = text.rsplit("```", 1)[0].strip()
     return json.loads(text)
 
 
