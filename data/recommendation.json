@@ -1,11 +1,11 @@
 {
-  "workout_name": "Cascade Springs Over-Under Attack",
-  "reasoning": "<strong>Koren,</strong> to tackle your <strong>lactate clearance</strong> limiter, we're focusing on over-under intervals. Your last ride emphasized aerobic capacity but lacked the intensity to enhance your lactate threshold. This workout mimics the demands of the <strong>Alpine Loop's main climb</strong> and aims to build your ability to handle sustained efforts with varying intensity.",
-  "focus": "Over-Under Intervals",
+  "workout_name": "Alpine Loop Fatigue Resistance Sweet Spot",
+  "reasoning": "<strong>The primary limiter for Koren is poor lactate clearance and low fatigue resistance</strong>, as shown by the 25W drop in sustained efforts. <strong>This session addresses these issues directly</strong> by incorporating extended sweet spot work, vital for the Alpine Loop climb. Given the extended rest period since the last ride, the workout begins controlled to adjust intensity gradually.",
+  "focus": "Fatigue Resistance",
   "duration_minutes": 75,
   "target_power": {
     "low": 209,
-    "high": 256
+    "high": 249
   },
   "hr_zone": "Zone 4",
   "suggested_sets": [
@@ -25,7 +25,7 @@
         88,
         108
       ],
-      "description": "Perform 5 sets of 6-minute over-under intervals: 2 minutes at 201-218W, 2 minutes at 242-256W, repeat. 2-minute recovery between sets at 60% FTP."
+      "description": "3 x 10 min intervals at 201-218W with 5 min recovery at 209-223W between each. Focus on maintaining form and controlled breathing."
     },
     {
       "name": "Cooldown",
@@ -34,12 +34,12 @@
         40,
         55
       ],
-      "description": "Easy spin to aid recovery"
+      "description": "Easy spin"
     }
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-02-28T13:49:32.109831+00:00",
+  "generated_at": "2026-02-28T19:00:18.789683+00:00",
   "based_on_ride": 17496676819,
   "weekly_focus": "This week: controlled return \u2014 rebuild aerobic base before pushing threshold again."
 }
