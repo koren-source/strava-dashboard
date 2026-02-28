@@ -14,7 +14,7 @@ from flask_cors import CORS
 from openai import OpenAI
 
 app = Flask(__name__)
-CORS(app)  # allow GitHub Pages origin
+CORS(app, origins=["https://koren-source.github.io"])  # restrict to dashboard only
 
 DATA_DIR = Path(__file__).parent.parent / "data"
 RATE_FILE = Path(__file__).parent / "rate_limit.json"
