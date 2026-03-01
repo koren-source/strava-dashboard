@@ -1,11 +1,11 @@
 {
-  "workout_name": "Alpine Loop Over-Unders",
-  "reasoning": "<strong>Your primary limiter is poor lactate clearance and low fatigue resistance</strong>, highlighted by a 9.3% drop from your 5-min to 20-min power. In your last ride, we saw a relatively low intensity, so we'll progressively challenge your aerobic base and lactate clearance skills. This workout is designed to prepare you for sustained climbs like the Alpine Loop by raising your capacity to maintain power output across the main climb.",
-  "focus": "Lactate Clearance",
+  "workout_name": "Alpine Loop Lactate Clearance Over-Unders",
+  "reasoning": "<strong>Koren,</strong> to effectively target your <strong>lactate clearance</strong> limitation, you'll focus on over-unders to simulate the demands of the <strong>Alpine Loop</strong> climb. Your last ride showed a need for a structured approach to improving your aerobic base and fatigue resistance.",
+  "focus": "Over-Unders",
   "duration_minutes": 75,
   "target_power": {
     "low": 209,
-    "high": 249
+    "high": 256
   },
   "hr_zone": "Zone 4",
   "suggested_sets": [
@@ -25,7 +25,7 @@
         88,
         108
       ],
-      "description": "4x sets of 6 min over-under intervals: 2 min at 242-256W, followed by 4 min at 201-218W. Finish with a 5 min recovery at 50% FTP between each set."
+      "description": "Alternate 2 min at 242-256W with 4 min at 201-218W. Repeat 5 times."
     },
     {
       "name": "Cooldown",
@@ -39,7 +39,7 @@
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-03-01T05:12:06.484650+00:00",
+  "generated_at": "2026-03-01T07:48:30.663692+00:00",
   "based_on_ride": 17496676819,
   "weekly_focus": "This week: controlled return \u2014 rebuild aerobic base before pushing threshold again."
 }
