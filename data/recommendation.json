@@ -1,11 +1,11 @@
 {
-  "workout_name": "Alpine Loop Over-Unders",
-  "reasoning": "<strong>Your primary limiter is poor lactate clearance and low aerobic endurance</strong>. Given your recent extended rest, we'll start gradually with this workout targeting <strong>over-unders and extended sweet spot to strengthen your fatigue resistance</strong>. This will prepare you for the sustained effort needed on the Alpine Loop.",
+  "workout_name": "Emigration Canyon Progressive Over-Unders",
+  "reasoning": "<strong>Koren,</strong> this session specifically targets your primary limiter: poor lactate clearance and underdeveloped aerobic base. Your recent data suggests extended rest, so we'll start controlled. By focusing on <strong>over-unders</strong>, we aim to boost your fatigue resistance and aerobic efficiency, which are crucial for maintaining 220-235W during the Alpine Loop climb.",
   "focus": "Lactate Clearance",
   "duration_minutes": 75,
   "target_power": {
     "low": 209,
-    "high": 256
+    "high": 249
   },
   "hr_zone": "Zone 4",
   "suggested_sets": [
@@ -25,7 +25,7 @@
         88,
         108
       ],
-      "description": "3 sets of 6 mins (88%/209W sweet spot) / 3 mins (108%/256W over-under), 3 mins rest between sets"
+      "description": "4 x 10 min over-unders (2 min @ 209W, 3 min @ 242W, 2 min @ 218W, 3 min @ 256W), with 5 min recovery @ 50% FTP between sets"
     },
     {
       "name": "Cooldown",
@@ -39,7 +39,7 @@
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-03-01T13:51:42.235703+00:00",
+  "generated_at": "2026-03-01T19:01:38.056454+00:00",
   "based_on_ride": 17496676819,
   "weekly_focus": "This week: controlled return \u2014 rebuild aerobic base before pushing threshold again."
 }
