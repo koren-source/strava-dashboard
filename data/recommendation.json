@@ -1,11 +1,11 @@
 {
-  "workout_name": "Alpine Loop Over-Unders",
-  "reasoning": "This workout addresses Koren's <strong>lactate clearance limiter</strong> by improving aerobic base and fatigue resistance. Following the extended rest week and last aerobic session, focusing on over-unders will prepare Koren for the sustained efforts required on the <strong>Alpine Loop</strong>, especially the key segment from Sundance to Cascade Springs.",
+  "workout_name": "Alpine Loop Lactate Clearance Attack",
+  "reasoning": "<strong>The main limiter is your lactate clearance, highlighted by the 9.3% drop from your 5-min to 20-min power</strong>. This workout directly addresses this through over-unders to enhance your aerobic base and fatigue resistance. Considering your last ride was a lower intensity aerobic build, this session is a crucial step towards sustaining a higher power output for the Alpine Loop main climb.",
   "focus": "Lactate Clearance",
   "duration_minutes": 75,
   "target_power": {
     "low": 209,
-    "high": 256
+    "high": 249
   },
   "hr_zone": "Zone 4",
   "suggested_sets": [
@@ -25,7 +25,7 @@
         88,
         108
       ],
-      "description": "4x10 min blocks with 2-min recovery: 7 min at 201-218W / 3 min at 242-256W"
+      "description": "3x (6 min @ 242-256W, 4 min @ 201-218W) with 5 min recovery @ 50% FTP after each set"
     },
     {
       "name": "Cooldown",
@@ -39,7 +39,7 @@
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-03-02T08:01:09.028621+00:00",
+  "generated_at": "2026-03-02T14:31:43.707404+00:00",
   "based_on_ride": 17496676819,
   "weekly_focus": "This week: controlled return \u2014 rebuild aerobic base before pushing threshold again."
 }
