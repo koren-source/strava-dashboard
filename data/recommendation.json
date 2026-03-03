@@ -1,6 +1,6 @@
 {
-  "workout_name": "Cascade Springs Over-Under Intervals",
-  "reasoning": "<strong>Your primary limiter</strong> is your <strong>9.3% decline</strong> in power from 5-min to 20-min efforts, indicating <strong>poor lactate clearance and a need for improved fatigue resistance</strong>. Your last ride was at a controlled, lower intensity after an extended rest period, so we'll ease back into intensity with focus on sustained over-under intervals. This session directly prepares you for the continuous gradients of the <strong>Alpine Loop</strong> by targeting power builds and sustained efforts.",
+  "workout_name": "Alpine Loop Over-Unders",
+  "reasoning": "<strong>The primary limiter</strong> we need to address is Koren's <strong>poor lactate clearance and underdeveloped aerobic base</strong>. Considering the <strong>recent extended rest</strong> and reviewing the last ride at <strong>69% FTP</strong>, we will focus on over-unders to specifically target this limiter and improve performance on the <strong>Alpine Loop</strong> ascent.",
   "focus": "Lactate Clearance",
   "duration_minutes": 75,
   "target_power": {
@@ -25,7 +25,7 @@
         88,
         108
       ],
-      "description": "Perform 5x 6-min over-unders: 2 min at 201-218W, 1 min at 242-256W, repeat. Focus on strong, controlled breathing to manage heart rate."
+      "description": "4 x (10 min set - 8 min @ 88% FTP [209W] + 2 min @ 108% FTP [256W] with 5 min recovery spin between sets)"
     },
     {
       "name": "Cooldown",
@@ -34,12 +34,12 @@
         40,
         55
       ],
-      "description": "Easy spin to flush out lactate"
+      "description": "Easy spin"
     }
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-03-02T19:52:40.279667+00:00",
+  "generated_at": "2026-03-03T05:07:35.182777+00:00",
   "based_on_ride": 17496676819,
   "weekly_focus": "This week: controlled return \u2014 rebuild aerobic base before pushing threshold again."
 }
