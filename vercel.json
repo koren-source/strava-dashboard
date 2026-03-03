@@ -1,9 +1,4 @@
 {
-  "functions": {
-    "api/recommend.py": {
-      "runtime": "python3.9"
-    }
-  },
   "headers": [
     {
       "source": "/api/(.*)",
