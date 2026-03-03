@@ -187,26 +187,5 @@
     "suffer_score": 52.0,
     "calories": null,
     "strava_url": "https://www.strava.com/activities/17151609484"
-  },
-  {
-    "id": 16790131125,
-    "name": "Zwift - Volcano Circuit in Watopia",
-    "date": "2025-12-20",
-    "start_date_local": "2025-12-20T06:01:00Z",
-    "type": "VirtualRide",
-    "dist_mi": 20.7,
-    "moving_mins": 61,
-    "elapsed_mins": 61,
-    "elev_ft": 531,
-    "avg_speed_mph": 20.3,
-    "max_speed_mph": 32.1,
-    "avg_watts": 183.4,
-    "normalized_watts": 189,
-    "max_watts": 457,
-    "avg_hr": 134.5,
-    "max_hr": 165.0,
-    "suffer_score": 47.0,
-    "calories": null,
-    "strava_url": "https://www.strava.com/activities/16790131125"
   }
 ]

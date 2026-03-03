@@ -33,12 +33,5 @@
     "week": "2026-W03",
     "label": "Jan 19-25",
     "hours": 1.0
-  },
-  {
-    "rides": 1,
-    "miles": 20.7,
-    "week": "2025-W50",
-    "label": "Dec 15-21",
-    "hours": 1.0
   }
 ]
