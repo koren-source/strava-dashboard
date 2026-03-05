@@ -1,6 +1,6 @@
 {
-  "workout_name": "Cascade Springs Lactate Clearance Booster",
-  "reasoning": "<strong>We need to address the lactate clearance limiter</strong>, which was evident in your power decline from 5-min to 20-min efforts. Given your recent extended rest and last ride effort at low intensity, this session jumpstarts your aerobic base aligned with the demands of the <strong>Alpine Loop key segment</strong>.",
+  "workout_name": "Alpine Loop Lactate Clearance Builder",
+  "reasoning": "<strong>Your primary limiter is poor lactate clearance</strong>. Given the <strong>extended rest of 10 days</strong>, we'll focus on rebuilding with controlled but purposeful intensity. This session targets aerobic improvements essential for the main climb at Alpine Loop.",
   "focus": "Lactate Clearance",
   "duration_minutes": 75,
   "target_power": {
@@ -25,7 +25,7 @@
         88,
         108
       ],
-      "description": "5x (5min Over at 242-256W, 3min Under at 201-218W), totaling 40 min active, 1 min recovery between sets"
+      "description": "3x (7'/4') over-unders; 7' @ 242-256W, 4' @ 201-218W. This will enhance lactate clearance and fatigue resistance."
     },
     {
       "name": "Cooldown",
@@ -39,7 +39,7 @@
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-03-05T14:34:52.091202+00:00",
+  "generated_at": "2026-03-05T20:05:11.969336+00:00",
   "based_on_ride": 17496676819,
   "weekly_focus": "This week: controlled return \u2014 rebuild aerobic base before pushing threshold again."
 }
