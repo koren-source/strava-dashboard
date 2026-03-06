@@ -1,5 +1,26 @@
 [
   {
+    "id": 17619555765,
+    "name": "Zwift - Giza on London 8 in London",
+    "date": "2026-03-05",
+    "start_date_local": "2026-03-05T23:20:22Z",
+    "type": "VirtualRide",
+    "dist_mi": 16.0,
+    "moving_mins": 60,
+    "elapsed_mins": 61,
+    "elev_ft": 994,
+    "avg_speed_mph": 15.9,
+    "max_speed_mph": 47.0,
+    "avg_watts": 156.5,
+    "normalized_watts": 165,
+    "max_watts": 288,
+    "avg_hr": 147.2,
+    "max_hr": 170.0,
+    "suffer_score": 70.0,
+    "calories": null,
+    "strava_url": "https://www.strava.com/activities/17619555765"
+  },
+  {
     "id": 17496676819,
     "name": "Zwift - Aerobic Builds on Ocean Lava Cliffside Loop in Watopia",
     "date": "2026-02-23",
@@ -166,26 +187,5 @@
     "suffer_score": 50.0,
     "calories": null,
     "strava_url": "https://www.strava.com/activities/17196103057"
-  },
-  {
-    "id": 17151609484,
-    "name": "Zwift - Classique in London",
-    "date": "2026-01-23",
-    "start_date_local": "2026-01-23T15:57:34Z",
-    "type": "VirtualRide",
-    "dist_mi": 20.8,
-    "moving_mins": 61,
-    "elapsed_mins": 61,
-    "elev_ft": 535,
-    "avg_speed_mph": 20.2,
-    "max_speed_mph": 29.9,
-    "avg_watts": 169.3,
-    "normalized_watts": 177,
-    "max_watts": 705,
-    "avg_hr": 143.5,
-    "max_hr": 172.0,
-    "suffer_score": 52.0,
-    "calories": null,
-    "strava_url": "https://www.strava.com/activities/17151609484"
   }
 ]
