@@ -166,26 +166,5 @@
     "suffer_score": 19.0,
     "calories": null,
     "strava_url": "https://www.strava.com/activities/17206828622"
-  },
-  {
-    "id": 17196103057,
-    "name": "Zwift - Strength Endurance #1 on Figure 8 in Watopia",
-    "date": "2026-01-27",
-    "start_date_local": "2026-01-27T16:50:57Z",
-    "type": "VirtualRide",
-    "dist_mi": 17.9,
-    "moving_mins": 59,
-    "elapsed_mins": 59,
-    "elev_ft": 817,
-    "avg_speed_mph": 18.0,
-    "max_speed_mph": 40.3,
-    "avg_watts": 162.3,
-    "normalized_watts": 173,
-    "max_watts": 262,
-    "avg_hr": 142.7,
-    "max_hr": 165.0,
-    "suffer_score": 50.0,
-    "calories": null,
-    "strava_url": "https://www.strava.com/activities/17196103057"
   }
 ]
