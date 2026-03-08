@@ -1,11 +1,11 @@
 {
-  "workout_name": "Emigration Canyon Lactate Crusher",
-  "reasoning": "<strong>Koren, your primary limiter is lactate clearance and aerobics base</strong>. Your last ride showed a recovery trend, so we're ready for a challenge. This workout targets the 25W drop from your power curve. It will boost your resistance to fatigue, improving your performance on climbs like the Alpine Loop.",
-  "focus": "Lactate Clearance & Aerobic Strength",
+  "workout_name": "Alpine Loop Lactate Buster",
+  "reasoning": "<strong>The limiter</strong> we're addressing is your poor lactate clearance and low fatigue resistance, which is holding back your sustained climbing power. Your last ride was a solid recovery effort, setting us up to attack this limiter effectively. Focusing on over-unders will closely mimic the demands you'll face on the Sundance to Cascade Springs segment of the <strong>Alpine Loop</strong>.",
+  "focus": "Lactate clearance",
   "duration_minutes": 75,
   "target_power": {
-    "low": 209,
-    "high": 249
+    "low": 201,
+    "high": 256
   },
   "hr_zone": "Zone 4",
   "suggested_sets": [
@@ -25,7 +25,7 @@
         88,
         108
       ],
-      "description": "Over-unders: Alternate 6 mins at 209-218W and 3 mins at 242-249W. Repeat for 5 rounds."
+      "description": "10 min over-under intervals: 8 min at 201-218W, 2 min at 242-256W, repeat for 4 sets."
     },
     {
       "name": "Cooldown",
@@ -34,12 +34,12 @@
         40,
         55
       ],
-      "description": "Easy spin to recover fully"
+      "description": "Easy spin"
     }
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-03-08T07:44:28.043160+00:00",
+  "generated_at": "2026-03-08T13:52:33.246514+00:00",
   "based_on_ride": 17619555765,
   "weekly_focus": "This week: controlled return \u2014 rebuild aerobic base before pushing threshold again."
 }
