@@ -1,7 +1,7 @@
 {
-  "workout_name": "Alpine Loop Lactate Buster",
-  "reasoning": "<strong>The limiter</strong> we're addressing is your poor lactate clearance and low fatigue resistance, which is holding back your sustained climbing power. Your last ride was a solid recovery effort, setting us up to attack this limiter effectively. Focusing on over-unders will closely mimic the demands you'll face on the Sundance to Cascade Springs segment of the <strong>Alpine Loop</strong>.",
-  "focus": "Lactate clearance",
+  "workout_name": "Emigration Canyon Over-Unders",
+  "reasoning": "<strong>Koren</strong>, we need to tackle your <strong>lactate clearance and aerobic base</strong>, as highlighted by the power drop from your 5-minute to 20-minute efforts. Your last ride indicated a lower intensity on Giza, so it's time to push more at <strong>Emigration Canyon</strong> levels. This will help prepare you for the <strong>Alpine Loop</strong>\u2019s demanding sections.",
+  "focus": "Lactate Clearance",
   "duration_minutes": 75,
   "target_power": {
     "low": 201,
@@ -25,7 +25,7 @@
         88,
         108
       ],
-      "description": "10 min over-under intervals: 8 min at 201-218W, 2 min at 242-256W, repeat for 4 sets."
+      "description": "3x12 min over-unders: 2 min at 218W, 3 min at 242W, repeat, with 3 min recovery between sets."
     },
     {
       "name": "Cooldown",
@@ -39,7 +39,7 @@
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-03-08T13:52:33.246514+00:00",
+  "generated_at": "2026-03-08T19:02:38.402338+00:00",
   "based_on_ride": 17619555765,
   "weekly_focus": "This week: controlled return \u2014 rebuild aerobic base before pushing threshold again."
 }
