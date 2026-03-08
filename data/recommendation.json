@@ -1,7 +1,7 @@
 {
-  "workout_name": "Emigration Canyon Fatigue Resistance Intervals",
-  "reasoning": "This workout aims to improve <strong>lactate clearance</strong> and develop a better <strong>aerobic base</strong> by focusing on fatigue resistance, as highlighted by your power curve decline. Your last ride was a recovery-focused effort at 66% FTP, ensuring proper rest for today's training. Building fatigue resistance will help you sustain 220-235W on the <strong>Alpine Loop</strong> main climb, critical for success.",
-  "focus": "Fatigue Resistance",
+  "workout_name": "Emigration Canyon Lactate Crusher",
+  "reasoning": "<strong>Koren, your primary limiter is lactate clearance and aerobics base</strong>. Your last ride showed a recovery trend, so we're ready for a challenge. This workout targets the 25W drop from your power curve. It will boost your resistance to fatigue, improving your performance on climbs like the Alpine Loop.",
+  "focus": "Lactate Clearance & Aerobic Strength",
   "duration_minutes": 75,
   "target_power": {
     "low": 209,
@@ -25,7 +25,7 @@
         88,
         108
       ],
-      "description": "Over-unders in intervals: 4x12 min (4 min @ 218W, 4 min @ 245W, 4 min @ 256W) with 2 min easy spin between intervals."
+      "description": "Over-unders: Alternate 6 mins at 209-218W and 3 mins at 242-249W. Repeat for 5 rounds."
     },
     {
       "name": "Cooldown",
@@ -34,12 +34,12 @@
         40,
         55
       ],
-      "description": "Easy spin"
+      "description": "Easy spin to recover fully"
     }
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-03-08T05:02:17.670964+00:00",
+  "generated_at": "2026-03-08T07:44:28.043160+00:00",
   "based_on_ride": 17619555765,
   "weekly_focus": "This week: controlled return \u2014 rebuild aerobic base before pushing threshold again."
 }
