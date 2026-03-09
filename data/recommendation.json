@@ -1,6 +1,6 @@
 {
-  "workout_name": "Alpine Loop Over-Under Endurance",
-  "reasoning": "<strong>Your current limiter is lactate clearance,</strong> which is critical when preparing for the sustained climbs of the Alpine Loop. <strong>The last ride indicated some recovery,</strong> so we'll tackle this directly with over-unders. This builds your ability to sustain and recover at threshold, crucial for climbs like Sundance to Cascade Springs.",
+  "workout_name": "Emigration Canyon Over-Unders",
+  "reasoning": "Today, we're focusing on improving your <strong>lactate clearance and aerobic base</strong>, which are crucial for maintaining power over the long Sundance to Cascade Springs climb on the Alpine Loop. Your last ride was moderate in effort, ideal for setting you up for a more demanding session today. Over-unders will help mimic race pace demands and build fatigue resistance.",
   "focus": "Lactate Clearance",
   "duration_minutes": 75,
   "target_power": {
@@ -25,7 +25,7 @@
         88,
         108
       ],
-      "description": "4 sets of 10-minute intervals (5 mins at 201W-218W, 5 mins at 242W-256W), with 2-minute recovery at 55%. Repeat."
+      "description": "Include 5 sets of 6-minute blocks: 2 min at 218W (over) followed by 4 min at 201W (under)"
     },
     {
       "name": "Cooldown",
@@ -39,7 +39,7 @@
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-03-09T13:19:02.610944+00:00",
+  "generated_at": "2026-03-09T19:02:05.109694+00:00",
   "based_on_ride": 17655346917,
   "weekly_focus": "This week: controlled return \u2014 rebuild aerobic base before pushing threshold again."
 }
