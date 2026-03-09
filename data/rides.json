@@ -1,5 +1,26 @@
 [
   {
+    "id": 17655346917,
+    "name": "Zwift - New Workout on Ocean Lava Cliffside Loop in Watopia",
+    "date": "2026-03-09",
+    "start_date_local": "2026-03-09T00:05:28Z",
+    "type": "VirtualRide",
+    "dist_mi": 17.8,
+    "moving_mins": 65,
+    "elapsed_mins": 65,
+    "elev_ft": 791,
+    "avg_speed_mph": 16.4,
+    "max_speed_mph": 40.7,
+    "avg_watts": 159.7,
+    "normalized_watts": 165,
+    "max_watts": 347,
+    "avg_hr": 152.4,
+    "max_hr": 178.0,
+    "suffer_score": 94.0,
+    "calories": null,
+    "strava_url": "https://www.strava.com/activities/17655346917"
+  },
+  {
     "id": 17619555765,
     "name": "Zwift - Giza on London 8 in London",
     "date": "2026-03-05",
@@ -145,26 +166,5 @@
     "suffer_score": 50.0,
     "calories": null,
     "strava_url": "https://www.strava.com/activities/17320119648"
-  },
-  {
-    "id": 17206828622,
-    "name": "Zwift - Day 3 on Hilly Route in Watopia",
-    "date": "2026-01-28",
-    "start_date_local": "2026-01-28T15:06:23Z",
-    "type": "VirtualRide",
-    "dist_mi": 15.7,
-    "moving_mins": 60,
-    "elapsed_mins": 60,
-    "elev_ft": 1007,
-    "avg_speed_mph": 15.7,
-    "max_speed_mph": 38.1,
-    "avg_watts": 144.6,
-    "normalized_watts": 148,
-    "max_watts": 172,
-    "avg_hr": 126.7,
-    "max_hr": 157.0,
-    "suffer_score": 19.0,
-    "calories": null,
-    "strava_url": "https://www.strava.com/activities/17206828622"
   }
 ]
