@@ -1,6 +1,6 @@
 {
-  "workout_name": "Alpine Loop Lactate Clearance Boost",
-  "reasoning": "<strong>The key limiter</strong> is the 9.3% decline from 5-min to 20-min power, indicating poor lactate clearance and aerobic base. <strong>Your last ride</strong> on the Ocean Lava Cliffside Loop showed a moderate TSS, which aligns with a recovering status and readiness for intensity. <strong>Focusing on efforts like</strong> the main climb in the Alpine Loop, developing fatigue resistance with focused over-unders will prepare you for the extended climb demands.",
+  "workout_name": "Emigration Canyon Fatigue Resistance Over-Unders",
+  "reasoning": "<strong>Addressing your lactate clearance limiter</strong> is essential to enhancing your 5-20 minute power difference. Your last ride indicates you're in a recovery phase. This workout prepares you for Alpine Loop by building fatigue resistance, crucial for maintaining your target power on the climb.",
   "focus": "Lactate Clearance",
   "duration_minutes": 75,
   "target_power": {
@@ -25,7 +25,7 @@
         88,
         108
       ],
-      "description": "3 x 15 min over-unders at 218W for 4 min, then 8 min at 245W, repeat with 3 min rest between sets"
+      "description": "Alternate 4 minutes at 218W, 3 minutes at 242W, repeated 5 times"
     },
     {
       "name": "Cooldown",
@@ -39,7 +39,7 @@
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-03-10T07:00:31.467343+00:00",
+  "generated_at": "2026-03-10T13:16:36.467304+00:00",
   "based_on_ride": 17655346917,
   "weekly_focus": "This week: controlled return \u2014 rebuild aerobic base before pushing threshold again."
 }
