@@ -1,11 +1,11 @@
 {
-  "workout_name": "Cascade Springs Over-Unders",
-  "reasoning": "<strong>Koren, today\u2019s workout is designed to tackle your poor lactate clearance and improve your aerobic base.</strong> After analyzing your 9.3% power drop-off between your 5-minute and 20-minute efforts, it's crucial to focus on fatigue resistance. <strong>Preparing with over-under intervals will help you stay strong during the key Sundance to Cascade Springs segment of the Alpine Loop.</strong> Your last ride indicated good recovery, so we're hitting it strong today, but still building back to peak effort.",
-  "focus": "Over-Unders",
+  "workout_name": "Cascade Springs Lactate Clearance Over-Unders",
+  "reasoning": "<strong>Koren</strong>, we need to address your <strong>poor lactate clearance</strong> and <strong>low fatigue resistance</strong> to help you perform better on sustained climbs like the Alpine Loop. Your last Zwift ride indicates you\u2019re in a recovery trend, so let's not push too hard just yet. We\u2019ll simulate the challenging sections of the Alpine Loop to build your capacity to clear lactate effectively.",
+  "focus": "Lactate Clearance",
   "duration_minutes": 75,
   "target_power": {
-    "low": 201,
-    "high": 256
+    "low": 209,
+    "high": 249
   },
   "hr_zone": "Zone 4",
   "suggested_sets": [
@@ -25,7 +25,7 @@
         88,
         108
       ],
-      "description": "9 min blocks: 6 min at 209W, then 3 min at 242-256W; repeat for total of 5 sets"
+      "description": "Perform 3 sets of 5x (3 min at 242-256W, 2 min at 201-218W) with 3 min recovery between sets at 209W."
     },
     {
       "name": "Cooldown",
@@ -39,7 +39,7 @@
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-03-10T18:59:33.190806+00:00",
+  "generated_at": "2026-03-11T02:34:45.787689+00:00",
   "based_on_ride": 17655346917,
   "weekly_focus": "This week: controlled return \u2014 rebuild aerobic base before pushing threshold again."
 }
