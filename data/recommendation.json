@@ -1,11 +1,11 @@
 {
-  "workout_name": "Alpine Loop Over-Unders",
-  "reasoning": "This workout directly targets your <strong>poor lactate clearance</strong> by implementing over-under intervals. During your last ride, you spent a lot of time at a lower wattage (159.7W), which doesn't sufficiently address the limiter for the Alpine Loop's sustained climbing demands.",
+  "workout_name": "Emigration Canyon Over-Unders",
+  "reasoning": "The primary limiter for Koren is <strong>poor lactate clearance</strong> leading to a significant drop in power from 5 to 20 minutes. This workout will address this by incorporating over-under intervals that simulate the steady climbs of the <strong>Alpine Loop</strong> and build the necessary fatigue resistance. Given the last ride was at 67% FTP, this session will be a step-up in intensity and specificity.",
   "focus": "Lactate Clearance",
   "duration_minutes": 75,
   "target_power": {
-    "low": 201,
-    "high": 256
+    "low": 209,
+    "high": 249
   },
   "hr_zone": "Zone 4",
   "suggested_sets": [
@@ -22,10 +22,10 @@
       "name": "Main Set",
       "duration_minutes": 45,
       "power_pct_ftp": [
-        85,
+        88,
         108
       ],
-      "description": "Perform 6x7 min intervals: 4 min at 201-218W, then 3 min at 242-256W. 2 min easy spin between each."
+      "description": "5 x 8-minute over-unders: 6 minutes at 201-218W, 2 minutes at 242-256W. Maintain smooth power."
     },
     {
       "name": "Cooldown",
@@ -39,7 +39,7 @@
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-03-11T07:03:44.735359+00:00",
+  "generated_at": "2026-03-11T13:16:11.956579+00:00",
   "based_on_ride": 17655346917,
   "weekly_focus": "This week: controlled return \u2014 rebuild aerobic base before pushing threshold again."
 }
