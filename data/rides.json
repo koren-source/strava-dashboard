@@ -1,5 +1,26 @@
 [
   {
+    "id": 17711404741,
+    "name": "Lunch Ride",
+    "date": "2026-03-13",
+    "start_date_local": "2026-03-13T12:46:29Z",
+    "type": "Ride",
+    "dist_mi": 9.0,
+    "moving_mins": 39,
+    "elapsed_mins": 42,
+    "elev_ft": 1191,
+    "avg_speed_mph": 13.5,
+    "max_speed_mph": 38.1,
+    "avg_watts": 87.3,
+    "normalized_watts": 142,
+    "max_watts": 440,
+    "avg_hr": 157.1,
+    "max_hr": 182.0,
+    "suffer_score": 65.0,
+    "calories": null,
+    "strava_url": "https://www.strava.com/activities/17711404741"
+  },
+  {
     "id": 17702892675,
     "name": "Afternoon Ride",
     "date": "2026-03-12",
@@ -145,26 +166,5 @@
     "suffer_score": 97.0,
     "calories": null,
     "strava_url": "https://www.strava.com/activities/17423565774"
-  },
-  {
-    "id": 17334300922,
-    "name": "Zwift - #1 Find Your Rhythm on 2015 Worlds Course in Richmond",
-    "date": "2026-02-08",
-    "start_date_local": "2026-02-08T21:46:39Z",
-    "type": "VirtualRide",
-    "dist_mi": 13.8,
-    "moving_mins": 47,
-    "elapsed_mins": 47,
-    "elev_ft": 604,
-    "avg_speed_mph": 17.6,
-    "max_speed_mph": 40.7,
-    "avg_watts": 177.0,
-    "normalized_watts": 190,
-    "max_watts": 261,
-    "avg_hr": 147.6,
-    "max_hr": 174.0,
-    "suffer_score": 51.0,
-    "calories": null,
-    "strava_url": "https://www.strava.com/activities/17334300922"
   }
 ]
