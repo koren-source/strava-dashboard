@@ -1,6 +1,6 @@
 {
   "workout_name": "Cascade Springs Over-Unders",
-  "reasoning": "<strong>Koren, our goal is to enhance your lactate clearance and build fatigue resistance</strong>. Given the 25W drop-off between your 5-minute and 20-minute power, we need to focus on strengthening your aerobic base. This workout mimics the demands of the Alpine Loop, focusing on your performance across prolonged efforts, crucial for the key segment from Sundance to Cascade Springs.",
+  "reasoning": "<strong>Your current limiter is a 9.3% decline between your 5-min and 20-min power outputs.</strong> This indicates poor lactate clearance and low fatigue resistance, crucial for the sustained efforts on the Alpine Loop climb. After a lighter ride yesterday, this workout will enhance your ability to maintain higher power levels with efficient lactate management.",
   "focus": "Lactate Clearance",
   "duration_minutes": 75,
   "target_power": {
@@ -25,7 +25,7 @@
         88,
         108
       ],
-      "description": "3x 12-minutes of Over-Unders: alternate 2 minutes at 209-219W followed by 1 minute at 242-249W, with 3-minute recovery spins at 190W between intervals."
+      "description": "Over-unders: Alternate 3 mins at 201-218W, then 242-256W, repeat 6 times"
     },
     {
       "name": "Cooldown",
@@ -39,7 +39,7 @@
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-03-14T06:58:01.933196+00:00",
+  "generated_at": "2026-03-14T13:06:17.994852+00:00",
   "based_on_ride": 17711404741,
   "weekly_focus": "This week: controlled return \u2014 rebuild aerobic base before pushing threshold again."
 }
