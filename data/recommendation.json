@@ -1,11 +1,11 @@
 {
   "workout_name": "Emigration Canyon Over-Unders",
-  "reasoning": "<strong>Your limiter</strong> is poor lactate clearance and <strong>low fatigue resistance</strong>, as shown by the 25W drop from 5-min to 20-min power. We can address this directly through this structured session. Considering your recent <strong>low-intensity ride</strong>, we will build intensity to simulate the demands of your <strong>Alpine Loop goal</strong>.",
-  "focus": "Lactate Clearance & Fatigue Resistance",
+  "reasoning": "<strong>Koren, let's tackle your lactate clearance today.</strong> The 25W drop from your 5-min to 20-min power indicates this is key. Reflecting on your last ride, we need more intensity to prepare for the Alpine Loop's demanding climbs. Over-unders will train your body to clear lactate efficiently and build fatigue resistance.",
+  "focus": "Lactate Clearance",
   "duration_minutes": 75,
   "target_power": {
-    "low": 209,
-    "high": 249
+    "low": 201,
+    "high": 256
   },
   "hr_zone": "Zone 4",
   "suggested_sets": [
@@ -22,10 +22,10 @@
       "name": "Main Set",
       "duration_minutes": 45,
       "power_pct_ftp": [
-        84,
+        88,
         108
       ],
-      "description": "4x10 minute over-unders: 2 min at 201W-218W, 3 min at 242W-256W, 5 min at 209W-223W. 3 min easy spin recovery between sets."
+      "description": "4 x 8-min over-under intervals: 2 min at 218W, 2 min at 242W, 2 min at 218W, 2 min at 256W. 5 min Z2 recovery in between."
     },
     {
       "name": "Cooldown",
@@ -39,7 +39,7 @@
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-03-16T13:27:59.193508+00:00",
+  "generated_at": "2026-03-16T19:13:29.728187+00:00",
   "based_on_ride": 17711404741,
   "weekly_focus": "This week: controlled return \u2014 rebuild aerobic base before pushing threshold again."
 }
