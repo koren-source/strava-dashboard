@@ -1,7 +1,7 @@
 {
   "name": "Koren Saida",
   "ftp": 237,
-  "weight_kg": 83.9146,
+  "weight_kg": 80,
   "athlete_id": 107150754,
   "ytd_miles": 216.4,
   "ytd_rides": 13,
@@ -16,5 +16,5 @@
     "Get faster on Zwift"
   ],
   "days_since_last_ride": 4,
-  "last_updated": "2026-03-17T13:26:17.701438+00:00"
+  "last_updated": "2026-03-17T19:12:25.785308+00:00"
 }
