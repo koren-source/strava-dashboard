@@ -1,6 +1,6 @@
 {
-  "workout_name": "Cascade Sprint Over-Unders",
-  "reasoning": "<strong>Lactate clearance</strong> is the key limiter here, as evidenced by the <strong>25W drop from 5-min to 20-min power</strong>. This specific workout targets improving your fatigue resistance and aerobic base while preparing you for the Cascade Springs segment of the Alpine Loop. Your last B2B ride indicates a recovering trend, so we'll push just enough to encourage adaptation.",
+  "workout_name": "Alpine Loop Fatigue Resistance Builder",
+  "reasoning": "The <strong>limiter</strong> for you is the <strong>25W drop</strong> from the 5-min to the 20-min power, which indicates <strong>poor lactate clearance</strong> and <strong>low fatigue resistance</strong>. Your last ride showed a focus on endurance rather than intensity. This workout targets the requirements of the <strong>Alpine Loop</strong> by improving your ability to sustain higher power over time.",
   "focus": "Lactate Clearance",
   "duration_minutes": 75,
   "target_power": {
@@ -25,7 +25,7 @@
         88,
         108
       ],
-      "description": "5 x (4 mins at 242-256W, then 2 mins at 201-218W), focus on controlled breathing and staying smooth while transitioning between effort levels"
+      "description": "Perform 5 x 5-minute over-unders at 242W to 256W, with 5-minute recoveries at 209-223W. Focus on rhythm and breathing."
     },
     {
       "name": "Cooldown",
@@ -34,12 +34,12 @@
         40,
         55
       ],
-      "description": "Easy spin"
+      "description": "Easy spin to flush out lactate"
     }
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-03-18T07:11:16.778326+00:00",
+  "generated_at": "2026-03-18T13:27:45.178947+00:00",
   "based_on_ride": 17760532980,
   "weekly_focus": "This week: controlled return \u2014 rebuild aerobic base before pushing threshold again."
 }
