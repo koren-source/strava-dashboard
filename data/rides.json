@@ -1,5 +1,26 @@
 [
   {
+    "id": 17785491584,
+    "name": "Afternoon Ride",
+    "date": "2026-03-19",
+    "start_date_local": "2026-03-19T15:38:33Z",
+    "type": "Ride",
+    "dist_mi": 20.6,
+    "moving_mins": 79,
+    "elapsed_mins": 83,
+    "elev_ft": 509,
+    "avg_speed_mph": 15.6,
+    "max_speed_mph": 30.4,
+    "avg_watts": 123.7,
+    "normalized_watts": 137,
+    "max_watts": 888,
+    "avg_hr": 129.1,
+    "max_hr": 156.0,
+    "suffer_score": 27.0,
+    "calories": null,
+    "strava_url": "https://www.strava.com/activities/17785491584"
+  },
+  {
     "id": 17760532980,
     "name": "B2B -> suncrest",
     "date": "2026-03-17",
@@ -145,26 +166,5 @@
     "suffer_score": 101.0,
     "calories": null,
     "strava_url": "https://www.strava.com/activities/17379985614"
-  },
-  {
-    "id": 17355211089,
-    "name": "Zwift - #1 Find Your Rhythm - Long on Temple Trek in Watopia",
-    "date": "2026-02-10",
-    "start_date_local": "2026-02-10T19:24:03Z",
-    "type": "VirtualRide",
-    "dist_mi": 24.4,
-    "moving_mins": 75,
-    "elapsed_mins": 78,
-    "elev_ft": 771,
-    "avg_speed_mph": 19.3,
-    "max_speed_mph": 31.5,
-    "avg_watts": 180.3,
-    "normalized_watts": 191,
-    "max_watts": 261,
-    "avg_hr": 148.9,
-    "max_hr": 172.0,
-    "suffer_score": 88.0,
-    "calories": null,
-    "strava_url": "https://www.strava.com/activities/17355211089"
   }
 ]
