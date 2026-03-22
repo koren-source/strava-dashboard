@@ -1,10 +1,10 @@
 {
-  "workout_name": "Cascade Over-Unders",
-  "reasoning": "<strong>Koren, your primary limiter is the 25W drop in your power curve from 5-minute to 20-minute efforts due to poor lactate clearance.</strong> Your last ride was a low-intensity output, indicating a good recovery point to tackle more strenuous efforts. This workout simulates the power demands of the Alpine Loop climb to build your aerobic foundation and improve fatigue resistance.",
+  "workout_name": "Emigration Canyon Over-Unders",
+  "reasoning": "<strong>Lactate clearance</strong> is key to improve Koren\u2019s 5 to 20-minute power drop. <strong>Emigration Canyon</strong> is an excellent venue to practice the <strong>aerobic base and fatigue resistance</strong> needed for the Alpine Loop. Given Koren\u2019s last ride was relatively low intensity, this session is designed to challenge and build these areas.",
   "focus": "Lactate Clearance",
   "duration_minutes": 75,
   "target_power": {
-    "low": 201,
+    "low": 209,
     "high": 256
   },
   "hr_zone": "Zone 4",
@@ -25,7 +25,7 @@
         88,
         108
       ],
-      "description": "5x 6-minute blocks alternating 3 minutes at 209W then 3 minutes at 248W"
+      "description": "4x10 min over-unders: 6 min at 209-223W, 4 min at 242-256W. Recover 5 min easy between intervals."
     },
     {
       "name": "Cooldown",
@@ -39,7 +39,7 @@
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-03-22T13:05:54.647700+00:00",
+  "generated_at": "2026-03-22T18:47:57.363995+00:00",
   "based_on_ride": 17785491584,
   "weekly_focus": "This week: progressive loading \u2014 keep attacking the lactate clearance gap."
 }
