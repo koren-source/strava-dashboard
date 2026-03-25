@@ -1,11 +1,11 @@
 {
-  "workout_name": "Emigration Canyon Extended Sweet Spot",
-  "reasoning": "<strong>Your primary limiter</strong> is poor lactate clearance, as highlighted by the <strong>25W drop from your 5-min to 20-min power</strong>. This workout, set on the familiar terrain of Emigration Canyon, transitions from <strong>Zone 2 to sweet spot intervals</strong> to bolster your aerobic base and fatigue resistance. Building stamina here is crucial to supporting your goal to hit an average of 220-235W on the Alpine Loop climb.",
-  "focus": "Lactate Clearance",
+  "workout_name": "Cascade Springs Over-Unders",
+  "reasoning": "<strong>We need to target your lactate clearance limiter</strong> by incorporating over-under intervals to increase your aerobic base and fatigue resistance. Your last ride showed a moderate effort, which suggests you are in a good state to push a little harder. This session directly connects to the main climb of the Alpine Loop, where maintaining power and managing fatigue is key.",
+  "focus": "Over-Unders",
   "duration_minutes": 75,
   "target_power": {
     "low": 209,
-    "high": 249
+    "high": 256
   },
   "hr_zone": "Zone 4",
   "suggested_sets": [
@@ -25,7 +25,7 @@
         88,
         108
       ],
-      "description": "2x20 minutes at 209-223W with 5-minute recovery at 201W in between. Focus on staying controlled yet consistent in your effort, aiming to push the upper end on the second block."
+      "description": "5 sets of 8-minute intervals: 2 minutes at 95-100% FTP (242-256W), 2 minutes at 85-88% FTP (201-209W), repeat twice per set."
     },
     {
       "name": "Cooldown",
@@ -39,7 +39,7 @@
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-03-25T02:46:30.249155+00:00",
+  "generated_at": "2026-03-25T07:11:20.341875+00:00",
   "based_on_ride": 17847114535,
   "weekly_focus": "This week: controlled return \u2014 rebuild aerobic base before pushing threshold again."
 }
