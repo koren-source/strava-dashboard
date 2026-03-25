@@ -1,5 +1,26 @@
 [
   {
+    "id": 17847114535,
+    "name": "sneaky ride",
+    "date": "2026-03-24",
+    "start_date_local": "2026-03-24T16:24:51Z",
+    "type": "Ride",
+    "dist_mi": 7.8,
+    "moving_mins": 36,
+    "elapsed_mins": 38,
+    "elev_ft": 1086,
+    "avg_speed_mph": 12.8,
+    "max_speed_mph": 41.8,
+    "avg_watts": 173.4,
+    "normalized_watts": 205,
+    "max_watts": 406,
+    "avg_hr": 156.5,
+    "max_hr": 183.0,
+    "suffer_score": 57.0,
+    "calories": null,
+    "strava_url": "https://www.strava.com/activities/17847114535"
+  },
+  {
     "id": 17785491584,
     "name": "Afternoon Ride",
     "date": "2026-03-19",
@@ -145,26 +166,5 @@
     "suffer_score": 104.0,
     "calories": null,
     "strava_url": "https://www.strava.com/activities/17496676819"
-  },
-  {
-    "id": 17379985614,
-    "name": "Zwift - SST (Med) on Roule Ma Poule in France",
-    "date": "2026-02-13",
-    "start_date_local": "2026-02-13T00:34:08Z",
-    "type": "VirtualRide",
-    "dist_mi": 25.6,
-    "moving_mins": 85,
-    "elapsed_mins": 85,
-    "elev_ft": 1014,
-    "avg_speed_mph": 18.0,
-    "max_speed_mph": 37.8,
-    "avg_watts": 180.4,
-    "normalized_watts": 190,
-    "max_watts": 534,
-    "avg_hr": 147.6,
-    "max_hr": 169.0,
-    "suffer_score": 101.0,
-    "calories": null,
-    "strava_url": "https://www.strava.com/activities/17379985614"
   }
 ]
