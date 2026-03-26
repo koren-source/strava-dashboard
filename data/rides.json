@@ -1,5 +1,26 @@
 [
   {
+    "id": 17860605457,
+    "name": "Afternoon Ride",
+    "date": "2026-03-25",
+    "start_date_local": "2026-03-25T17:54:05Z",
+    "type": "Ride",
+    "dist_mi": 24.0,
+    "moving_mins": 89,
+    "elapsed_mins": 95,
+    "elev_ft": 1640,
+    "avg_speed_mph": 16.1,
+    "max_speed_mph": 42.8,
+    "avg_watts": 162.6,
+    "normalized_watts": 190,
+    "max_watts": 1119,
+    "avg_hr": 153.8,
+    "max_hr": 185.0,
+    "suffer_score": 126.0,
+    "calories": null,
+    "strava_url": "https://www.strava.com/activities/17860605457"
+  },
+  {
     "id": 17847114535,
     "name": "sneaky ride",
     "date": "2026-03-24",
@@ -145,26 +166,5 @@
     "suffer_score": 70.0,
     "calories": null,
     "strava_url": "https://www.strava.com/activities/17619555765"
-  },
-  {
-    "id": 17496676819,
-    "name": "Zwift - Aerobic Builds on Ocean Lava Cliffside Loop in Watopia",
-    "date": "2026-02-23",
-    "start_date_local": "2026-02-23T16:36:58Z",
-    "type": "VirtualRide",
-    "dist_mi": 24.1,
-    "moving_mins": 82,
-    "elapsed_mins": 82,
-    "elev_ft": 1030,
-    "avg_speed_mph": 17.5,
-    "max_speed_mph": 40.5,
-    "avg_watts": 163.1,
-    "normalized_watts": 168,
-    "max_watts": 378,
-    "avg_hr": 150.3,
-    "max_hr": 171.0,
-    "suffer_score": 104.0,
-    "calories": null,
-    "strava_url": "https://www.strava.com/activities/17496676819"
   }
 ]
