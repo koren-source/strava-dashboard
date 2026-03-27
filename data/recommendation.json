@@ -1,6 +1,6 @@
 {
-  "workout_name": "Cascade Springs Over-Unders",
-  "reasoning": "<strong>The primary limiter</strong> for Koren is poor lactate clearance, as highlighted by the 9.3% drop from 5-min to 20-min efforts. The last ride showed consistent output but lacked intensity work. This session will prepare Koren for the demands of the Sundance \u2192 Cascade Springs climb on the Alpine Loop by improving aerobic capacity and fatigue resistance.",
+  "workout_name": "Emigration Canyon Over-Unders",
+  "reasoning": "<strong>Lactate clearance remains your top limiter</strong>. Your recent ride maintained a 69% FTP, indicating endurance but lacking high-intensity adaptations. Our goal is to raise your capacity for sustained efforts simulating the crucial Alpine Loop climb.",
   "focus": "Lactate Clearance",
   "duration_minutes": 75,
   "target_power": {
@@ -25,7 +25,7 @@
         88,
         108
       ],
-      "description": "Perform 4x10 minutes alternating between 2 minutes at 242-256W and 3 minutes at 201-218W with 2-minute easy spins in between."
+      "description": "3 sets of 5-min at 242-256W followed by 5-min at 201-218W, simulating elevation profiles like the Alpine Loop"
     },
     {
       "name": "Cooldown",
@@ -39,7 +39,7 @@
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-03-27T13:20:45.402670+00:00",
+  "generated_at": "2026-03-27T19:04:20.770570+00:00",
   "based_on_ride": 17860605457,
   "weekly_focus": "This week: progressive loading \u2014 keep attacking the lactate clearance gap."
 }
