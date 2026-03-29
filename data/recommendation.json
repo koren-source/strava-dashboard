@@ -1,7 +1,7 @@
 {
-  "workout_name": "Emigration Canyon Over-Unders",
-  "reasoning": "<strong>We're addressing your lactate clearance</strong> by honing in on over-unders which directly target your power drop-off from 5 to 20 minutes. Your last ride shows a developing aerobic base at 162.6W, but we need to push your endurance for the 58-64 minute main climb on the Alpine Loop.",
-  "focus": "Lactate Clearance",
+  "workout_name": "Emigration Canyon Aerobic Builder",
+  "reasoning": "<strong>Lactate clearance and aerobic base development</strong> are key limiters identified by a 25W drop between 5 and 20-min power. The last ride showed aerobic inefficiency, indicated by a 67% FTP average with a relatively high heart rate. Enhancing these areas prepares you for the sustained effort needed on the <strong>Alpine Loop key climb</strong>.",
+  "focus": "Aerobic base",
   "duration_minutes": 75,
   "target_power": {
     "low": 209,
@@ -25,7 +25,7 @@
         88,
         108
       ],
-      "description": "Repeat over-unders: 5 mins at 201-218W followed by 5 mins at 242-256W. Total 4 sets."
+      "description": "Three sets of 8 min at 242-256W followed by 7 min at 209-223W to build fatigue resistance and lactate clearance."
     },
     {
       "name": "Cooldown",
@@ -39,7 +39,7 @@
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-03-28T18:52:17.284202+00:00",
-  "based_on_ride": 17860605457,
+  "generated_at": "2026-03-29T03:18:03.746139+00:00",
+  "based_on_ride": 17894918324,
   "weekly_focus": "This week: progressive loading \u2014 keep attacking the lactate clearance gap."
 }
