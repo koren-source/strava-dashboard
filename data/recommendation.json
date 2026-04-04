@@ -1,6 +1,6 @@
 {
-  "workout_name": "Alpine Loop Over-Unders",
-  "reasoning": "<strong>Lactate clearance</strong> is your primary physiological limiter. In your last ride, you maintained low intensity; now it's crucial to engage higher effort levels to develop aerobic capacity and fatigue resistance. This workout aligns with your target to sustain 220-235W on the Alpine Loop climb.",
+  "workout_name": "Cascade Springs Lactate Builder",
+  "reasoning": "<strong>This workout focuses on improving lactate clearance and fatigue resistance</strong>, targeting Koren's main limiter\u2014a higher-than-desired power drop from 5-min to 20-min efforts. <strong>Given the extended rest since the last ride</strong>, we'll keep intensity controlled to moderately attack the limiter. This session is designed to prepare Koren for the sustained efforts required on the main climb of the Alpine Loop, particularly emulating parts of the Cascade Springs segment.",
   "focus": "Lactate Clearance",
   "duration_minutes": 75,
   "target_power": {
@@ -25,7 +25,7 @@
         88,
         108
       ],
-      "description": "Repeat 5x: 5 min at 242W, 3 min at 218W, then 2 min at 256W"
+      "description": "3x 12-min over-under intervals (3 min at 242-250W, 3 min at 201-218W), 2 min recovery spins at 209W."
     },
     {
       "name": "Cooldown",
@@ -39,7 +39,7 @@
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-04-03T18:57:05.806072+00:00",
+  "generated_at": "2026-04-04T02:44:03.025997+00:00",
   "based_on_ride": 17904276315,
   "weekly_focus": "This week: progressive loading \u2014 keep attacking the lactate clearance gap."
 }
