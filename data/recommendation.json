@@ -1,11 +1,11 @@
 {
-  "workout_name": "Cascade Springs Over-Unders",
-  "reasoning": "<strong>Lactate clearance</strong> is your key limiter, Koren. Last week's rest and ride show a need to build <strong>fatigue resistance</strong>. This session targets the power demands of the <strong>Alpine Loop</strong> climb.",
-  "focus": "Over-Unders",
+  "workout_name": "Emigration Canyon Over-Unders",
+  "reasoning": "We're focusing on improving <strong>lactate clearance</strong> by tackling over-unders, emphasizing your aerobic base and fatigue resistance. Your last ride showed solid effort at 66% FTP, but we need to push slightly higher intensities. This directly supports your goal to achieve a sustained average of 220-235W on the Alpine Loop climb.",
+  "focus": "Lactate clearance",
   "duration_minutes": 75,
   "target_power": {
     "low": 209,
-    "high": 249
+    "high": 256
   },
   "hr_zone": "Zone 4",
   "suggested_sets": [
@@ -25,7 +25,7 @@
         88,
         108
       ],
-      "description": "5x (6 minutes @ 242-256W, 3 minutes @ 201-218W), simulate Alpine Loop over-unders."
+      "description": "4 x (8 min @ 242-256W, 2 min @ 201-218W) to simulate over-under efforts"
     },
     {
       "name": "Cooldown",
@@ -39,7 +39,7 @@
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-04-05T18:54:58.604002+00:00",
-  "based_on_ride": 17904276315,
-  "weekly_focus": "This week: progressive loading \u2014 keep attacking the lactate clearance gap."
+  "generated_at": "2026-04-06T03:23:18.953158+00:00",
+  "based_on_ride": 17991905428,
+  "weekly_focus": "This week: controlled return \u2014 rebuild aerobic base before pushing threshold again."
 }
