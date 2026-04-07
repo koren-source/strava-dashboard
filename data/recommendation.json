@@ -1,11 +1,11 @@
 {
-  "workout_name": "Cascade Hills Over-Unders",
-  "reasoning": "<strong>Addressing Koren's lactate clearance limiter</strong>, this ride targets improved aerobic base and fatigue resistance with over-unders, essential for excelling in the <strong>Alpine Loop</strong> climb. Keep in mind, your last ride averaged 152.3W, indicating readiness to handle the increased intensity without overreaching.",
-  "focus": "Over-Unders",
+  "workout_name": "Emigration Canyon Lactate Clearance",
+  "reasoning": "<strong>Koren, your key physiological limiter is lactate clearance</strong>. The performance drop from 5-min to 20-min indicates a need for <strong>improved fatigue resistance and aerobic base</strong>. On this ride, we'll include structured over-unders to mimic the demands of the <strong>Alpine Loop</strong> and prepare you for sustained climbing.",
+  "focus": "Lactate Clearance",
   "duration_minutes": 75,
   "target_power": {
     "low": 209,
-    "high": 256
+    "high": 249
   },
   "hr_zone": "Zone 4",
   "suggested_sets": [
@@ -25,7 +25,7 @@
         88,
         108
       ],
-      "description": "6x (4 minutes at 242-256W, 3 minutes at 209-223W) to boost lactate clearance and stamina for sustained climbs."
+      "description": "Perform 4 sets of 8 minutes: 2 minutes at 212W (88% FTP) followed by 4 minutes at 246W (104% FTP), then 2 minutes at 218W (92% FTP). Rest for 2 minutes at 50% FTP between sets."
     },
     {
       "name": "Cooldown",
@@ -39,7 +39,7 @@
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-04-07T02:56:12.058575+00:00",
+  "generated_at": "2026-04-07T07:41:26.771391+00:00",
   "based_on_ride": 18007427185,
   "weekly_focus": "This week: controlled return \u2014 rebuild aerobic base before pushing threshold again."
 }
