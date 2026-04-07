@@ -1,6 +1,6 @@
 {
-  "workout_name": "Emigration Canyon Lactate Clearance",
-  "reasoning": "<strong>Koren, your key physiological limiter is lactate clearance</strong>. The performance drop from 5-min to 20-min indicates a need for <strong>improved fatigue resistance and aerobic base</strong>. On this ride, we'll include structured over-unders to mimic the demands of the <strong>Alpine Loop</strong> and prepare you for sustained climbing.",
+  "workout_name": "Emigration Canyon Over-Under Intervals",
+  "reasoning": "<strong>The primary limiter is your lactate clearance capability</strong>, as evidenced by the 9.3% decline from your 5-min to 20-min power. With your recent ride showing a lower intensity, it's essential to push slightly harder to enhance your aerobic base for the Alpine Loop ascent. This session will simulate the demands of the Sundance to Cascade Springs climb.",
   "focus": "Lactate Clearance",
   "duration_minutes": 75,
   "target_power": {
@@ -25,7 +25,7 @@
         88,
         108
       ],
-      "description": "Perform 4 sets of 8 minutes: 2 minutes at 212W (88% FTP) followed by 4 minutes at 246W (104% FTP), then 2 minutes at 218W (92% FTP). Rest for 2 minutes at 50% FTP between sets."
+      "description": "Perform 6 x 6-minute intervals: 4 mins at 201-218W and 2 mins at 242-256W, 3 mins easy spin between intervals."
     },
     {
       "name": "Cooldown",
@@ -39,7 +39,7 @@
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-04-07T07:41:26.771391+00:00",
+  "generated_at": "2026-04-07T13:45:28.561580+00:00",
   "based_on_ride": 18007427185,
   "weekly_focus": "This week: controlled return \u2014 rebuild aerobic base before pushing threshold again."
 }
