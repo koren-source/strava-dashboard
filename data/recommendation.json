@@ -1,11 +1,11 @@
 {
   "workout_name": "Emigration Canyon Over-Unders",
-  "reasoning": "<strong>The primary limiter for Koren is poor lactate clearance and underdeveloped aerobic base.</strong> This workout is designed to enhance these areas by inducing and managing lactate production, helping to mirror key aspects of the Alpine Loop climb. The recent B2B ride indicates a trend towards recovery, allowing for a more intensive session.",
+  "reasoning": "<strong>Your primary limiter is lactate clearance and low fatigue resistance.</strong> In your last ride, your power was at 64% of FTP, indicating a need to push higher intensities while managing fatigue. By targeting over-unders with watt targets slightly below and above your FTP, you'll enhance lactate clearance efficiency, preparing for the demands of the Alpine Loop's consistent climbs.",
   "focus": "Lactate Clearance",
   "duration_minutes": 75,
   "target_power": {
     "low": 209,
-    "high": 256
+    "high": 249
   },
   "hr_zone": "Zone 4",
   "suggested_sets": [
@@ -25,7 +25,7 @@
         88,
         108
       ],
-      "description": "3x 12 min blocks: 2 min @ 210-218W, 2 min @ 242-256W, repeated 3 times each block. 3 min rest between blocks."
+      "description": "Alternating 4 min @ 209W, 2 min @ 249W. Repeat 6 times."
     },
     {
       "name": "Cooldown",
@@ -39,7 +39,7 @@
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-04-08T02:57:33.489737+00:00",
+  "generated_at": "2026-04-08T07:45:04.215334+00:00",
   "based_on_ride": 18007427185,
   "weekly_focus": "This week: controlled return \u2014 rebuild aerobic base before pushing threshold again."
 }
