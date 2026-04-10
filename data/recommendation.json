@@ -1,6 +1,6 @@
 {
-  "workout_name": "Alpine Loop Lactate Builder",
-  "reasoning": "<strong>Addressing your primary limiter of poor lactate clearance</strong> is key to improving your performance on the <strong>Alpine Loop</strong>. This workout targets this limiter directly, building on your last ride by incorporating intervals designed to enhance lactate processing and aerobic capacity crucial for the long climbs.",
+  "workout_name": "Emigration Over-Unders Attack",
+  "reasoning": "Your current limiter involves <strong>poor lactate clearance and low fatigue resistance</strong>, noticeably affecting your power drop-off from 5 to 20 minutes. Considering your last ride was at a moderate effort, this session will prepare you for the sustained climbing demands of the <strong>Alpine Loop</strong>, particularly targeting your ability to handle fluctuations in power.",
   "focus": "Lactate Clearance",
   "duration_minutes": 75,
   "target_power": {
@@ -25,7 +25,7 @@
         88,
         108
       ],
-      "description": "3x (5min @ 242-256W, 5min @ 201-218W) to mimic sustained efforts and recovery phases essential for the Alpine Loop climb."
+      "description": "Perform 3x15 min over-unders: 3 min at 242W, 2 min at 218W, repeat. Focus on steady HR and breathing."
     },
     {
       "name": "Cooldown",
@@ -39,7 +39,7 @@
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-04-10T13:25:31.832143+00:00",
+  "generated_at": "2026-04-10T19:03:35.912777+00:00",
   "based_on_ride": 18029056162,
   "weekly_focus": "This week: controlled return \u2014 rebuild aerobic base before pushing threshold again."
 }
