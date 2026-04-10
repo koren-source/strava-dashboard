@@ -1,11 +1,11 @@
 {
-  "workout_name": "Emigration Canyon Sweet Spot Over-Unders",
-  "reasoning": "<strong>Koren, we're focusing on improving your lactate clearance and aerobic base</strong> with over-unders designed to simulate the demands of the Alpine Loop. Your last ride showed a solid base but a need to push closer to race intensity, especially on sustained climbs.",
+  "workout_name": "Emigration Canyon Over-Unders",
+  "reasoning": "<strong>We're focusing on Koren's lactate clearance and aerobic base underperformance.</strong> The last ride was a moderate effort indicating recovery readiness. We'll simulate Alpine Loop's demands with over-unders mimicking its climbs while addressing the key limiter.",
   "focus": "Lactate Clearance",
   "duration_minutes": 75,
   "target_power": {
     "low": 209,
-    "high": 256
+    "high": 249
   },
   "hr_zone": "Zone 4",
   "suggested_sets": [
@@ -25,7 +25,7 @@
         88,
         108
       ],
-      "description": "3x (12 min 209-223W @ Sweet Spot, 3 min 242-256W @ Threshold), simulate changes in grade like Emigration Canyon."
+      "description": "3x (8 mins at 209-223W, 4 mins at 242-256W), 2-min easy spin between sets"
     },
     {
       "name": "Cooldown",
@@ -39,7 +39,7 @@
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-04-10T03:23:55.130926+00:00",
+  "generated_at": "2026-04-10T07:51:39.346621+00:00",
   "based_on_ride": 18029056162,
   "weekly_focus": "This week: controlled return \u2014 rebuild aerobic base before pushing threshold again."
 }
