@@ -1,5 +1,26 @@
 [
   {
+    "id": 18073616259,
+    "name": "Evening Ride",
+    "date": "2026-04-11",
+    "start_date_local": "2026-04-11T18:03:38Z",
+    "type": "Ride",
+    "dist_mi": 19.9,
+    "moving_mins": 77,
+    "elapsed_mins": 85,
+    "elev_ft": 1329,
+    "avg_speed_mph": 15.4,
+    "max_speed_mph": 29.5,
+    "avg_watts": 152.7,
+    "normalized_watts": 180,
+    "max_watts": 519,
+    "avg_hr": 125.2,
+    "max_hr": 162.0,
+    "suffer_score": 28.0,
+    "calories": null,
+    "strava_url": "https://www.strava.com/activities/18073616259"
+  },
+  {
     "id": 18057670021,
     "name": "Lunch Ride",
     "date": "2026-04-10",
@@ -187,26 +208,5 @@
     "suffer_score": 27.0,
     "calories": null,
     "strava_url": "https://www.strava.com/activities/17785491584"
-  },
-  {
-    "id": 17760532980,
-    "name": "B2B -> suncrest",
-    "date": "2026-03-17",
-    "start_date_local": "2026-03-17T15:37:08Z",
-    "type": "Ride",
-    "dist_mi": 15.0,
-    "moving_mins": 73,
-    "elapsed_mins": 84,
-    "elev_ft": 2110,
-    "avg_speed_mph": 12.2,
-    "max_speed_mph": 46.4,
-    "avg_watts": 167.3,
-    "normalized_watts": 199,
-    "max_watts": 592,
-    "avg_hr": 153.9,
-    "max_hr": 179.0,
-    "suffer_score": 105.0,
-    "calories": null,
-    "strava_url": "https://www.strava.com/activities/17760532980"
   }
 ]
