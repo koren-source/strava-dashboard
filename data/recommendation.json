@@ -1,11 +1,11 @@
 {
-  "workout_name": "Emigration Canyon Over-Unders",
-  "reasoning": "<strong>Tackling your lactate clearance limiter is key</strong> to improving your performance on climbs like Alpine Loop. During your last ride, your average wattage was well below what we need for race day. This session will help you build the fatigue resistance and aerobic capacity crucial for maintaining steady power output over the event's critical segments.",
+  "workout_name": "Emigration Canyon Over-Under Boost",
+  "reasoning": "<strong>Your current limiter is poor lactate clearance and low fatigue resistance</strong>, which is critical for sustained climbs like the Alpine Loop's key segment. Your last ride showed a moderate intensity, so we'll push your aerobic capacity by mimicking race demands. This workout directly targets <strong>lactate clearance and fatigue resistance</strong> through strategic over-unders on Emigration Canyon.",
   "focus": "Lactate Clearance",
   "duration_minutes": 75,
   "target_power": {
     "low": 209,
-    "high": 256
+    "high": 249
   },
   "hr_zone": "Zone 4",
   "suggested_sets": [
@@ -22,10 +22,10 @@
       "name": "Main Set",
       "duration_minutes": 45,
       "power_pct_ftp": [
-        88,
+        85,
         108
       ],
-      "description": "4x8 mins at 248W (105% FTP) with 2 mins 212W (90% FTP) recovery between. These over-unders simulate the demands of the Sundance to Cascade Springs climb, practicing clearing lactate while maintaining power."
+      "description": "3x12 min (4 mins 201-218W / 6 mins 242-256W, 2 min easy)"
     },
     {
       "name": "Cooldown",
@@ -39,7 +39,7 @@
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-04-16T03:30:34.255337+00:00",
+  "generated_at": "2026-04-16T07:57:27.557114+00:00",
   "based_on_ride": 18084811761,
   "weekly_focus": "This week: controlled return \u2014 rebuild aerobic base before pushing threshold again."
 }
