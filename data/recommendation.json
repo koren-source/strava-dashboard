@@ -1,6 +1,6 @@
 {
-  "workout_name": "Cascade Springs Lactate Over-Unders",
-  "reasoning": "Koren, we need to target your <strong>poor lactate clearance</strong> and <strong>low fatigue resistance</strong> directly. Last ride showed a <strong>recovery state</strong> with lower intensity. Let's build towards the Alpine Loop climb by pushing through extended intensity to adapt your clearance ability.",
+  "workout_name": "Cascade Springs Sweet Spot Over-Unders",
+  "reasoning": "<strong>Koren, your main physiological limiter</strong> is the 9.3% power drop from your 5-min to 20-min efforts, pointing to issues with lactate clearance and aerobic base development. <strong>Your last ride was notably low intensity</strong> after extended rest, requiring controlled reintroduction to intensity. This workout will <strong>simulate the demands of the Cascade Springs climb</strong> in the Alpine Loop by focusing on over-unders, crucial for boosting fatigue resistance and improving power sustainability.",
   "focus": "Lactate Clearance",
   "duration_minutes": 75,
   "target_power": {
@@ -25,7 +25,7 @@
         88,
         108
       ],
-      "description": "3 x (12 min over-unders: 4 min @ 210W, 2 min @ 245W, 4 min @ 213W, 2 min @ 249W)"
+      "description": "5x (8 min @ 210W-225W, follow with 1 min @ 242W-256W) to enhance clearance and endurance."
     },
     {
       "name": "Cooldown",
@@ -39,7 +39,7 @@
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-04-18T07:18:28.746755+00:00",
+  "generated_at": "2026-04-18T13:15:37.812889+00:00",
   "based_on_ride": 18084811761,
   "weekly_focus": "This week: controlled return \u2014 rebuild aerobic base before pushing threshold again."
 }
