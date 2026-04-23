@@ -1,11 +1,11 @@
 {
   "workout_name": "Emigration Canyon Over-Unders",
-  "reasoning": "<strong>Lactate clearance and aerobic endurance</strong> are your primary focus areas due to the significant 5-20 minute power decline. Your last ride shows an average power of 152.6W, indicating the need to build more fatigue resistance to sustain higher efforts, particularly for the <strong>Alpine Loop's sustained climb</strong>.",
-  "focus": "Lactate clearance",
+  "reasoning": "<strong>Your main limiter is poor lactate clearance</strong>, highlighted by a 9.3% decline from 5-min to 20-min output versus the standard 5-8% for trained cyclists. In your last ride, you averaged 152.6W, indicating room to grow your intensity. Tackling this directly will help you maintain the 220-235W average we are targeting for the Alpine Loop\u2019s main climb.",
+  "focus": "Lactate Clearance",
   "duration_minutes": 75,
   "target_power": {
     "low": 209,
-    "high": 256
+    "high": 249
   },
   "hr_zone": "Zone 4",
   "suggested_sets": [
@@ -25,7 +25,7 @@
         88,
         108
       ],
-      "description": "6x6 min over-unders: 3 min at 209-218W, 3 min at 242-256W. Focus on maintaining control and steady breathing."
+      "description": "3 sets of (10 min @ 209-218W, 5 min @ 242-256W), 5 min easy between"
     },
     {
       "name": "Cooldown",
@@ -39,7 +39,7 @@
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-04-22T19:23:28.631811+00:00",
+  "generated_at": "2026-04-23T03:28:20.920829+00:00",
   "based_on_ride": 18178812394,
   "weekly_focus": "This week: progressive loading \u2014 keep attacking the lactate clearance gap."
 }
