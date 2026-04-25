@@ -1,6 +1,6 @@
 {
-  "workout_name": "Alpine Loop Lactate Attack",
-  "reasoning": "<strong>Your primary limiter</strong> here is lactate clearance and fatigue resistance, evidenced by the 9.3% drop in your power curve. Last ride was at a reduced intensity, <strong>making today critical</strong> to hit the sweet spot and slightly above. This will directly address your lactate clearance challenge and prepare you for the sustained effort needed on the Alpine Loop climb.",
+  "workout_name": "Cascade Springs Over-Under Build",
+  "reasoning": "<strong>The key limiter here is Koren's lactate clearance and underdeveloped aerobic base.</strong> His power drop-off from 5 to 20 minutes indicates a need for more structured over-under and extended sweet spot intervals. This workout is designed to simulate the sustained efforts required on the Alpine Loop, particularly on segments like the Sundance to Cascade Springs climb.",
   "focus": "Lactate Clearance",
   "duration_minutes": 75,
   "target_power": {
@@ -25,7 +25,7 @@
         88,
         108
       ],
-      "description": "3x 10-minute over-under intervals: 5min at 201-218W, 5min at 242-256W. Rest 5min between sets at 201W."
+      "description": "3x 12-min over-under intervals: 6 mins at 242W, 3 mins at 218W, 3 mins at 256W. 3-min recovery at 50% FTP between intervals."
     },
     {
       "name": "Cooldown",
@@ -39,7 +39,7 @@
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-04-25T03:15:31.371403+00:00",
+  "generated_at": "2026-04-25T07:38:09.909048+00:00",
   "based_on_ride": 18178812394,
   "weekly_focus": "This week: progressive loading \u2014 keep attacking the lactate clearance gap."
 }
