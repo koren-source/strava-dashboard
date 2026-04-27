@@ -1,6 +1,6 @@
 {
-  "workout_name": "Alpine Loop Lactate Clearance Builder",
-  "reasoning": "<strong>Koren</strong>, today's ride targets your <strong>lactate clearance limiter</strong> identified by the higher than average decline from 5-min to 20-min power. Given your recent extended rest and the need to <strong>execute a controlled start</strong>, we'll focus on enhancing your <strong>aerobic base</strong> and <strong>fatigue resistance</strong>. This session prepares you for the sustained efforts necessary for <strong>Alpine Loop</strong> climbs.",
+  "workout_name": "Emigration Canyon Over-Unders",
+  "reasoning": "<strong>Your lactate clearance is the main limiter.</strong> The last ride shows you've had an extended rest, so we'll start controlled but focus on building fatigue resistance essential for the Alpine Loop climb. Tackling Emigration Canyon with structured over-unders will enhance your aerobic base and improve that crucial 9.3% power drop-off.",
   "focus": "Lactate Clearance",
   "duration_minutes": 75,
   "target_power": {
@@ -25,7 +25,7 @@
         88,
         108
       ],
-      "description": "3 sets of 12 minutes; 3 mins at 242W, 3 mins at 218W, 3 mins at 249W, and 3 mins recovery at 209W. Focus on smooth transitions."
+      "description": "Alternate 3 min at 218W (92% FTP), 2 min at 248W (104% FTP). Execute 5 rounds with minimal recovery."
     },
     {
       "name": "Cooldown",
@@ -39,7 +39,7 @@
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-04-27T14:10:44.302090+00:00",
+  "generated_at": "2026-04-27T19:41:44.108340+00:00",
   "based_on_ride": 18178812394,
   "weekly_focus": "This week: progressive loading \u2014 keep attacking the lactate clearance gap."
 }
