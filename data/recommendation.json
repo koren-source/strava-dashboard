@@ -1,11 +1,11 @@
 {
-  "workout_name": "Alpine Loop Over-Unders",
-  "reasoning": "This workout directly targets <strong>lactate clearance</strong>, <strong>underdeveloped aerobic base</strong>, and <strong>low fatigue resistance</strong> by incorporating over-unders and extended sweet spot segments. After your extended rest, it's crucial to build into intensity controlled to mimic the demands of the Alpine Loop by practicing these intervals.",
-  "focus": "Lactate Clearance",
+  "workout_name": "Emigration Canyon Fatigue Resistance Builder",
+  "reasoning": "This workout specifically targets Koren's <strong>poor lactate clearance</strong> and <strong>underdeveloped aerobic base</strong>. Considering the extended rest and reduced intensity need, it's vital to employ a controlled build in intensity. Connecting to Koren's goal, improving the lactate threshold will be crucial for sustained effort on the Alpine Loop climb.",
+  "focus": "Fatigue Resistance",
   "duration_minutes": 75,
   "target_power": {
     "low": 209,
-    "high": 256
+    "high": 249
   },
   "hr_zone": "Zone 4",
   "suggested_sets": [
@@ -25,7 +25,7 @@
         88,
         108
       ],
-      "description": "3x12 minutes over-unders: alternate 2 minutes at 209-223W with 2 minutes at 242-256W; 3-minute recovery between sets."
+      "description": "3 sets of 10 minutes alternating between 3 mins at 201-218W and 2 mins at 242-256W. Between sets, 5 mins at 209-223W."
     },
     {
       "name": "Cooldown",
@@ -39,7 +39,7 @@
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-04-27T03:41:25.860036+00:00",
+  "generated_at": "2026-04-27T08:35:38.117547+00:00",
   "based_on_ride": 18178812394,
   "weekly_focus": "This week: progressive loading \u2014 keep attacking the lactate clearance gap."
 }
