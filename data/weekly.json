@@ -14,17 +14,10 @@
     "hours": 2.8
   },
   {
-    "rides": 5,
-    "miles": 86.9,
+    "rides": 4,
+    "miles": 69.8,
     "week": "2026-W14",
     "label": "Apr 6-12",
-    "hours": 6.0
-  },
-  {
-    "rides": 1,
-    "miles": 22.0,
-    "week": "2026-W13",
-    "label": "Mar 30 \u2013 Apr 5",
-    "hours": 1.4
+    "hours": 4.5
   }
 ]
