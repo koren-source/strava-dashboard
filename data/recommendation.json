@@ -1,6 +1,6 @@
 {
   "workout_name": "Cascade Springs Over-Unders",
-  "reasoning": "<strong>Your primary limiter is poor lactate clearance</strong>, reflected in your 25W drop over a 5 to 20-minute power duration. Given your recent extended rest from the last ride with a 71% FTP average, it's crucial to re-tackle this with the <strong>Sundance to Cascade Springs section in mind</strong> on the Alpine Loop. This workout focuses on improving lactate clearance and building that aerobic base.",
+  "reasoning": "<strong>We're focusing on improving your lactate clearance and aerobic base.</strong> The 9.3% decline from your 5-min to 20-min power highlights a need to enhance fatigue resistance. Given your last ride showed a Suffer Score indicating moderate effort with a 5-day rest, we'll reduce intensity slightly and aim to target these physiological needs, preparing you for the sustained demands of the Alpine Loop.",
   "focus": "Lactate Clearance",
   "duration_minutes": 75,
   "target_power": {
@@ -25,7 +25,7 @@
         88,
         108
       ],
-      "description": "5x: Over-unders (4 min @ 242W, 3 min @ 218W), recover 2 min @ 209W"
+      "description": "5x(6min @ 201-218W, 3min @ 242-256W) - simulate Alpine Loop's key climb with over-unders"
     },
     {
       "name": "Cooldown",
@@ -39,7 +39,7 @@
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-05-04T03:49:56.311419+00:00",
+  "generated_at": "2026-05-04T08:37:43.899417+00:00",
   "based_on_ride": 18313949803,
   "weekly_focus": "This week: progressive loading \u2014 keep attacking the lactate clearance gap."
 }
