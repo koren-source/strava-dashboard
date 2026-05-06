@@ -1,11 +1,11 @@
 {
-  "workout_name": "Emigration Canyon Lactate Clearance Intervals",
-  "reasoning": "<strong>The primary limiter is poor lactate clearance</strong>, evidenced by your 9.3% decline from 5-minute to 20-minute power. Last week's extended rest requires a reduction in initial intensity, offering a better opportunity to build a strong aerobic base. Improving lactate clearance will enhance fatigue resistance, crucial for maintaining 220-235W on the Alpine Loop climb.",
+  "workout_name": "Emigration Canyon Over-Unders",
+  "reasoning": "<strong>The aim is to tackle your lactate clearance limiter.</strong> Given the recent extended rest and lower intensity last ride, start controlled with targeted efforts at Emigration Canyon to build your aerobic base and fatigue resistance. This will prepare you for sustaining high power on climbs like those in the Alpine Loop.",
   "focus": "Lactate Clearance",
   "duration_minutes": 75,
   "target_power": {
-    "low": 201,
-    "high": 256
+    "low": 209,
+    "high": 249
   },
   "hr_zone": "Zone 4",
   "suggested_sets": [
@@ -16,7 +16,7 @@
         50,
         75
       ],
-      "description": "Easy spin building to tempo"
+      "description": "Easy spin building to tempo work"
     },
     {
       "name": "Main Set",
@@ -25,7 +25,7 @@
         88,
         108
       ],
-      "description": "3x (5 min at 242-256W, 5 min at 201-218W). Focus on control at lower power and strong effort during over intervals."
+      "description": "Over-unders: 6x (2min at 242W, 2min at 218W) with 2min easy spin between sets. Focus on maintaining control and managing heart rate."
     },
     {
       "name": "Cooldown",
@@ -34,12 +34,12 @@
         40,
         55
       ],
-      "description": "Easy spin to help with recovery."
+      "description": "Easy spin to flush out lactate"
     }
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-05-06T03:45:51.693488+00:00",
+  "generated_at": "2026-05-06T08:35:16.077283+00:00",
   "based_on_ride": 18313949803,
   "weekly_focus": "This week: progressive loading \u2014 keep attacking the lactate clearance gap."
 }
