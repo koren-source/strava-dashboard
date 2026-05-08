@@ -1,5 +1,26 @@
 [
   {
+    "id": 18419476688,
+    "name": "Afternoon Ride",
+    "date": "2026-05-07",
+    "start_date_local": "2026-05-07T16:18:56Z",
+    "type": "Ride",
+    "dist_mi": 17.3,
+    "moving_mins": 67,
+    "elapsed_mins": 67,
+    "elev_ft": 984,
+    "avg_speed_mph": 15.3,
+    "max_speed_mph": 32.6,
+    "avg_watts": 138.7,
+    "normalized_watts": 175,
+    "max_watts": 545,
+    "avg_hr": 142.7,
+    "max_hr": 173.0,
+    "suffer_score": 59.0,
+    "calories": null,
+    "strava_url": "https://www.strava.com/activities/18419476688"
+  },
+  {
     "id": 18313949803,
     "name": "redrock",
     "date": "2026-04-29",
@@ -40,26 +61,5 @@
     "suffer_score": 51.0,
     "calories": null,
     "strava_url": "https://www.strava.com/activities/18178812394"
-  },
-  {
-    "id": 18164783775,
-    "name": "Afternoon Ride",
-    "date": "2026-04-18",
-    "start_date_local": "2026-04-18T16:37:39Z",
-    "type": "Ride",
-    "dist_mi": 17.1,
-    "moving_mins": 78,
-    "elapsed_mins": 83,
-    "elev_ft": 2356,
-    "avg_speed_mph": 13.1,
-    "max_speed_mph": 40.9,
-    "avg_watts": 164.6,
-    "normalized_watts": 192,
-    "max_watts": 679,
-    "avg_hr": 147.8,
-    "max_hr": 176.0,
-    "suffer_score": 90.0,
-    "calories": null,
-    "strava_url": "https://www.strava.com/activities/18164783775"
   }
 ]
