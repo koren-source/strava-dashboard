@@ -1,10 +1,10 @@
 [
   {
-    "rides": 1,
-    "miles": 17.3,
+    "rides": 2,
+    "miles": 30.9,
     "week": "2026-W18",
     "label": "May 4-10",
-    "hours": 1.1
+    "hours": 2.1
   },
   {
     "rides": 1,
@@ -14,10 +14,10 @@
     "hours": 1.9
   },
   {
-    "rides": 2,
-    "miles": 43.5,
+    "rides": 1,
+    "miles": 26.4,
     "week": "2026-W15",
     "label": "Apr 13-19",
-    "hours": 2.8
+    "hours": 1.5
   }
 ]
