@@ -1,11 +1,11 @@
 {
-  "workout_name": "Alpine Loop Over-Unders",
-  "reasoning": "Building Koren's <strong>aerobic base</strong> and <strong>lactate clearance</strong> is crucial to minimizing the 9.3% power drop across longer efforts. The last ride showed solid endurance but we need sharper, focused efforts to handle the sustained demands of the Alpine Loop climb at 220-235W.",
+  "workout_name": "Emigration Canyon Over-Unders",
+  "reasoning": "<strong>We need to address your poor lactate clearance by incorporating over-unders.</strong> In your last ride, your average power was notably lower at 173.8W, showing a need to push your limits to match the requirements of the Alpine Loop. This workout focuses on enhancing your fatigue resistance needed for long climbs like those in the Alpine Loop.",
   "focus": "Lactate Clearance",
   "duration_minutes": 75,
   "target_power": {
     "low": 209,
-    "high": 256
+    "high": 249
   },
   "hr_zone": "Zone 4",
   "suggested_sets": [
@@ -25,7 +25,7 @@
         88,
         108
       ],
-      "description": "Over-unders: Alternate 3 min at 242-256W with 3 min at 209-218W. Repeat for 5 complete cycles."
+      "description": "Perform 4 sets of 8 minutes at 242-256W (over) holding for 3 minutes, followed by 5 minutes at 201-218W (under). Rest 2 minutes between sets."
     },
     {
       "name": "Cooldown",
@@ -34,12 +34,12 @@
         40,
         55
       ],
-      "description": "Easy spin to bring heart rate down"
+      "description": "Easy spin"
     }
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-05-13T20:03:01.836012+00:00",
+  "generated_at": "2026-05-14T03:56:44.553496+00:00",
   "based_on_ride": 18457940174,
   "weekly_focus": "This week: progressive loading \u2014 keep attacking the lactate clearance gap."
 }
