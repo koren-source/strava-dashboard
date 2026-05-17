@@ -1,11 +1,11 @@
 {
-  "workout_name": "Emigration Canyon Over-Unders",
-  "reasoning": "Today's workout addresses your <strong>lactate clearance limiter</strong> by focusing on controlled over-unders. Your last ride showed you're recovering well, so we're targeting adaptations crucial for the <strong>Sundance to Cascade Springs climb on the Alpine Loop</strong>.",
-  "focus": "Lactate Clearance",
+  "workout_name": "Emigration Canyon Extended Sweet Spot",
+  "reasoning": "<strong>Lactate clearance is your primary limiter</strong>. We're focusing on <strong>improving your aerobic base and fatigue resistance</strong> by extending your time at sweet spot effort. Your last ride was a lighter endurance ride, so today we'll increase the intensity to support your goal of maintaining 220-235W during the key segment of the Alpine Loop.",
+  "focus": "Extended Sweet Spot",
   "duration_minutes": 75,
   "target_power": {
-    "low": 201,
-    "high": 256
+    "low": 209,
+    "high": 223
   },
   "hr_zone": "Zone 4",
   "suggested_sets": [
@@ -23,9 +23,9 @@
       "duration_minutes": 45,
       "power_pct_ftp": [
         88,
-        108
+        93
       ],
-      "description": "5 sets of 4 mins at 242-256W, 3 mins at 201-218W. Repeat for lactate clearance benefits."
+      "description": "Steady state at 209-223W, focus on smooth pedal strokes and steady HR in Zone 4"
     },
     {
       "name": "Cooldown",
@@ -34,12 +34,12 @@
         40,
         55
       ],
-      "description": "Easy spin"
+      "description": "Easy spin to flush out the legs"
     }
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-05-17T04:01:09.120344+00:00",
+  "generated_at": "2026-05-17T08:28:17.401682+00:00",
   "based_on_ride": 18535812398,
   "weekly_focus": "This week: controlled return \u2014 rebuild aerobic base before pushing threshold again."
 }
