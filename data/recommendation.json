@@ -1,7 +1,7 @@
 {
-  "workout_name": "Cascade Springs Over-Under Builder",
-  "reasoning": "<strong>Koren, your current limiter</strong> is your <strong>inability to maintain power output over longer durations</strong> due to poor lactate clearance. In your last ride, your average power was only 148.3W, well below your target for the Alpine Loop climb. By focusing on over-unders today, we're simulating the demands of the <strong>Cascade Springs segment</strong> to increase your fatigue resistance and aerobic capabilities.",
-  "focus": "Over-Unders",
+  "workout_name": "Emigration Canyon Over-Unders",
+  "reasoning": "<strong>Koren</strong>, today's workout focuses on improving your <strong>lactate clearance and aerobic base</strong>, crucial for your target event, the <strong>Alpine Loop</strong>. Your last ride was at 63% FTP, indicating a focus on recovery, so now we need to push those limits with structured over-unders.",
+  "focus": "Lactate Clearance",
   "duration_minutes": 75,
   "target_power": {
     "low": 209,
@@ -25,7 +25,7 @@
         88,
         108
       ],
-      "description": "5 sets of 6 min over (242W-256W) / 3 min under (201W-218W) with 2 min recovery after each set"
+      "description": "5x 5-min: 3-min @ 218W, 2-min @ 242W. Recover 3-min between sets @ 201W."
     },
     {
       "name": "Cooldown",
@@ -39,7 +39,7 @@
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-05-19T19:58:40.031933+00:00",
+  "generated_at": "2026-05-20T04:09:23.399989+00:00",
   "based_on_ride": 18535812398,
   "weekly_focus": "This week: controlled return \u2014 rebuild aerobic base before pushing threshold again."
 }
