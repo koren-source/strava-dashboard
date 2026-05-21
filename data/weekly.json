@@ -1,5 +1,12 @@
 [
   {
+    "rides": 1,
+    "miles": 28.7,
+    "week": "2026-W20",
+    "label": "May 18-24",
+    "hours": 2.1
+  },
+  {
     "rides": 2,
     "miles": 54.8,
     "week": "2026-W19",

@@ -1,5 +1,26 @@
 [
   {
+    "id": 18589439285,
+    "name": "Afternoon Ride",
+    "date": "2026-05-20",
+    "start_date_local": "2026-05-20T16:33:23Z",
+    "type": "Ride",
+    "dist_mi": 28.7,
+    "moving_mins": 124,
+    "elapsed_mins": 142,
+    "elev_ft": 3163,
+    "avg_speed_mph": 13.8,
+    "max_speed_mph": 42.4,
+    "avg_watts": 162.1,
+    "normalized_watts": 185,
+    "max_watts": 966,
+    "avg_hr": 145.8,
+    "max_hr": 177.0,
+    "suffer_score": 134.0,
+    "calories": null,
+    "strava_url": "https://www.strava.com/activities/18589439285"
+  },
+  {
     "id": 18535812398,
     "name": "Afternoon Ride",
     "date": "2026-05-16",
