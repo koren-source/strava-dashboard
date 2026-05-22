@@ -1,11 +1,11 @@
 {
-  "workout_name": "Cascade Clearance Builders",
-  "reasoning": "<strong>To address your primary limiter of poor lactate clearance and low fatigue resistance</strong>, this workout focuses on structured over-under intervals. Your last ride indicated a sustainable effort, but to excel in the Alpine Loop's key climb, this session will boost your aerobic base and prepare you for sustained power output.",
-  "focus": "Lactate Clearance",
+  "workout_name": "Emigration Canyon Over-Unders",
+  "reasoning": "<strong>Addressing lactate clearance</strong> is crucial due to your <strong>9.3% power drop</strong> from 5-min to 20-min efforts. Your last ride showed aerobic maintenance but not enough stimulus for fatigue resistance. Let's mimic climbing demands similar to the <strong>Alpine Loop</strong>, focusing on over-unders.",
+  "focus": "Over-Unders",
   "duration_minutes": 75,
   "target_power": {
     "low": 209,
-    "high": 256
+    "high": 249
   },
   "hr_zone": "Zone 4",
   "suggested_sets": [
@@ -25,7 +25,7 @@
         88,
         108
       ],
-      "description": "3x 12-minute sets: 2 min at 218W, 4 min at 242W, 2 min at 218W, 4 min at 242W; 3-minute recovery between sets"
+      "description": "4x9min (3min 209-223W, 3min 242-256W, 3min 209-223W) with 3min easy recovery"
     },
     {
       "name": "Cooldown",
@@ -39,7 +39,7 @@
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-05-22T14:51:00.488724+00:00",
+  "generated_at": "2026-05-22T19:56:49.251056+00:00",
   "based_on_ride": 18589439285,
   "weekly_focus": "This week: close the 5-to-20 gap with over-unders and Zone 2 base work."
 }
