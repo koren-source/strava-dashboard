@@ -1,11 +1,11 @@
 {
-  "workout_name": "Emigration Canyon Over-Unders",
-  "reasoning": "Koren, today's ride is aimed at addressing your <strong>lactate clearance</strong>, a key limiter highlighted by the 25W drop from your 5-min to 20-min power. Improving this will enhance your <strong>aerobic base</strong> and <strong>fatigue resistance</strong>, crucial for sustaining power during the <strong>Alpine Loop's</strong> main climb. This workout builds on your recent effort and prepares you for the demands of sustained climbing.",
+  "workout_name": "Emigration Canyon Fatigue-Resistant Over-Unders",
+  "reasoning": "<strong>Targeting Koren's primary limitation</strong> of lactate clearance and developing fatigue resistance is crucial, given the <strong>9.3% drop from 5-min to 20-min power</strong>. Building these areas will ensure the power needed for the <strong>Alpine Loop climb</strong>. The <strong>last ride's effort at 69% FTP</strong> provides a solid endurance base but now needs specific intensity improvements.",
   "focus": "Lactate Clearance",
   "duration_minutes": 75,
   "target_power": {
     "low": 209,
-    "high": 249
+    "high": 256
   },
   "hr_zone": "Zone 4",
   "suggested_sets": [
@@ -25,7 +25,7 @@
         88,
         108
       ],
-      "description": "Perform 3 sets of 12 minutes over-unders: 3 min at 242W, 3 min at 201W, repeat. Aim to hit 256W on the higher end and maintain 218W on the lower, focusing on smooth transitions."
+      "description": "3x 12-minute intervals: 3 min at 201-218W, 2 min at 242-256W, 3 min at 209-223W, 2 min at 242-256W, 2 min recovery at 160W"
     },
     {
       "name": "Cooldown",
@@ -39,7 +39,7 @@
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-05-24T13:48:06.628494+00:00",
-  "based_on_ride": 18589439285,
-  "weekly_focus": "This week: close the 5-to-20 gap with over-unders and Zone 2 base work."
+  "generated_at": "2026-05-24T19:24:41.183694+00:00",
+  "based_on_ride": 18639605601,
+  "weekly_focus": "This week: progressive loading \u2014 keep attacking the lactate clearance gap."
 }
