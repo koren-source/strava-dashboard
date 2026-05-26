@@ -1,11 +1,11 @@
 {
   "workout_name": "Emigration Canyon Over-Unders",
-  "reasoning": "<strong>Koren,</strong> this ride addresses your significant dropout from 5-min to 20-min power, a clear sign of <strong>poor lactate clearance and low fatigue resistance</strong>. By alternating over and under your FTP, you'll improve both aerobic capacity and fatigue management, crucial for tackling sustained climbs like the <strong>Alpine Loop</strong>. Considering your recent recovery rides, this session will gradually push your endurance without overstressing your system.",
-  "focus": "Lactate clearance",
+  "reasoning": "<strong>The primary limiter is the poor lactate clearance and low fatigue resistance</strong>. Your last ride had a low TSS of 23, indicating recovery. Today's focus will be on over-under intervals, which will simulate the demands of the Alpine Loop while specifically targeting this limiter.",
+  "focus": "Over-Unders for Lactate Clearance",
   "duration_minutes": 75,
   "target_power": {
     "low": 209,
-    "high": 249
+    "high": 256
   },
   "hr_zone": "Zone 4",
   "suggested_sets": [
@@ -25,7 +25,7 @@
         88,
         108
       ],
-      "description": "4x [6 min at 242-256W, 4 min at 201-218W] with 2 min recovery"
+      "description": "4x10-minute sets: 2 minutes at 201W, 3 minutes at 242W, 2 minutes at 218W, 3 minutes at 256W. 5-minute recovery spins between sets."
     },
     {
       "name": "Cooldown",
@@ -39,7 +39,7 @@
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-05-26T15:55:12.646812+00:00",
+  "generated_at": "2026-05-26T20:20:39.950345+00:00",
   "based_on_ride": 18651392853,
   "weekly_focus": "This week: controlled return \u2014 rebuild aerobic base before pushing threshold again."
 }
