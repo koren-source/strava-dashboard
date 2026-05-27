@@ -1,11 +1,11 @@
 {
-  "workout_name": "Emigration Canyon Extended Sweet Spot",
-  "reasoning": "<strong>Koren,</strong> we're honing in on your primary limiter: poor lactate clearance. The last ride indicates a solid recovery trend, making this an excellent opportunity to push your sustained power. By tackling the Emigration Canyon with extended sweet spot efforts, we'll enhance your aerobic base and fatigue resistance, directly contributing to your performance goal for the key segment of the Alpine Loop.",
-  "focus": "Lactate clearance",
+  "workout_name": "Cascade Springs Over-Unders",
+  "reasoning": "<strong>Your primary physiological limiter is the high lactate drop between 5-min and 20-min efforts</strong>. Following a lighter recovery ride last session and with your TSS trend recovering, focusing on increasing your lactate clearance today will help you better manage sustained climbs like the Alpine Loop's key segment. This workout helps address fatigue resistance and your aerobic base.",
+  "focus": "Lactate Clearance",
   "duration_minutes": 75,
   "target_power": {
     "low": 209,
-    "high": 249
+    "high": 256
   },
   "hr_zone": "Zone 4",
   "suggested_sets": [
@@ -25,7 +25,7 @@
         88,
         108
       ],
-      "description": "5x8-minute intervals with 5 min recovery; 209-223W steady, surging to 242-256W in last 2 minutes of intervals"
+      "description": "Do 5 sets of 6 minutes: 3 minutes at 242W followed by 3 minutes at 210W to work on lactate clearance."
     },
     {
       "name": "Cooldown",
@@ -39,7 +39,7 @@
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-05-27T16:00:02.586853+00:00",
+  "generated_at": "2026-05-27T20:25:01.023568+00:00",
   "based_on_ride": 18651392853,
   "weekly_focus": "This week: controlled return \u2014 rebuild aerobic base before pushing threshold again."
 }
