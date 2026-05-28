@@ -1,6 +1,6 @@
 {
-  "workout_name": "Cascade Springs Over-Unders",
-  "reasoning": "<strong>Your primary physiological limiter is the high lactate drop between 5-min and 20-min efforts</strong>. Following a lighter recovery ride last session and with your TSS trend recovering, focusing on increasing your lactate clearance today will help you better manage sustained climbs like the Alpine Loop's key segment. This workout helps address fatigue resistance and your aerobic base.",
+  "workout_name": "Emigration Canyon Over-Unders",
+  "reasoning": "<strong>Lactate clearance</strong> is Koren's primary limiter, showing a 9.3% power drop from 5-min to 20-min efforts. Your last ride at 110.4W indicates a need for more intense intervals. Improving this will enhance your performance on the Alpine Loop's key climb.",
   "focus": "Lactate Clearance",
   "duration_minutes": 75,
   "target_power": {
@@ -25,7 +25,7 @@
         88,
         108
       ],
-      "description": "Do 5 sets of 6 minutes: 3 minutes at 242W followed by 3 minutes at 210W to work on lactate clearance."
+      "description": "5x 6-minute efforts: 4 minutes at 209-218W, 2 minutes at 242-256W. Short recovery between each."
     },
     {
       "name": "Cooldown",
@@ -39,7 +39,7 @@
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-05-27T20:25:01.023568+00:00",
+  "generated_at": "2026-05-28T04:12:10.330373+00:00",
   "based_on_ride": 18651392853,
   "weekly_focus": "This week: controlled return \u2014 rebuild aerobic base before pushing threshold again."
 }
