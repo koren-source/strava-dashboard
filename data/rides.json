@@ -1,5 +1,26 @@
 [
   {
+    "id": 18689867330,
+    "name": "Morning Ride",
+    "date": "2026-05-28",
+    "start_date_local": "2026-05-28T07:10:42Z",
+    "type": "Ride",
+    "dist_mi": 21.3,
+    "moving_mins": 81,
+    "elapsed_mins": 90,
+    "elev_ft": 1506,
+    "avg_speed_mph": 15.7,
+    "max_speed_mph": 46.4,
+    "avg_watts": 150.5,
+    "normalized_watts": 182,
+    "max_watts": 913,
+    "avg_hr": 134.2,
+    "max_hr": 177.0,
+    "suffer_score": 55.0,
+    "calories": null,
+    "strava_url": "https://www.strava.com/activities/18689867330"
+  },
+  {
     "id": 18651392853,
     "name": "Morning Ride",
     "date": "2026-05-25",
