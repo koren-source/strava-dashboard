@@ -1,11 +1,11 @@
 {
   "workout_name": "Emigration Canyon Over-Unders",
-  "reasoning": "<strong>Addressing your lactate clearance</strong> is key here, given the notable 25W drop from your 5-min to 20-min power. Connecting to your last effort averaging 150.5W, these over-unders will push your aerobic base. Prepare for the Alpine Loop's demands by increasing fatigue resistance for sustained climbs.",
-  "focus": "Lactate Clearance",
+  "reasoning": "This workout targets <strong>lactate clearance</strong> and <strong>fatigue resistance</strong>, essential for improving Koren's power drop-off observed in the last ride. Stronger lactate clearance will help maintain higher power on long climbs like the <strong>Alpine Loop</strong>.",
+  "focus": "Over-Unders",
   "duration_minutes": 75,
   "target_power": {
     "low": 209,
-    "high": 249
+    "high": 256
   },
   "hr_zone": "Zone 4",
   "suggested_sets": [
@@ -25,7 +25,7 @@
         88,
         108
       ],
-      "description": "8x 5-minute Over-Unders: 2 min at 242-256W, 3 min at 201-218W; 2-minute recovery between sets"
+      "description": "Perform 6-minute intervals at 242-256W followed by 4 minutes at 201-218W, repeat 3 times with 2-minute rest between sets."
     },
     {
       "name": "Cooldown",
@@ -39,7 +39,7 @@
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-05-28T16:14:00.265946+00:00",
+  "generated_at": "2026-05-28T20:31:12.334679+00:00",
   "based_on_ride": 18689867330,
   "weekly_focus": "This week: close the 5-to-20 gap with over-unders and Zone 2 base work."
 }
