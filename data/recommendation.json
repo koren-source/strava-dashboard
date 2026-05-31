@@ -1,6 +1,6 @@
 {
-  "workout_name": "Emigration Canyon Lactate Busters",
-  "reasoning": "<strong>Koren,</strong> we're targeting your poor lactate clearance and low fatigue resistance. On your last ride, you were riding at 64% of your FTP, and to conquer the Alpine Loop, we need to build sustainable power over longer climbs. Today, we'll simulate the demands of the Alpine Loop by focusing on maintaining and surpassing your 20-min power consistently.",
+  "workout_name": "Emigration Canyon Over-Unders",
+  "reasoning": "This workout targets your <strong>poor lactate clearance</strong> and <strong>low fatigue resistance</strong> by using over-under intervals. Your last ride showed a relatively low intensity, which gives you a stable base to build from. By focusing on this, you'll better handle sustained efforts like those on the Alpine Loop, especially on the critical climb from Sundance to Cascade Springs.",
   "focus": "Lactate Clearance",
   "duration_minutes": 75,
   "target_power": {
@@ -22,10 +22,10 @@
       "name": "Main Set",
       "duration_minutes": 45,
       "power_pct_ftp": [
-        88,
+        86,
         108
       ],
-      "description": "4x10-minute blocks with 7 minutes at 201-218W followed by 3 minutes at 242-256W. Short recovery between each block."
+      "description": "4 sets of 5x (3 min at 242-256W, 2 min at 201-218W), 5 min rest between sets"
     },
     {
       "name": "Cooldown",
@@ -34,12 +34,12 @@
         40,
         55
       ],
-      "description": "Easy spin to flush out the legs"
+      "description": "Easy spin"
     }
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-05-30T19:26:37.392624+00:00",
+  "generated_at": "2026-05-31T04:24:26.253801+00:00",
   "based_on_ride": 18689867330,
   "weekly_focus": "This week: close the 5-to-20 gap with over-unders and Zone 2 base work."
 }
