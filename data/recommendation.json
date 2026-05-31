@@ -1,6 +1,6 @@
 {
-  "workout_name": "Alpine Loop Over-Unders",
-  "reasoning": "Strengthening <strong>lactate clearance</strong> is crucial to reduce the 25W drop-off in your power curve. This session is designed to imitate the sustained efforts required on the Alpine Loop, specifically enhancing the fatigue resistance needed for the key climb. Your last ride showed a moderate intensity, so today we'll push the aerobic base up a notch.",
+  "workout_name": "Emigration Canyon Over-Unders",
+  "reasoning": "We are focusing on the <strong>lactate clearance limitation</strong> you have. Your last ride had an intensity of 64% FTP, which is insufficient to address the aerobic base development needed for the Alpine Loop. The over-unders will specifically target your lactate threshold and fatigue resistance required for the sustained climb from Sundance to Cascade Springs.",
   "focus": "Lactate Clearance",
   "duration_minutes": 75,
   "target_power": {
@@ -25,7 +25,7 @@
         88,
         108
       ],
-      "description": "Perform 3 sets of 12 min: 3 min at 242W-256W followed by 3 min at 201W-218W. 2-3 min easy spin between sets."
+      "description": "3 sets of 10 min over-under intervals: 2 min at 242-256W, 3 min at 201-218W. Repeat once more after short recovery."
     },
     {
       "name": "Cooldown",
@@ -39,7 +39,7 @@
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-05-31T08:54:30.240298+00:00",
+  "generated_at": "2026-05-31T13:58:58.644223+00:00",
   "based_on_ride": 18689867330,
   "weekly_focus": "This week: close the 5-to-20 gap with over-unders and Zone 2 base work."
 }
