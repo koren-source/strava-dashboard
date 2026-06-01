@@ -1,11 +1,11 @@
 {
-  "workout_name": "Cascade Springs Over-Unders",
-  "reasoning": "<strong>The limiter is a 9.3% drop from 5-min to 20-min power</strong>, indicating poor lactate clearance and low fatigue resistance. Your last ride averaged 150.5W, which is solid for base endurance, but today we'll intensify with targeted over-unders to simulate the demands of the Alpine Loop's climb, focusing on improving your aerobic base and lactate processing.",
-  "focus": "Lactate Clearance",
+  "workout_name": "Emigration Canyon Fatigue Resistance Sweet Spot",
+  "reasoning": "To address <strong>poor lactate clearance</strong> and develop a stronger aerobic base, we need a targeted workout to build fatigue resistance. This ride will emulate aspects of the <strong>Alpine Loop</strong>, particularly focusing on sustaining power over longer durations, crucial for the main climb. Your last ride indicated room for increasing effort sustainability, so we'll push just above your current comfort zone.",
+  "focus": "Fatigue Resistance",
   "duration_minutes": 75,
   "target_power": {
-    "low": 201,
-    "high": 256
+    "low": 209,
+    "high": 249
   },
   "hr_zone": "Zone 4",
   "suggested_sets": [
@@ -25,7 +25,7 @@
         88,
         108
       ],
-      "description": "5 x (5 min @ 242-256W, 5 min @ 201-218W) with 2 min rest between sets"
+      "description": "3x10 minutes at 209-223W with 5-minute recoveries at 201-209W"
     },
     {
       "name": "Cooldown",
@@ -39,7 +39,7 @@
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-06-01T17:53:12.873295+00:00",
+  "generated_at": "2026-06-01T21:39:19.660841+00:00",
   "based_on_ride": 18689867330,
   "weekly_focus": "This week: close the 5-to-20 gap with over-unders and Zone 2 base work."
 }
