@@ -1,11 +1,11 @@
 {
-  "workout_name": "Emigration Canyon Sweet Spot Surges",
-  "reasoning": "<strong>Koren, we're targeting your lactate clearance limiter directly.</strong> After reviewing your last ride, we're focusing on improving your aerobic base and fatigue resistance, with the goal of better endurance on the Alpine Loop climb.",
+  "workout_name": "Emigration Canyon Over-Unders",
+  "reasoning": "<strong>Lactate clearance is your primary limiter,</strong> and we're targeting this by focusing on over-unders. Your last ride was below the power demands needed for the Alpine Loop, which requires sustained efforts. To better handle the climbs, we need to improve your aerobic base and fatigue resistance.",
   "focus": "Lactate Clearance",
   "duration_minutes": 75,
   "target_power": {
     "low": 209,
-    "high": 249
+    "high": 256
   },
   "hr_zone": "Zone 4",
   "suggested_sets": [
@@ -25,7 +25,7 @@
         88,
         108
       ],
-      "description": "3x [6 min @ 209W, then 3 min @ 246W] with 4-min rests"
+      "description": "3x 15 minutes with 4 min at 201-218W, followed by 1 min at 242-256W"
     },
     {
       "name": "Cooldown",
@@ -39,7 +39,7 @@
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-06-02T20:56:59.714010+00:00",
+  "generated_at": "2026-06-03T04:51:49.025766+00:00",
   "based_on_ride": 18756413075,
   "weekly_focus": "This week: progressive loading \u2014 keep attacking the lactate clearance gap."
 }
