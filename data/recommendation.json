@@ -1,11 +1,11 @@
 {
-  "workout_name": "Cascade Springs Fatigue Resistance Build",
-  "reasoning": "<strong>Koren,</strong> your 25W drop suggests<br /><strong>poor lactate clearance and low fatigue resistance.</strong><br />The Alpine Loop demands you sustain 220-235W on climbs like Sundance \u2192 Cascade Springs.<br /><strong>This workout</strong> will simulate climb stress, utilizing fatigue-resistant intervals built off your recent easy ride. It's time to build your aerobic base.",
-  "focus": "Fatigue Resistance",
+  "workout_name": "Cascade Springs Over-Unders",
+  "reasoning": "<strong>Koren</strong>, today we're tackling your lactate clearance limiter by focusing on over-under intervals. Your last ride indicated a comfortable endurance level, and today's workout will bridge the gap to the demands of the Cascade Springs climb on the Alpine Loop. By emphasizing these intervals, we'll build both your aerobic base and fatigue resistance for longer efforts.",
+  "focus": "Lactate Clearance",
   "duration_minutes": 75,
   "target_power": {
     "low": 209,
-    "high": 256
+    "high": 249
   },
   "hr_zone": "Zone 4",
   "suggested_sets": [
@@ -25,7 +25,7 @@
         88,
         108
       ],
-      "description": "4x [5 min at 242-256W (high Z4), 5 min at 209-223W (high Z2)] to build fatigue resistance and lactate clearance"
+      "description": "3x12 minutes of over-unders: 3 minutes at 242-256W, followed by 3 minutes at 201-218W. 3-minute recovery spins between each set."
     },
     {
       "name": "Cooldown",
@@ -39,7 +39,7 @@
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-06-07T09:25:07.395691+00:00",
+  "generated_at": "2026-06-07T14:07:04.211736+00:00",
   "based_on_ride": 18797956429,
   "weekly_focus": "This week: progressive loading \u2014 keep attacking the lactate clearance gap."
 }
