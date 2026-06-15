@@ -1,11 +1,11 @@
 {
-  "workout_name": "Cascade Springs Lactate Buster",
-  "reasoning": "<strong>Koren, we're tackling your lactate clearance issues head-on today.</strong> After your last ride and extended rest, we'll focus on building your aerobic base and improving fatigue resistance. This session aims to prepare you for the key climb on the Alpine Loop, ensuring you're efficient at maintaining power on prolonged ascents.",
-  "focus": "Lactate clearance",
+  "workout_name": "Emigration Canyon Over-Unders",
+  "reasoning": "<strong>Addressing lactate clearance</strong> is critical as demonstrated by your <strong>9.3% power drop</strong> from 5min to 20min efforts. The <strong>extended rest</strong> period suggests starting with controlled intensity. Emigration Canyon is ideal to simulate the demands of the Alpine Loop's key segment.",
+  "focus": "Lactate Clearance",
   "duration_minutes": 75,
   "target_power": {
     "low": 209,
-    "high": 256
+    "high": 249
   },
   "hr_zone": "Zone 4",
   "suggested_sets": [
@@ -22,10 +22,10 @@
       "name": "Main Set",
       "duration_minutes": 45,
       "power_pct_ftp": [
-        85,
+        88,
         108
       ],
-      "description": "Perform 6x5 min over-unders: 3 min at 242-256W followed by 2 min at 201-218W, 3 min easy spin between sets."
+      "description": "3x12 mins over-unders: 2 mins @ 242W, 2 mins @ 209W. 3 mins recovery between intervals."
     },
     {
       "name": "Cooldown",
@@ -39,7 +39,7 @@
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-06-15T12:30:07.656710+00:00",
+  "generated_at": "2026-06-15T21:12:00.169797+00:00",
   "based_on_ride": 18867113086,
   "weekly_focus": "This week: progressive loading \u2014 keep attacking the lactate clearance gap."
 }
