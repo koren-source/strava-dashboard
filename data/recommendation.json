@@ -1,6 +1,6 @@
 {
-  "workout_name": "Sundance Cascade Lactate Clearance",
-  "reasoning": "<strong>Your primary limiter is lactate clearance and aerobic base,</strong> which is evident from the 9.3% power drop over 5 to 20 minutes. After your 12 days of extended rest, <strong>this workout targets developing fatigue resistance and aligns with your event target on the Alpine Loop.</strong>",
+  "workout_name": "Emigration Canyon Lactate Clearance Session",
+  "reasoning": "<strong>Koren, your main limiter is poor lactate clearance and low fatigue resistance.</strong> After 12 days of rest, we'll gradually ramp up with some controlled, targeted work. This session will help you build the aerobic base needed for the sustained intensity of the Alpine Loop climb.",
   "focus": "Lactate Clearance",
   "duration_minutes": 75,
   "target_power": {
@@ -25,7 +25,7 @@
         88,
         108
       ],
-      "description": "Over-Unders: 3 minutes at 240W, followed by 2 minutes at 212W, repeat 6 times."
+      "description": "4 sets of 8 min over-under intervals at 201-218W for 6 min, 242-256W for 2 min. 2 min easy spin (50% FTP) between sets."
     },
     {
       "name": "Cooldown",
@@ -39,7 +39,7 @@
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-06-22T05:05:29.096590+00:00",
+  "generated_at": "2026-06-22T12:15:49.081370+00:00",
   "based_on_ride": 18867113086,
   "weekly_focus": "This week: progressive loading \u2014 keep attacking the lactate clearance gap."
 }
