@@ -1,11 +1,11 @@
 {
-  "workout_name": "Emigration Over-Unders",
-  "reasoning": "<strong>Your ability to clear lactate and improve fatigue resistance needs focused work.</strong> After the extended rest period, starting with a controlled session targeting your lactate clearance will be crucial. By practicing over-unders similar to those required for the <strong>Alpine Loop</strong>, you'll adapt to sustained climbing efforts.",
+  "workout_name": "Alpine Loop Over-Unders",
+  "reasoning": "Koren, today we're focusing on directly attacking your <strong>lactate clearance and aerobic base limiter</strong> post-rest, adapting our intensity for a smooth return. This workout mimics the demands of the <strong>key Alpine Loop climb</strong>, aiding in building the fatigue resistance needed for sustained performance.",
   "focus": "Lactate Clearance",
   "duration_minutes": 75,
   "target_power": {
     "low": 209,
-    "high": 249
+    "high": 256
   },
   "hr_zone": "Zone 4",
   "suggested_sets": [
@@ -25,7 +25,7 @@
         88,
         108
       ],
-      "description": "5 sets of 5 min at 201-218W, 3 min at 242-256W, followed by 2 min easy spin"
+      "description": "3x (10 min Over-Unders: 6 min at 215W; 2 min at 245W; 2 min at 220W), 5 min recovery between each set"
     },
     {
       "name": "Cooldown",
@@ -34,12 +34,12 @@
         40,
         55
       ],
-      "description": "Easy spin to flush out the legs"
+      "description": "Easy spin"
     }
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-06-27T19:37:24.778024+00:00",
+  "generated_at": "2026-06-28T04:22:54.043403+00:00",
   "based_on_ride": 18867113086,
   "weekly_focus": "This week: progressive loading \u2014 keep attacking the lactate clearance gap."
 }
