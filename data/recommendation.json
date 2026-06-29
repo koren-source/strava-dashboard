@@ -1,11 +1,11 @@
 {
-  "workout_name": "Cascade Springs Over-Unders",
-  "reasoning": "<strong>Koren</strong>, your current limiter is a 9.3% power drop between your 5-minute and 20-minute efforts, indicating <strong>poor lactate clearance and aerobic base</strong>. Let's sharpen your ability to sustain power on the length of the Alpine Loop climb, particularly the Sundance to Cascade Springs section. Referencing your last ride, we'll utilize over-unders to boost your <strong>fatigue resistance</strong>.",
-  "focus": "Lactate Clearance",
+  "workout_name": "Emigration Canyon Aerobic Builder",
+  "reasoning": "<strong>Koren, your current limiter is your lactate clearance and aerobic base.</strong> Your last ride indicates you're recovering, so today's workout will focus on controlled efforts to boost endurance without overreaching. Dialing into this aerobic builder will improve your performance on the Alpine Loop, especially on climbs such as Sundance to Cascade Springs.",
+  "focus": "Aerobic Base and Lactate Clearance",
   "duration_minutes": 75,
   "target_power": {
     "low": 209,
-    "high": 256
+    "high": 249
   },
   "hr_zone": "Zone 4",
   "suggested_sets": [
@@ -25,7 +25,7 @@
         88,
         108
       ],
-      "description": "3x12 min blocks with 4 mins at 201-218W, then 2 mins at 242-256W, 3 min easy spin between sets"
+      "description": "4 x 10 minute blocks of Over-Unders: 2 min at 242W, 3 min at 218W, 2 min at 256W, 3 min at 209W. Focus on smooth transitions."
     },
     {
       "name": "Cooldown",
@@ -39,7 +39,7 @@
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-06-29T15:57:33.549889+00:00",
+  "generated_at": "2026-06-29T20:07:17.442101+00:00",
   "based_on_ride": 19111672105,
   "weekly_focus": "This week: controlled return \u2014 rebuild aerobic base before pushing threshold again."
 }
