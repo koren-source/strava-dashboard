@@ -1,10 +1,10 @@
 {
-  "workout_name": "Cascade Springs Over-Unders",
-  "reasoning": "<strong>Lactate clearance</strong> is crucial to improving your performance on the Alpine Loop. Your last ride shows a steady pace, but to conquer the 8.5-mile climb from Sundance to Cascade Springs, we need to improve your endurance and fatigue resistance. This workout targets your FTP decline from 5 to 20 minutes.",
-  "focus": "Lactate clearance",
+  "workout_name": "Emigration Canyon Over-Unders",
+  "reasoning": "<strong>The limiter</strong> for you is a <strong>poor lactate clearance</strong> and <strong>underdeveloped aerobic base</strong>. Your last ride was at 60% of FTP, which is a good recovery level, but now we need to push your boundaries. Tackling Emigration Canyon with over-unders at specific intensities will prepare you for the sustained effort required in sections of the Alpine Loop.",
+  "focus": "Lactate Dynamics",
   "duration_minutes": 75,
   "target_power": {
-    "low": 209,
+    "low": 201,
     "high": 256
   },
   "hr_zone": "Zone 4",
@@ -25,7 +25,7 @@
         88,
         108
       ],
-      "description": "Perform over-unders: 2min at 201-218W, then 2min at 242-256W. Repeat for 5 cycles, then maintain sweet spot effort at 209-223W for the remainder."
+      "description": "5x5 min over-unders at 242W and 218W, 5 min recovery between sets"
     },
     {
       "name": "Cooldown",
@@ -39,7 +39,7 @@
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-07-01T20:03:31.995802+00:00",
+  "generated_at": "2026-07-02T04:04:29.428368+00:00",
   "based_on_ride": 19131636385,
   "weekly_focus": "This week: progressive loading \u2014 keep attacking the lactate clearance gap."
 }
