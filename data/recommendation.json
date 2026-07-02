@@ -1,6 +1,6 @@
 {
-  "workout_name": "Emigration Canyon Lactate Crusher",
-  "reasoning": "<strong>Koren</strong>, today we're tackling your <strong>poor lactate clearance</strong> head-on. Your last ride was at a moderate effort, which laid groundwork for higher intensity. Let's mimic the sustained efforts of the <strong>Alpine Loop</strong> by working on controlled over-unders along <strong>Emigration Canyon</strong>, key for sustaining power during climbs.",
+  "workout_name": "Emigration Canyon Over-Unders",
+  "reasoning": "<strong>Address the lactate clearance limiter</strong> by targeting the decline in power over longer efforts. Utilize over-under intervals, tailored to improve lactate processing and aerobic resilience. This aligns with the demands of the <strong>Alpine Loop</strong>, helping you maintain average wattage over prolonged climbs.",
   "focus": "Lactate Clearance",
   "duration_minutes": 75,
   "target_power": {
@@ -25,7 +25,7 @@
         88,
         108
       ],
-      "description": "Perform 3x (10 minutes: 8 min at 209-223W + 2 min at 242-256W), with 5-minute recovery between sets."
+      "description": "3 sets of 12-minute over-unders: 3 min at 220W, 3 min at 248W, repeat. Recover 3 min between sets."
     },
     {
       "name": "Cooldown",
@@ -39,7 +39,7 @@
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-07-02T09:23:47.161060+00:00",
+  "generated_at": "2026-07-02T14:17:07.482572+00:00",
   "based_on_ride": 19131636385,
   "weekly_focus": "This week: progressive loading \u2014 keep attacking the lactate clearance gap."
 }
