@@ -1,5 +1,26 @@
 [
   {
+    "id": 19157702396,
+    "name": "Afternoon Ride",
+    "date": "2026-07-02",
+    "start_date_local": "2026-07-02T17:44:54Z",
+    "type": "Ride",
+    "dist_mi": 20.6,
+    "moving_mins": 79,
+    "elapsed_mins": 82,
+    "elev_ft": 1450,
+    "avg_speed_mph": 15.6,
+    "max_speed_mph": 40.1,
+    "avg_watts": 129.7,
+    "normalized_watts": 158,
+    "max_watts": 692,
+    "avg_hr": 144.5,
+    "max_hr": 177.0,
+    "suffer_score": 75.0,
+    "calories": null,
+    "strava_url": "https://www.strava.com/activities/19157702396"
+  },
+  {
     "id": 19131636385,
     "name": "Evening Ride",
     "date": "2026-06-30",
@@ -187,26 +208,5 @@
     "suffer_score": 23.0,
     "calories": null,
     "strava_url": "https://www.strava.com/activities/18651392853"
-  },
-  {
-    "id": 18649811140,
-    "name": "Morning Ride",
-    "date": "2026-05-25",
-    "start_date_local": "2026-05-25T09:03:26Z",
-    "type": "Ride",
-    "dist_mi": 14.3,
-    "moving_mins": 58,
-    "elapsed_mins": 60,
-    "elev_ft": 1460,
-    "avg_speed_mph": 14.6,
-    "max_speed_mph": 42.8,
-    "avg_watts": 155.2,
-    "normalized_watts": 191,
-    "max_watts": 649,
-    "avg_hr": 143.4,
-    "max_hr": 171.0,
-    "suffer_score": 56.0,
-    "calories": null,
-    "strava_url": "https://www.strava.com/activities/18649811140"
   }
 ]

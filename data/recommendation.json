@@ -1,11 +1,11 @@
 {
-  "workout_name": "Emigration Canyon Sweet Spot Plus",
-  "reasoning": "<strong>Your primary limiter is lactate clearance and aerobic base.</strong> This workout focuses on extended sweet spot work to strengthen fatigue resistance, aligning with the demands of the Alpine Loop climb. Given your last ride showed moderate effort, this session will intensify your threshold abilities.",
-  "focus": "Sweet Spot Strengthening",
+  "workout_name": "Alpine Loop Lactate Clearance Builder",
+  "reasoning": "<strong>Targeting lactate clearance and enhancing aerobic base</strong>. Your 25W drop from 5-min to 20-min power indicates room for improvement in fatigue resistance. Last ride's lower intensity suggests readiness for a focused workout. Dialing in this aspect is crucial for tackling climbs like the <strong>Alpine Loop</strong>.",
+  "focus": "Lactate Clearance",
   "duration_minutes": 75,
   "target_power": {
     "low": 209,
-    "high": 256
+    "high": 249
   },
   "hr_zone": "Zone 4",
   "suggested_sets": [
@@ -25,7 +25,7 @@
         88,
         108
       ],
-      "description": "3 sets of over-unders: 8 minutes at 209-223W, 2 minutes at 242-256W, repeat twice; focus on steady breathing and smooth transitions"
+      "description": "Alternate 5 min @ 209-218W (88-92% FTP, sweet spot) with 5 min @ 242-256W (102-108% FTP, threshold) for 4 cycles"
     },
     {
       "name": "Cooldown",
@@ -34,12 +34,12 @@
         40,
         55
       ],
-      "description": "Easy spin to bring heart rate down"
+      "description": "Easy spin"
     }
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-07-02T19:40:43.612468+00:00",
-  "based_on_ride": 19131636385,
-  "weekly_focus": "This week: progressive loading \u2014 keep attacking the lactate clearance gap."
+  "generated_at": "2026-07-03T03:50:58.016751+00:00",
+  "based_on_ride": 19157702396,
+  "weekly_focus": "This week: controlled return \u2014 rebuild aerobic base before pushing threshold again."
 }
