@@ -1,5 +1,26 @@
 [
   {
+    "id": 19179745884,
+    "name": "happy 250th \ud83c\uddfa\ud83c\uddf8\ud83c\uddfa\ud83c\uddf8\ud83c\uddfa\ud83c\uddf8",
+    "date": "2026-07-04",
+    "start_date_local": "2026-07-04T06:38:19Z",
+    "type": "Ride",
+    "dist_mi": 76.5,
+    "moving_mins": 259,
+    "elapsed_mins": 300,
+    "elev_ft": 2067,
+    "avg_speed_mph": 17.7,
+    "max_speed_mph": 35.2,
+    "avg_watts": 139.4,
+    "normalized_watts": 161,
+    "max_watts": 1100,
+    "avg_hr": 139.7,
+    "max_hr": 173.0,
+    "suffer_score": 190.0,
+    "calories": null,
+    "strava_url": "https://www.strava.com/activities/19179745884"
+  },
+  {
     "id": 19157702396,
     "name": "Afternoon Ride",
     "date": "2026-07-02",
@@ -187,26 +208,5 @@
     "suffer_score": 55.0,
     "calories": null,
     "strava_url": "https://www.strava.com/activities/18689867330"
-  },
-  {
-    "id": 18651392853,
-    "name": "Morning Ride",
-    "date": "2026-05-25",
-    "start_date_local": "2026-05-25T10:24:21Z",
-    "type": "Ride",
-    "dist_mi": 21.0,
-    "moving_mins": 75,
-    "elapsed_mins": 96,
-    "elev_ft": 236,
-    "avg_speed_mph": 16.7,
-    "max_speed_mph": 29.4,
-    "avg_watts": 110.4,
-    "normalized_watts": 128,
-    "max_watts": 1195,
-    "avg_hr": 125.1,
-    "max_hr": 161.0,
-    "suffer_score": 23.0,
-    "calories": null,
-    "strava_url": "https://www.strava.com/activities/18651392853"
   }
 ]
