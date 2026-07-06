@@ -1,11 +1,11 @@
 {
-  "workout_name": "Emigration Canyon Lactate Clearance Boost",
-  "reasoning": "<strong>The primary limiter</strong> for Koren is the significant drop in power over longer intervals, indicating poor lactate clearance and an underdeveloped aerobic base. Keeping in mind the <strong>historical power drop</strong> from 5-min to 20-min efforts and Koren's recent long ride, this workout focuses on enhancing fatigue resistance which is crucial for the sustained climbs of the <strong>Alpine Loop</strong>.",
+  "workout_name": "Alpine Over-Under Builder",
+  "reasoning": "We need to address your <strong>lactate clearance and aerobic base</strong>. Your last ride was long and steady, perfect for building endurance, but to improve performance on the Alpine Loop, let's focus on your limiter by integrating over-under intervals.",
   "focus": "Lactate Clearance",
   "duration_minutes": 75,
   "target_power": {
     "low": 209,
-    "high": 249
+    "high": 256
   },
   "hr_zone": "Zone 4",
   "suggested_sets": [
@@ -25,7 +25,7 @@
         88,
         108
       ],
-      "description": "Complete 3 sets of (6 min at 242-256W followed by 4 min at 201-218W). Aim to hold strong through each interval to boost fatigue resistance."
+      "description": "3x (6 min at 218W, 6 min at 242W). Cool 2 min between sets."
     },
     {
       "name": "Cooldown",
@@ -34,12 +34,12 @@
         40,
         55
       ],
-      "description": "Easy spin to relax the legs"
+      "description": "Easy spin"
     }
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-07-05T19:26:26.926572+00:00",
+  "generated_at": "2026-07-06T04:08:01.519885+00:00",
   "based_on_ride": 19179745884,
   "weekly_focus": "This week: progressive loading \u2014 keep attacking the lactate clearance gap."
 }
