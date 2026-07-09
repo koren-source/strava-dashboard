@@ -1,7 +1,7 @@
 {
-  "workout_name": "Emigration Canyon Extended Sweet Spot Intervals",
-  "reasoning": "<strong>This workout addresses your limiter of poor lactate clearance and low fatigue resistance.</strong> By combining extended sweet spot intervals with back-to-back fatigue-resistance work, we directly challenge your ability to maintain higher power outputs over time. <strong>Considering your last ride's average power was quite low,</strong> this structured session will better prepare you for the Alpine Loop\u2019s sustained climbs.",
-  "focus": "Extended Sweet Spot",
+  "workout_name": "Emigration Canyon Over-Unders",
+  "reasoning": "<strong>Your main limiter is lactate clearance.</strong> We observed a significant power drop from 5 to 20 minutes. Today we'll attack that with over-unders, crucial for your Alpine Loop goals. The last ride showed a respectable duration but low intensity, underscoring the need for a tougher challenge.",
+  "focus": "Lactate Clearance",
   "duration_minutes": 75,
   "target_power": {
     "low": 209,
@@ -25,7 +25,7 @@
         88,
         108
       ],
-      "description": "3x [12 minutes at 218W (94%), 3 minutes at 245W (103%)], focus on staying controlled"
+      "description": "5 sets of 6 min: 3 min at 201-218W, 2 min at 242-256W, 1 min easy spin"
     },
     {
       "name": "Cooldown",
@@ -39,7 +39,7 @@
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-07-08T19:42:30.887283+00:00",
+  "generated_at": "2026-07-09T03:52:39.370379+00:00",
   "based_on_ride": 19203633668,
   "weekly_focus": "This week: progressive loading \u2014 keep attacking the lactate clearance gap."
 }
