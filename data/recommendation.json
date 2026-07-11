@@ -1,11 +1,11 @@
 {
   "workout_name": "Emigration Canyon Lactate Clearance Intervals",
-  "reasoning": "<strong>Your main limiter is the ability to clear lactate efficiently.</strong> Given your extended rest, we need to ease back into intensity cautiously but effectively. Focusing on Emigration Canyon will employ necessary elevation changes to mimic key parts of the Alpine Loop challenge, helping to build fatigue resistance and aerobic capacity over time.",
+  "reasoning": "<strong>The key to improving your performance on the Alpine Loop is enhancing your lactate clearance and aerobic base.</strong> Last ride data shows the need for controlled intensity after extended rest. <strong>This session targets the 25W drop over extended periods by employing over-unders and fatigue resistance work.</strong>",
   "focus": "Lactate Clearance",
   "duration_minutes": 75,
   "target_power": {
     "low": 209,
-    "high": 249
+    "high": 256
   },
   "hr_zone": "Zone 4",
   "suggested_sets": [
@@ -25,7 +25,7 @@
         88,
         108
       ],
-      "description": "4 x 8 min over-unders: 6 min at 242-256W (100-108%), 2 min at 201-218W (85-92%) with 5 min easy spin recovery between sets."
+      "description": "3x15 mins with 5 mins at 209-223W (sweet spot), followed by 3 mins at 242-256W (over-under), repeat. Recover 3 mins between each interval."
     },
     {
       "name": "Cooldown",
@@ -39,7 +39,7 @@
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-07-11T13:39:44.184782+00:00",
+  "generated_at": "2026-07-11T19:12:16.997578+00:00",
   "based_on_ride": 19203633668,
   "weekly_focus": "This week: progressive loading \u2014 keep attacking the lactate clearance gap."
 }
