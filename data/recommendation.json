@@ -1,11 +1,11 @@
 {
-  "workout_name": "Emigration Canyon Fatigue Resistance Intervals",
-  "reasoning": "<strong>The primary limiter to address is your lactate clearance and fatigue resistance.</strong> Your previous ride indicates low session intensity at 124.4W, emphasizing the need to push threshold boundaries. As you prepare for the Alpine Loop, increasing your sustained power on sustained climbs is crucial.",
-  "focus": "Fatigue Resistance",
+  "workout_name": "Emigration Canyon Over-Unders",
+  "reasoning": "<strong>The primary limiter is lactate clearance.</strong> Your last ride was at a very low intensity, which helps recovery but doesn't target your limiter. Emigration Canyon's gradient simulates the Alpine Loop climb, providing a perfect setting to focus on sustained efforts with variation between high and low power to enhance clearance and fatigue resistance.",
+  "focus": "Lactate Clearance",
   "duration_minutes": 75,
   "target_power": {
     "low": 209,
-    "high": 249
+    "high": 256
   },
   "hr_zone": "Zone 4",
   "suggested_sets": [
@@ -25,7 +25,7 @@
         88,
         108
       ],
-      "description": "3 blocks 5 min @ 242-256W, 5 min @ 201-218W, repeated to improve lactate clearance and threshold"
+      "description": "Over-unders: 2 mins at 201-218W, 3 mins at 242-256W; repeat for 9 rounds"
     },
     {
       "name": "Cooldown",
@@ -39,7 +39,7 @@
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-07-14T13:57:58.067350+00:00",
+  "generated_at": "2026-07-14T19:34:31.711031+00:00",
   "based_on_ride": 19302354838,
   "weekly_focus": "This week: controlled return \u2014 rebuild aerobic base before pushing threshold again."
 }
