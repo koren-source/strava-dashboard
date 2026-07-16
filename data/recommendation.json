@@ -1,11 +1,11 @@
 {
-  "workout_name": "Emigration Canyon Over-Under Intervals",
-  "reasoning": "<strong>This workout addresses your poor lactate clearance and low fatigue resistance.</strong> By practicing in the 201-256W range, you'll improve your ability to sustain power over duration, critical for tackling the Sundance to Cascade Springs segment. Your last 130 min ride showed underdevelopment in this area, highlighting the need for targeted intervals.",
+  "workout_name": "Alpine Loop Over-Unders",
+  "reasoning": "This workout directly addresses your <strong>lactate clearance</strong> limitation indicated by the 9.3% decline from 5-min to 20-min power. The aim is to build <strong>fatigue resistance</strong> for sustained efforts like the 8.5-mile climb on the <strong>Alpine Loop</strong>. Considering your recent ride's lower intensity, this session will push your boundaries further.",
   "focus": "Lactate Clearance",
   "duration_minutes": 75,
   "target_power": {
     "low": 209,
-    "high": 256
+    "high": 249
   },
   "hr_zone": "Zone 4",
   "suggested_sets": [
@@ -25,7 +25,7 @@
         88,
         108
       ],
-      "description": "3 sets of 12 minutes: 4 mins at 201W, 2 mins at 255W, 4 mins at 209W, 2 mins at 256W, with 3 min rests"
+      "description": "Alternate 4 min at 201-218W followed by 2 min at 242-256W. Repeat 6 times."
     },
     {
       "name": "Cooldown",
@@ -39,7 +39,7 @@
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-07-16T03:15:49.174871+00:00",
+  "generated_at": "2026-07-16T08:23:10.300487+00:00",
   "based_on_ride": 19317811537,
   "weekly_focus": "This week: progressive loading \u2014 keep attacking the lactate clearance gap."
 }
