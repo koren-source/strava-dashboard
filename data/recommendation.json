@@ -1,6 +1,6 @@
 {
-  "workout_name": "Cascade Endurance Over-Unders",
-  "reasoning": "<strong>Lactate clearance</strong> and <strong>fatigue resistance</strong> are key for your Alpine Loop goal, especially considering the <strong>9.3% power drop</strong> from 5 to 20-minute durations. Last ride\u2019s average power of 169W indicates room for applying more controlled stress to improve these factors. This session mimics the demands of the Alpine Loop climb while targeting your limiter.",
+  "workout_name": "Emigration Canyon Sweet Spot Builder",
+  "reasoning": "<strong>Your recent ride average</strong> suggests room for <strong>improving fatigue resistance</strong>. We need to target your lactate clearance and <strong>develop a stronger aerobic base</strong> for sustained performance on the Alpine Loop's key ascent.",
   "focus": "Lactate Clearance",
   "duration_minutes": 75,
   "target_power": {
@@ -25,7 +25,7 @@
         88,
         108
       ],
-      "description": "8 x (3 min @ 242-256W, 2 min @ 201-218W); focus on smooth transitions and maintaining controlled breathing"
+      "description": "3x 12-min sweet spot intervals at 209-223W with 3-min recoveries between at 201-218W to simulate fluctuating demands of the Alpine Loop"
     },
     {
       "name": "Cooldown",
@@ -39,7 +39,7 @@
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-07-19T19:13:53.270562+00:00",
+  "generated_at": "2026-07-20T03:41:23.937703+00:00",
   "based_on_ride": 19366663873,
   "weekly_focus": "This week: progressive loading \u2014 keep attacking the lactate clearance gap."
 }
