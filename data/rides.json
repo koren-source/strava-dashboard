@@ -1,5 +1,26 @@
 [
   {
+    "id": 19433616056,
+    "name": "Birthday ride",
+    "date": "2026-07-23",
+    "start_date_local": "2026-07-23T08:19:38Z",
+    "type": "Ride",
+    "dist_mi": 16.8,
+    "moving_mins": 64,
+    "elapsed_mins": 82,
+    "elev_ft": 1385,
+    "avg_speed_mph": 15.5,
+    "max_speed_mph": 43.9,
+    "avg_watts": 165.2,
+    "normalized_watts": null,
+    "max_watts": null,
+    "avg_hr": 147.8,
+    "max_hr": 169.0,
+    "suffer_score": 75.0,
+    "calories": null,
+    "strava_url": "https://www.strava.com/activities/19433616056"
+  },
+  {
     "id": 19366663873,
     "name": "one battle after another \ud83e\udd1d",
     "date": "2026-07-18",
@@ -166,26 +187,5 @@
     "suffer_score": 66.0,
     "calories": null,
     "strava_url": "https://www.strava.com/activities/19111672105"
-  },
-  {
-    "id": 18867113086,
-    "name": "Morning Ride",
-    "date": "2026-06-10",
-    "start_date_local": "2026-06-10T08:41:54Z",
-    "type": "Ride",
-    "dist_mi": 15.7,
-    "moving_mins": 57,
-    "elapsed_mins": 60,
-    "elev_ft": 1030,
-    "avg_speed_mph": 16.4,
-    "max_speed_mph": 32.3,
-    "avg_watts": 157.0,
-    "normalized_watts": 200,
-    "max_watts": 910,
-    "avg_hr": 148.7,
-    "max_hr": 178.0,
-    "suffer_score": 66.0,
-    "calories": null,
-    "strava_url": "https://www.strava.com/activities/18867113086"
   }
 ]
