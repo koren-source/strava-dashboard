@@ -1,6 +1,6 @@
 {
-  "workout_name": "Emigration Canyon Extended Sweet Spot",
-  "reasoning": "<strong>Your current limiter is the 9.3% decline in power from 5-min to 20-min durations.</strong> This indicates poor lactate clearance and an underdeveloped aerobic base. The last ride showed your HR was moderate, suggesting you are on track to handle more intensity. This workout aims to boost fatigue resistance, which is critical for the Alpine Loop climb.",
+  "workout_name": "Alpine Loop Lactate Clearance Builder",
+  "reasoning": "Let's tackle your <strong>lactate clearance</strong> limitation seen in your 25W drop from 5 to 20 minutes. This session builds fatigue resistance needed for the crucial Cascade Springs climb on the Alpine Loop. Given your recent ride's low intensity, this will elevate aerobic base development and mimic race demands.",
   "focus": "Lactate Clearance",
   "duration_minutes": 75,
   "target_power": {
@@ -25,7 +25,7 @@
         88,
         108
       ],
-      "description": "5 x 9-minute extended sweet spot intervals (209-223W) with 1-minute surges (242-256W), 2-minute recovery between sets"
+      "description": "20 min at 201-218W followed by 5 min at 242-256W; Repeat twice"
     },
     {
       "name": "Cooldown",
@@ -39,7 +39,7 @@
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-07-25T19:16:34.043577+00:00",
-  "based_on_ride": 19433616056,
-  "weekly_focus": "This week: progressive loading \u2014 keep attacking the lactate clearance gap."
+  "generated_at": "2026-07-26T00:38:42.124817+00:00",
+  "based_on_ride": 19464990328,
+  "weekly_focus": "This week: controlled return \u2014 rebuild aerobic base before pushing threshold again."
 }
