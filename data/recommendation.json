@@ -1,11 +1,11 @@
 {
-  "workout_name": "Alpine Loop Fatigue Resistance Builder",
-  "reasoning": "This workout targets your <strong>lactate clearance limiter</strong> and aims to boost your <strong>fatigue resistance</strong> with repeated exposure to <strong>over-unders</strong>. Your last ride showed a solid recovery trend, so we can push with extended sweet spot efforts to simulate the sustained output needed on <strong>Alpine Loop's main climb</strong>.",
-  "focus": "Over-Unders & Sweet Spot",
+  "workout_name": "Emigration Canyon Over-Unders",
+  "reasoning": "<strong>Lactate clearance</strong> and an <strong>underdeveloped aerobic base</strong> are key limiters for you, as seen in your 9.3% power decline. This session targets improving your ability to maintain power on long climbs like the <strong>Alpine Loop</strong>, directly addressing these issues.",
+  "focus": "Over-Unders",
   "duration_minutes": 75,
   "target_power": {
     "low": 209,
-    "high": 256
+    "high": 249
   },
   "hr_zone": "Zone 4",
   "suggested_sets": [
@@ -25,7 +25,7 @@
         88,
         108
       ],
-      "description": "3x (10 min 201-218W, 5 min 242-256W). Focus on smooth transitions."
+      "description": "3 x (6 min 242-256W + 3 min 201-218W), recover 4 min @ 60% FTP"
     },
     {
       "name": "Cooldown",
@@ -39,7 +39,7 @@
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-07-26T19:06:14.054915+00:00",
+  "generated_at": "2026-07-26T21:57:08.309684+00:00",
   "based_on_ride": 19464990328,
   "weekly_focus": "This week: controlled return \u2014 rebuild aerobic base before pushing threshold again."
 }
