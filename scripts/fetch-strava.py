@@ -58,7 +58,7 @@ def fetch_athlete(token):
     return {
         "name": f"{data.get('firstname', '')} {data.get('lastname', '')}".strip(),
         "ftp": data.get("ftp") or 237,  # fallback to known value
-        "weight_kg": data.get("weight") or 80,
+        "weight_kg": data.get("weight") or 77.1,  # 170 lb (Koren 2026-07-25); Strava profile weight wins if set
         "athlete_id": data.get("id"),
     }
 
