@@ -1,6 +1,6 @@
 {
   "workout_name": "Emigration Canyon Over-Unders",
-  "reasoning": "<strong>The limiter</strong> you're facing involves poor lactate clearance and requires improving your <strong>aerobic base and fatigue resistance</strong>. In your last ride, you averaged 65% of FTP, which shows you're recovering well. Tackling workouts like this with Alpine Loop's demands in mind will get you to sustain 220-235W on climbs.",
+  "reasoning": "<strong>The main limiter is the lactate clearance and endurance at higher intensities, reflected in the 25W drop in Koren's power curve from 5-min to 20-min efforts.</strong> Comparing it to the last ride shows a lack of high-intensity effort. The workout is aligned with improving performance on the Alpine Loop's key segments.",
   "focus": "Lactate Clearance",
   "duration_minutes": 75,
   "target_power": {
@@ -25,7 +25,7 @@
         88,
         108
       ],
-      "description": "3x12 min over-unders: 2 min at 242-256W (above FTP) followed by 2 min at 209-223W (sweet spot), with 4 min easy spinning in between sets."
+      "description": "Over-under intervals: alternate 5 minutes at 209-223W with 2 minutes at 242-256W. Repeat 5 times."
     },
     {
       "name": "Cooldown",
@@ -39,7 +39,7 @@
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-07-27T06:27:10.891590+00:00",
+  "generated_at": "2026-07-27T12:19:56.025218+00:00",
   "based_on_ride": 19464990328,
   "weekly_focus": "This week: controlled return \u2014 rebuild aerobic base before pushing threshold again."
 }
