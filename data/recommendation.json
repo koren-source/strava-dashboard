@@ -1,7 +1,7 @@
 {
-  "workout_name": "Emigration Canyon Sweet Spot Over-Unders",
-  "reasoning": "<strong>Focusing on lactate clearance is crucial</strong> as evidenced by the 25W drop between 5-min and 20-min power. After the lower-intensity ride last time, it is essential to <strong>address the underdeveloped aerobic base</strong> and prepare you for the demands of the Alpine Loop. This session will help you sustain 220-235W during the main climb by improving fatigue resistance.",
-  "focus": "Lactate Clearance",
+  "workout_name": "Emigration Canyon Over-Unders",
+  "reasoning": "<strong>Your primary limiter is your poor lactate clearance, which we need to address through targeted intervals.</strong> The last ride showed you're on a recovery trend, so we can challenge your aerobic base more aggressively. This workout simulates demands similar to the Alpine Loop, helping to improve your fatigue resistance and prepare you for the key segments.",
+  "focus": "Lactate clearance",
   "duration_minutes": 75,
   "target_power": {
     "low": 209,
@@ -25,7 +25,7 @@
         88,
         108
       ],
-      "description": "Alternate between 3 minutes at 242-256W and 3 minutes at 201-218W for a total of 5 sets."
+      "description": "3 x 12-minute over-under intervals. 2 minutes at 242W, 3 minutes at 201W, repeat 4x with 3-minute recovery spins in between."
     },
     {
       "name": "Cooldown",
@@ -39,7 +39,7 @@
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-07-28T08:29:30.985170+00:00",
+  "generated_at": "2026-07-28T11:15:01.235506+00:00",
   "based_on_ride": 19464990328,
   "weekly_focus": "This week: controlled return \u2014 rebuild aerobic base before pushing threshold again."
 }
