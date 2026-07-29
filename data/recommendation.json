@@ -1,7 +1,7 @@
 {
   "workout_name": "Alpine Loop Over-Unders",
-  "reasoning": "The primary focus is on <strong>enhancing lactate clearance</strong> and improving your fatigue resistance, as indicated by your 9.3% drop over time. The last ride showed a steady lower power output, meaning you are ready for more intensity. This session will help you maintain a strong average power on the extended climb like the Alpine Loop's key segment.",
-  "focus": "Lactate Clearance",
+  "reasoning": "<strong>Your primary limiter</strong> is your lactate clearance, indicated by the 25W drop from 5 to 20 minutes. This session will specifically target this by improving your aerobic base and fatigue resistance, crucial for the sustained effort needed on the Alpine Loop climb. Your last ride showed recovery, so we're ready for this intensity.",
+  "focus": "Over-Unders",
   "duration_minutes": 75,
   "target_power": {
     "low": 209,
@@ -25,7 +25,7 @@
         88,
         108
       ],
-      "description": "4x10 min over-under intervals: 2 min at 242-256W (over), immediately into 3 min at 201-218W (under), repeat."
+      "description": "3x [5min @ 242-256W / 5min @ 201-218W] to replicate over-unders, focusing on sustaining intensity and clearing lactate."
     },
     {
       "name": "Cooldown",
@@ -39,7 +39,7 @@
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-07-29T16:19:25.387859+00:00",
+  "generated_at": "2026-07-29T19:11:13.899387+00:00",
   "based_on_ride": 19464990328,
   "weekly_focus": "This week: controlled return \u2014 rebuild aerobic base before pushing threshold again."
 }
