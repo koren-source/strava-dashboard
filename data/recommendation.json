@@ -1,6 +1,6 @@
 {
-  "workout_name": "Cascade Springs Lactate Clearance",
-  "reasoning": "<strong>Your primary limiter is lactate clearance,</strong> as evidenced by the significant drop from your 5-min to 20-min power. We need to target this to improve your ability to maintain power on long climbs like the Alpine Loop's Sundance to Cascade Springs segment. Last ride's intensity suggests you're in a building trend but not yet overreaching.",
+  "workout_name": "Sundance Cascade Over-Unders",
+  "reasoning": "<strong>Lactate clearance</strong> is your primary limiter, highlighted by the 25W drop in your 5-min to 20-min power curve. Your last ride was steady but lacked intensity; we need workouts that mimic the demands of the <strong>Alpine Loop</strong> climb. Today's ride targets improving your ability to handle and clear lactate under varying intensities.",
   "focus": "Lactate Clearance",
   "duration_minutes": 75,
   "target_power": {
@@ -25,7 +25,7 @@
         88,
         108
       ],
-      "description": "3x (8min @ 242W-256W/2min @ 201W-218W) with 3min rest between sets"
+      "description": "Perform 6 sets of 6-min over-unders: 3 min at 240-249W, 3 min at 218-223W. Focus on maintaining form and breathing to maximize lactate clearance."
     },
     {
       "name": "Cooldown",
@@ -39,7 +39,7 @@
   ],
   "source": "ai",
   "model": "gpt-4o",
-  "generated_at": "2026-07-30T11:05:01.869201+00:00",
+  "generated_at": "2026-07-30T13:52:48.954648+00:00",
   "based_on_ride": 19522791887,
   "weekly_focus": "This week: progressive loading \u2014 keep attacking the lactate clearance gap."
 }
