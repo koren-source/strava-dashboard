@@ -1,13 +1,13 @@
 {
-  "workout_name": "Alpine Loop Over-Unders",
-  "reasoning": "<strong>Your primary limiter</strong> is your lactate clearance, indicated by the 25W drop from 5 to 20 minutes. This session will specifically target this by improving your aerobic base and fatigue resistance, crucial for the sustained effort needed on the Alpine Loop climb. Your last ride showed recovery, so we're ready for this intensity.",
-  "focus": "Over-Unders",
-  "duration_minutes": 75,
+  "workout_name": "Sustained Climbing Power",
+  "reasoning": "You have had 4 recovery days since a high-load ride (131 min \u00b7 3,310 ft climbing \u00b7 Relative Effort 164). <strong>That supports one controlled sweet-spot session without turning the week into a threshold test.</strong> Two 20-minute blocks build the sustained power and fatigue resistance your current goals require.",
+  "focus": "Sustained climbing power",
+  "duration_minutes": 70,
   "target_power": {
     "low": 209,
-    "high": 249
+    "high": 218
   },
-  "hr_zone": "Zone 4",
+  "hr_zone": "Zone 3\u20134",
   "suggested_sets": [
     {
       "name": "Warmup",
@@ -16,16 +16,16 @@
         50,
         75
       ],
-      "description": "Easy spin building to tempo"
+      "description": "Easy spin into tempo, then add three 20-second high-cadence openers with full easy recovery."
     },
     {
       "name": "Main Set",
       "duration_minutes": 45,
       "power_pct_ftp": [
         88,
-        108
+        92
       ],
-      "description": "3x [5min @ 242-256W / 5min @ 201-218W] to replicate over-unders, focusing on sustaining intensity and clearing lactate."
+      "description": "2 \u00d7 20 min at 209\u2013218W with 5 min easy at 133\u2013154W between."
     },
     {
       "name": "Cooldown",
@@ -34,12 +34,32 @@
         40,
         55
       ],
-      "description": "Easy spin"
+      "description": "Easy spin until breathing and heart rate settle."
     }
   ],
-  "source": "ai",
-  "model": "gpt-4o",
-  "generated_at": "2026-07-29T19:11:13.899387+00:00",
-  "based_on_ride": 19464990328,
-  "weekly_focus": "This week: controlled return \u2014 rebuild aerobic base before pushing threshold again."
+  "weekly_focus": "This week: one controlled sweet-spot session plus easy Zone 2 volume; do not stack hard days.",
+  "plan_basis": {
+    "decision": "4 recovery days after a high-load ride support one controlled sweet-spot session, not a maximal threshold day.",
+    "signals": [
+      {
+        "label": "Recovery",
+        "value": "4 days since last ride"
+      },
+      {
+        "label": "Last ride",
+        "value": "High load \u00b7 164 points"
+      },
+      {
+        "label": "Last 7 days",
+        "value": "239 load \u00b7 2 rides"
+      },
+      {
+        "label": "Load trend",
+        "value": "Stable"
+      }
+    ]
+  },
+  "source": "training-engine-v2",
+  "generated_at": "2026-07-29T21:07:59.879518+00:00",
+  "based_on_ride": 19464990328
 }

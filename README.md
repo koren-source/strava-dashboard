@@ -2,20 +2,20 @@
 
 Live at: [koren-source.github.io/strava-dashboard](https://koren-source.github.io/strava-dashboard/)
 
-Personal cycling performance dashboard powered by Strava API + AI workout recommendations.
+Personal cycling performance dashboard powered by Strava API + data-backed workout recommendations.
 
 ## How It Works
 
 ```
-Strava API  -->  GitHub Actions (every 6hrs)  -->  JSON data files  -->  Static site on GitHub Pages
+Strava API  -->  GitHub Actions (every 3hrs)  -->  JSON data files  -->  Static site on GitHub Pages
                        |
-               Claude API (Sonnet 4.6)  -->  AI workout recommendation
+              Deterministic training engine  -->  next-session recommendation
 ```
 
-1. **GitHub Actions** runs `scripts/fetch-strava.py` on a cron schedule (every 6 hours)
+1. **GitHub Actions** runs `scripts/fetch-strava.py` on a cron schedule (every 3 hours)
 2. The script refreshes the Strava OAuth token, fetches recent rides and athlete stats
 3. Data is written to `data/rides.json` and `data/athlete.json`
-4. A second script (`scripts/generate-recommendation.py`) calls Claude API to generate an AI-powered Growth Ride recommendation
+4. A second script (`scripts/generate-recommendation.py`) evaluates the last 14 days of load and builds a recovery, endurance, or controlled quality session
 5. The recommendation is written to `data/recommendation.json`
 6. All data files are committed and pushed, triggering a GitHub Pages rebuild
 7. The static `index.html` loads these JSON files at runtime and renders the dashboard
@@ -55,7 +55,6 @@ In your repo settings (Settings > Secrets and variables > Actions), add:
 | `STRAVA_CLIENT_ID` | Your Strava API client ID |
 | `STRAVA_CLIENT_SECRET` | Your Strava API client secret |
 | `STRAVA_REFRESH_TOKEN` | Your Strava refresh token |
-| `ANTHROPIC_API_KEY` | Anthropic API key for AI recommendations (optional) |
 
 ### 4. Enable GitHub Pages
 
@@ -63,18 +62,20 @@ Settings > Pages > Source: Deploy from branch > Branch: `main`, folder: `/ (root
 
 ### 5. Trigger the First Sync
 
-Go to Actions > "Strava Sync & AI Recommendations" > "Run workflow"
+Go to Actions > "Strava Sync & Training Plan" > "Run workflow"
 
-## AI Recommendations
+## Training Recommendations
 
-The Growth Ride recommendation uses Claude Sonnet 4.6 to analyze:
-- Last ride metrics (power, HR, suffer score, duration)
-- Athlete profile (FTP, weight, goals)
-- Training context (days since last ride, TSS trend, training load)
+The next-session recommendation uses:
 
-The AI returns a structured workout prescription: name, reasoning, target power, sets, and duration.
+- Days since the last ride
+- Last-ride load classification
+- Strava Relative Effort, with estimated power load as a fallback
+- Actual current and prior seven-day load windows
 
-If the `ANTHROPIC_API_KEY` secret is not set, the system falls back to rule-based recommendations (Zone 2 → Threshold, Zone 3 → VO2 Max, etc.)
+The training engine owns the workout arithmetic, target power, and explanation.
+Every plan is validated before it is written, including an exact match between
+the displayed duration and the sum of its sets.
 
 ## Time Window Toggle
 
@@ -104,14 +105,14 @@ export STRAVA_CLIENT_SECRET=xxx
 export STRAVA_REFRESH_TOKEN=xxx
 python3 scripts/fetch-strava.py
 
-# Test AI recommendation (requires env var)
-export ANTHROPIC_API_KEY=xxx
+# Test the training engine
+python3 -m unittest discover -s tests
 python3 scripts/generate-recommendation.py
 ```
 
 ## Manual Sync
 
-Trigger from the GitHub Actions tab: Actions > "Strava Sync & AI Recommendations" > "Run workflow"
+Trigger from the GitHub Actions tab: Actions > "Strava Sync & Training Plan" > "Run workflow"
 
 ## File Structure
 
@@ -120,10 +121,13 @@ index.html                          # Dashboard (single-page, all CSS/JS inline)
 data/
   athlete.json                      # Athlete profile (FTP, weight, goals, YTD stats)
   rides.json                        # Recent rides from Strava
-  recommendation.json               # AI-generated workout recommendation
+  recommendation.json               # Data-backed workout recommendation
 scripts/
   fetch-strava.py                   # Strava API fetch (runs in GitHub Actions)
-  generate-recommendation.py        # AI recommendation generator
+  generate-recommendation.py        # Training recommendation generator
+training_plan.py                     # Pure session selection + validation logic
+tests/
+  test_training_plan.py             # Planner regression tests
 .github/workflows/
   strava-sync.yml                   # GitHub Actions workflow (cron + manual)
 ```

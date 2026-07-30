@@ -1,4 +1,4 @@
-name: Strava Sync & AI Recommendations
+name: Strava Sync & Training Plan
 
 on:
   schedule:
@@ -19,7 +19,7 @@ jobs:
           python-version: '3.12'
 
       - name: Install dependencies
-        run: pip install requests openai
+        run: pip install requests
 
       - name: Fetch Strava data
         env:
@@ -28,9 +28,10 @@ jobs:
           STRAVA_REFRESH_TOKEN: ${{ secrets.STRAVA_REFRESH_TOKEN }}
         run: python scripts/fetch-strava.py
 
-      - name: Generate AI recommendation
-        env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      - name: Test training-plan logic
+        run: python -m unittest discover -s tests
+
+      - name: Generate training recommendation
         run: python scripts/generate-recommendation.py
 
       - name: Commit and push if changed
