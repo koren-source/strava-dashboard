@@ -89,6 +89,19 @@ def compute_training_context(
     ordered = sorted(rides, key=_ride_date, reverse=True)
     last_ride = ordered[0]
     days_since_last_ride = _days_since(last_ride, current_time)
+    last_meaningful_ride = next(
+        (
+            ride
+            for ride in ordered
+            if classify_ride_load(ride, ftp) in {"moderate", "high"}
+        ),
+        None,
+    )
+    days_since_last_meaningful_ride = (
+        _days_since(last_meaningful_ride, current_time)
+        if last_meaningful_ride is not None
+        else None
+    )
 
     windows = {"recent": [], "prior": []}
     for ride in ordered:
@@ -112,6 +125,12 @@ def compute_training_context(
 
     return {
         "days_since_last_ride": days_since_last_ride,
+        "days_since_last_meaningful_ride": days_since_last_meaningful_ride,
+        "last_meaningful_ride_load": (
+            classify_ride_load(last_meaningful_ride, ftp)
+            if last_meaningful_ride is not None
+            else None
+        ),
         "last_ride_load": classify_ride_load(last_ride, ftp),
         "last_ride_points": estimate_ride_load(last_ride, ftp),
         "recent_7d_load": recent_load,
@@ -179,19 +198,41 @@ def _basis(
 
 def _recovery_plan(ftp: int, context: dict[str, Any]) -> dict[str, Any]:
     target_low, target_high = _watts(ftp, 50, 65)
-    decision = (
-        f"The last ride was {context['last_ride_load']} load and still recent, so "
-        "recovery creates more adaptation than another interval day."
-    )
-    return {
-        "workout_name": "Post-Ride Recovery Spin",
-        "reasoning": (
+    meaningful_days = context["days_since_last_meaningful_ride"]
+    if (
+        context["last_ride_load"] == "low"
+        and meaningful_days is not None
+        and meaningful_days <= 1
+    ):
+        meaningful_load = context["last_meaningful_ride_load"]
+        decision = (
+            f"A {meaningful_load}-load ride is still only {meaningful_days} day"
+            f"{'s' if meaningful_days != 1 else ''} old. The easy spin since then "
+            "does not reset the recovery clock, so another interval day would stack "
+            "intensity too soon."
+        )
+        reason = (
+            f"Your latest ride was an easy {_last_ride_summary(context)}, but a "
+            f"{meaningful_load}-load ride is still only {meaningful_days} day"
+            f"{'s' if meaningful_days != 1 else ''} old. <strong>The easy spin does "
+            "not erase the recovery need from that earlier work.</strong> Keep the "
+            "next session genuinely easy so the following quality day is productive."
+        )
+    else:
+        decision = (
+            f"The last ride was {context['last_ride_load']} load and still recent, so "
+            "recovery creates more adaptation than another interval day."
+        )
+        reason = (
             f"Your last ride was {_last_ride_summary(context)}, only "
             f"{context['days_since_last_ride']} day"
             f"{'s' if context['days_since_last_ride'] != 1 else ''} ago. "
             "<strong>Absorb that work before adding more intensity.</strong> Keep "
             "this ride genuinely easy; it should leave the legs better than it found them."
-        ),
+        )
+    return {
+        "workout_name": "Post-Ride Recovery Spin",
+        "reasoning": reason,
         "focus": "Recovery and adaptation",
         "duration_minutes": 45,
         "target_power": {"low": target_low, "high": target_high},
@@ -379,9 +420,14 @@ def build_training_plan(
     context = compute_training_context(rides, athlete, now=now)
     ftp = int(athlete.get("ftp") or 237)
     days = context["days_since_last_ride"]
+    meaningful_days = context["days_since_last_meaningful_ride"]
 
     if (
-        days <= 1 and context["last_ride_load"] in {"moderate", "high"}
+        days <= 1
+        and (
+            context["last_ride_load"] in {"moderate", "high"}
+            or (meaningful_days is not None and meaningful_days <= 1)
+        )
     ) or (
         days <= 2
         and (

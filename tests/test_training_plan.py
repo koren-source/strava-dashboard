@@ -81,6 +81,22 @@ class TrainingPlanTests(unittest.TestCase):
         self.assertIn("moderate load", plan["plan_basis"]["decision"])
         validate_plan(plan)
 
+    def test_easy_spin_does_not_hide_yesterdays_moderate_load(self):
+        rides = [
+            ride(1, "2026-07-29", minutes=71, suffer=14, watts=111),
+            ride(2, "2026-07-28", minutes=59, suffer=89, watts=175),
+            ride(3, "2026-07-25", minutes=131, suffer=164),
+        ]
+
+        plan = build_training_plan(rides, {"ftp": FTP}, now=NOW)
+
+        self.assertEqual(plan["workout_name"], "Post-Ride Recovery Spin")
+        self.assertIn(
+            "does not reset the recovery clock",
+            plan["plan_basis"]["decision"],
+        )
+        validate_plan(plan)
+
     def test_week_off_selects_aerobic_return(self):
         rides = [ride(1, "2026-07-20", minutes=75, suffer=80)]
 
