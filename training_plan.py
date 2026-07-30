@@ -223,7 +223,7 @@ def _recovery_plan(ftp: int, context: dict[str, Any]) -> dict[str, Any]:
             },
         ],
         "weekly_focus": (
-            "This week: absorb the high-load ride first, then add one quality "
+            "This week: absorb the recent ride first, then add one quality "
             "climbing session after at least 48 easy hours."
         ),
         "plan_basis": _basis(context, decision),

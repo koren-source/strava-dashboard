@@ -37,7 +37,7 @@
       "description": "Back the pressure off and finish fresher than you started."
     }
   ],
-  "weekly_focus": "This week: absorb the high-load ride first, then add one quality climbing session after at least 48 easy hours.",
+  "weekly_focus": "This week: absorb the recent ride first, then add one quality climbing session after at least 48 easy hours.",
   "plan_basis": {
     "decision": "The last ride was moderate load and still recent, so recovery creates more adaptation than another interval day.",
     "signals": [
@@ -60,6 +60,6 @@
     ]
   },
   "source": "training-engine-v2",
-  "generated_at": "2026-07-30T16:08:18.141511+00:00",
+  "generated_at": "2026-07-30T16:08:26.053592+00:00",
   "based_on_ride": 19522791887
 }
