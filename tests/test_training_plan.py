@@ -69,6 +69,18 @@ class TrainingPlanTests(unittest.TestCase):
         self.assertEqual(plan["target_power"], {"low": 118, "high": 154})
         validate_plan(plan)
 
+    def test_moderate_load_ride_yesterday_does_not_stack_quality(self):
+        rides = [
+            ride(1, "2026-07-28", minutes=59, suffer=89, watts=175),
+            ride(2, "2026-07-25", minutes=131, suffer=164),
+        ]
+
+        plan = build_training_plan(rides, {"ftp": FTP}, now=NOW)
+
+        self.assertEqual(plan["workout_name"], "Post-Ride Recovery Spin")
+        self.assertIn("moderate load", plan["plan_basis"]["decision"])
+        validate_plan(plan)
+
     def test_week_off_selects_aerobic_return(self):
         rides = [ride(1, "2026-07-20", minutes=75, suffer=80)]
 

@@ -180,8 +180,8 @@ def _basis(
 def _recovery_plan(ftp: int, context: dict[str, Any]) -> dict[str, Any]:
     target_low, target_high = _watts(ftp, 50, 65)
     decision = (
-        "The last ride was high load and still recent, so recovery creates more "
-        "adaptation than another interval day."
+        f"The last ride was {context['last_ride_load']} load and still recent, so "
+        "recovery creates more adaptation than another interval day."
     )
     return {
         "workout_name": "Post-Ride Recovery Spin",
@@ -380,8 +380,14 @@ def build_training_plan(
     ftp = int(athlete.get("ftp") or 237)
     days = context["days_since_last_ride"]
 
-    if days <= 2 and (
-        context["last_ride_load"] == "high" or context["recent_7d_load"] >= 300
+    if (
+        days <= 1 and context["last_ride_load"] in {"moderate", "high"}
+    ) or (
+        days <= 2
+        and (
+            context["last_ride_load"] == "high"
+            or context["recent_7d_load"] >= 300
+        )
     ):
         plan = _recovery_plan(ftp, context)
     elif days >= 7 or (
