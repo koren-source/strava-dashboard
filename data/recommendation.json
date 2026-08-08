@@ -1,31 +1,31 @@
 {
-  "workout_name": "Aerobic Return Ride",
-  "reasoning": "It has been 9 days since your last ride. <strong>Re-establish frequency and aerobic rhythm before adding a hard session.</strong> This is steady base work, not a fitness test.",
-  "focus": "Aerobic base",
-  "duration_minutes": 60,
+  "workout_name": "Post-Ride Recovery Spin",
+  "reasoning": "Your last ride was 150 min \u00b7 728 ft climbing \u00b7 Relative Effort 47, only 0 days ago. <strong>Absorb that work before adding more intensity.</strong> Keep this ride genuinely easy; it should leave the legs better than it found them.",
+  "focus": "Recovery and adaptation",
+  "duration_minutes": 45,
   "target_power": {
-    "low": 133,
-    "high": 166
+    "low": 118,
+    "high": 154
   },
-  "hr_zone": "Zone 2",
+  "hr_zone": "Zone 1\u20132",
   "suggested_sets": [
     {
-      "name": "Warmup",
+      "name": "Easy Start",
       "duration_minutes": 10,
       "power_pct_ftp": [
-        45,
-        60
+        40,
+        55
       ],
-      "description": "Build gradually from an easy spin into endurance power."
+      "description": "Easy spin at 95\u2013130W; light pressure on the pedals."
     },
     {
-      "name": "Steady Endurance",
-      "duration_minutes": 40,
+      "name": "Recovery Endurance",
+      "duration_minutes": 25,
       "power_pct_ftp": [
-        56,
-        70
+        50,
+        65
       ],
-      "description": "Hold 133\u2013166W with no threshold surges."
+      "description": "Smooth 118\u2013154W. No surges and no chasing speed."
     },
     {
       "name": "Cooldown",
@@ -34,24 +34,24 @@
         40,
         50
       ],
-      "description": "Easy spin and let heart rate settle."
+      "description": "Back the pressure off and finish fresher than you started."
     }
   ],
-  "weekly_focus": "This week: rebuild consistent Zone 2 volume, then earn the next quality session with fresh legs.",
+  "weekly_focus": "This week: absorb the recent ride first, then add one quality climbing session after at least 48 easy hours.",
   "plan_basis": {
-    "decision": "A full week or more off the bike calls for aerobic re-entry before threshold or VO2 work.",
+    "decision": "The last ride was moderate load and still recent, so recovery creates more adaptation than another interval day.",
     "signals": [
       {
         "label": "Recovery",
-        "value": "9 days since last ride"
+        "value": "0 days since last ride"
       },
       {
         "label": "Last ride",
-        "value": "Low load \u00b7 14 points"
+        "value": "Moderate load \u00b7 47 points"
       },
       {
         "label": "Last 7 days",
-        "value": "0 load \u00b7 0 rides"
+        "value": "47 load \u00b7 1 ride"
       },
       {
         "label": "Load trend",
@@ -60,6 +60,6 @@
     ]
   },
   "source": "training-engine-v2",
-  "generated_at": "2026-08-08T15:26:22.386742+00:00",
-  "based_on_ride": 19529661371
+  "generated_at": "2026-08-08T18:32:38.105511+00:00",
+  "based_on_ride": 19656948277
 }
