@@ -3,9 +3,9 @@
   "ftp": 237,
   "weight_kg": 77.1,
   "athlete_id": 107150754,
-  "ytd_miles": 1400.1,
-  "ytd_rides": 60,
-  "ytd_hours": 89.4,
+  "ytd_miles": 1416.9,
+  "ytd_rides": 61,
+  "ytd_hours": 90.4,
   "vo2max": 48,
   "max_hr": 194,
   "resting_hr": 46,
@@ -15,6 +15,6 @@
     "Improve VO2 Max",
     "Get faster on Zwift"
   ],
-  "days_since_last_ride": 2,
-  "last_updated": "2026-08-17T01:04:28.848471+00:00"
+  "days_since_last_ride": 1,
+  "last_updated": "2026-08-17T03:47:04.567624+00:00"
 }
