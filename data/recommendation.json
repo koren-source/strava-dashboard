@@ -1,6 +1,6 @@
 {
   "workout_name": "Post-Ride Recovery Spin",
-  "reasoning": "Your last ride was 65 min \u00b7 1,388 ft climbing \u00b7 Relative Effort 72, only 2 days ago. <strong>Absorb that work before adding more intensity.</strong> Keep this ride genuinely easy; it should leave the legs better than it found them.",
+  "reasoning": "Your last ride was 59 min \u00b7 1,365 ft climbing \u00b7 Relative Effort 124, only 1 day ago. <strong>Absorb that work before adding more intensity.</strong> Keep this ride genuinely easy; it should leave the legs better than it found them.",
   "focus": "Recovery and adaptation",
   "duration_minutes": 45,
   "target_power": {
@@ -39,19 +39,19 @@
   ],
   "weekly_focus": "This week: absorb the recent ride first, then add one quality climbing session after at least 48 easy hours.",
   "plan_basis": {
-    "decision": "The last ride was moderate load and still recent, so recovery creates more adaptation than another interval day.",
+    "decision": "The last ride was high load and still recent, so recovery creates more adaptation than another interval day.",
     "signals": [
       {
         "label": "Recovery",
-        "value": "2 days since last ride"
+        "value": "1 day since last ride"
       },
       {
         "label": "Last ride",
-        "value": "Moderate load \u00b7 72 points"
+        "value": "High load \u00b7 124 points"
       },
       {
         "label": "Last 7 days",
-        "value": "305 load \u00b7 4 rides"
+        "value": "429 load \u00b7 5 rides"
       },
       {
         "label": "Load trend",
@@ -60,6 +60,6 @@
     ]
   },
   "source": "training-engine-v2",
-  "generated_at": "2026-08-20T01:03:04.196755+00:00",
-  "based_on_ride": 19801451151
+  "generated_at": "2026-08-20T03:43:12.969103+00:00",
+  "based_on_ride": 19817597901
 }
