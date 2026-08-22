@@ -1,65 +1,65 @@
 {
-  "workout_name": "Sustained Climbing Power",
-  "reasoning": "You have had 3 recovery days since a high-load ride (59 min \u00b7 1,365 ft climbing \u00b7 Relative Effort 124). <strong>That supports one controlled sweet-spot session without turning the week into a threshold test.</strong> Two 20-minute blocks build the sustained power and fatigue resistance your current goals require.",
-  "focus": "Sustained climbing power",
-  "duration_minutes": 70,
+  "workout_name": "Post-Ride Recovery Spin",
+  "reasoning": "Your last ride was 197 min \u00b7 5,180 ft climbing \u00b7 Relative Effort 272, only 0 days ago. <strong>Absorb that work before adding more intensity.</strong> Keep this ride genuinely easy; it should leave the legs better than it found them.",
+  "focus": "Recovery and adaptation",
+  "duration_minutes": 45,
   "target_power": {
-    "low": 209,
-    "high": 218
+    "low": 118,
+    "high": 154
   },
-  "hr_zone": "Zone 3\u20134",
+  "hr_zone": "Zone 1\u20132",
   "suggested_sets": [
     {
-      "name": "Warmup",
-      "duration_minutes": 15,
+      "name": "Easy Start",
+      "duration_minutes": 10,
       "power_pct_ftp": [
-        50,
-        75
+        40,
+        55
       ],
-      "description": "Easy spin into tempo, then add three 20-second high-cadence openers with full easy recovery."
+      "description": "Easy spin at 95\u2013130W; light pressure on the pedals."
     },
     {
-      "name": "Main Set",
-      "duration_minutes": 45,
+      "name": "Recovery Endurance",
+      "duration_minutes": 25,
       "power_pct_ftp": [
-        88,
-        92
+        50,
+        65
       ],
-      "description": "2 \u00d7 20 min at 209\u2013218W with 5 min easy at 133\u2013154W between."
+      "description": "Smooth 118\u2013154W. No surges and no chasing speed."
     },
     {
       "name": "Cooldown",
       "duration_minutes": 10,
       "power_pct_ftp": [
         40,
-        55
+        50
       ],
-      "description": "Easy spin until breathing and heart rate settle."
+      "description": "Back the pressure off and finish fresher than you started."
     }
   ],
-  "weekly_focus": "This week: one controlled sweet-spot session plus easy Zone 2 volume; do not stack hard days.",
+  "weekly_focus": "This week: absorb the recent ride first, then add one quality climbing session after at least 48 easy hours.",
   "plan_basis": {
-    "decision": "3 recovery days after a high-load ride support one controlled sweet-spot session, not a maximal threshold day.",
+    "decision": "The last ride was high load and still recent, so recovery creates more adaptation than another interval day.",
     "signals": [
       {
         "label": "Recovery",
-        "value": "3 days since last ride"
+        "value": "0 days since last ride"
       },
       {
         "label": "Last ride",
-        "value": "High load \u00b7 124 points"
+        "value": "High load \u00b7 272 points"
       },
       {
         "label": "Last 7 days",
-        "value": "295 load \u00b7 3 rides"
+        "value": "567 load \u00b7 4 rides"
       },
       {
         "label": "Load trend",
-        "value": "Stable"
+        "value": "Rising"
       }
     ]
   },
   "source": "training-engine-v2",
-  "generated_at": "2026-08-22T18:24:52.659411+00:00",
-  "based_on_ride": 19817597901
+  "generated_at": "2026-08-22T21:18:25.854984+00:00",
+  "based_on_ride": 19855852149
 }

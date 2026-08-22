@@ -1,5 +1,26 @@
 [
   {
+    "id": 19855852149,
+    "name": "alpine -> sundance -> tibble",
+    "date": "2026-08-22",
+    "start_date_local": "2026-08-22T10:30:23Z",
+    "type": "Ride",
+    "dist_mi": 41.8,
+    "moving_mins": 197,
+    "elapsed_mins": 228,
+    "elev_ft": 5180,
+    "avg_speed_mph": 12.7,
+    "max_speed_mph": 40.9,
+    "avg_watts": 145.3,
+    "normalized_watts": 176,
+    "max_watts": 646,
+    "avg_hr": 150.4,
+    "max_hr": 176.0,
+    "suffer_score": 272.0,
+    "calories": null,
+    "strava_url": "https://www.strava.com/activities/19855852149"
+  },
+  {
     "id": 19817597901,
     "name": "racing the sun",
     "date": "2026-08-19",
@@ -187,26 +208,5 @@
     "suffer_score": 89.0,
     "calories": null,
     "strava_url": "https://www.strava.com/activities/19522791887"
-  },
-  {
-    "id": 19464990328,
-    "name": "Afternoon Ride",
-    "date": "2026-07-25",
-    "start_date_local": "2026-07-25T14:07:02Z",
-    "type": "Ride",
-    "dist_mi": 28.8,
-    "moving_mins": 131,
-    "elapsed_mins": 147,
-    "elev_ft": 3310,
-    "avg_speed_mph": 13.1,
-    "max_speed_mph": 42.1,
-    "avg_watts": 154.1,
-    "normalized_watts": null,
-    "max_watts": null,
-    "avg_hr": 148.8,
-    "max_hr": 175.0,
-    "suffer_score": 164.0,
-    "calories": null,
-    "strava_url": "https://www.strava.com/activities/19464990328"
   }
 ]
