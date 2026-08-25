@@ -1,31 +1,31 @@
 {
-  "workout_name": "Post-Ride Recovery Spin",
-  "reasoning": "Your last ride was 197 min \u00b7 5,180 ft climbing \u00b7 Relative Effort 272, only 2 days ago. <strong>Absorb that work before adding more intensity.</strong> Keep this ride genuinely easy; it should leave the legs better than it found them.",
-  "focus": "Recovery and adaptation",
-  "duration_minutes": 45,
+  "workout_name": "Aerobic Consolidation Ride",
+  "reasoning": "The last seven days contain 396 load points across 2 rides. <strong>Add aerobic volume without stacking another hard day.</strong> Keep the power controlled from start to finish.",
+  "focus": "Aerobic base",
+  "duration_minutes": 60,
   "target_power": {
-    "low": 118,
-    "high": 154
+    "low": 133,
+    "high": 166
   },
-  "hr_zone": "Zone 1\u20132",
+  "hr_zone": "Zone 2",
   "suggested_sets": [
     {
-      "name": "Easy Start",
+      "name": "Warmup",
       "duration_minutes": 10,
       "power_pct_ftp": [
-        40,
-        55
+        45,
+        60
       ],
-      "description": "Easy spin at 95\u2013130W; light pressure on the pedals."
+      "description": "Build gradually from an easy spin into endurance power."
     },
     {
-      "name": "Recovery Endurance",
-      "duration_minutes": 25,
+      "name": "Steady Endurance",
+      "duration_minutes": 40,
       "power_pct_ftp": [
-        50,
-        65
+        56,
+        70
       ],
-      "description": "Smooth 118\u2013154W. No surges and no chasing speed."
+      "description": "Hold 133\u2013166W with no threshold surges."
     },
     {
       "name": "Cooldown",
@@ -34,16 +34,16 @@
         40,
         50
       ],
-      "description": "Back the pressure off and finish fresher than you started."
+      "description": "Easy spin and let heart rate settle."
     }
   ],
-  "weekly_focus": "This week: absorb the recent ride first, then add one quality climbing session after at least 48 easy hours.",
+  "weekly_focus": "This week: rebuild consistent Zone 2 volume, then earn the next quality session with fresh legs.",
   "plan_basis": {
-    "decision": "The last ride was high load and still recent, so recovery creates more adaptation than another interval day.",
+    "decision": "Recent load is already concentrated, so an endurance day keeps the week productive without stacking intensity.",
     "signals": [
       {
         "label": "Recovery",
-        "value": "2 days since last ride"
+        "value": "3 days since last ride"
       },
       {
         "label": "Last ride",
@@ -51,7 +51,7 @@
       },
       {
         "label": "Last 7 days",
-        "value": "468 load \u00b7 3 rides"
+        "value": "396 load \u00b7 2 rides"
       },
       {
         "label": "Load trend",
@@ -60,6 +60,6 @@
     ]
   },
   "source": "training-engine-v2",
-  "generated_at": "2026-08-24T21:25:14.038344+00:00",
+  "generated_at": "2026-08-25T01:05:02.242444+00:00",
   "based_on_ride": 19855852149
 }
