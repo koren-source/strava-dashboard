@@ -1,6 +1,6 @@
 {
   "workout_name": "Aerobic Return Ride",
-  "reasoning": "It has been 12 days since your last ride. <strong>Re-establish frequency and aerobic rhythm before adding a hard session.</strong> This is steady base work, not a fitness test.",
+  "reasoning": "It has been 13 days since your last ride. <strong>Re-establish frequency and aerobic rhythm before adding a hard session.</strong> This is steady base work, not a fitness test.",
   "focus": "Aerobic base",
   "duration_minutes": 60,
   "target_power": {
@@ -43,7 +43,7 @@
     "signals": [
       {
         "label": "Recovery",
-        "value": "12 days since last ride"
+        "value": "13 days since last ride"
       },
       {
         "label": "Last ride",
@@ -60,6 +60,6 @@
     ]
   },
   "source": "training-engine-v2",
-  "generated_at": "2026-09-03T22:57:43.480224+00:00",
+  "generated_at": "2026-09-04T02:50:14.628933+00:00",
   "based_on_ride": 19855852149
 }
