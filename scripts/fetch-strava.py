@@ -9,6 +9,7 @@ Required env vars:
   STRAVA_REFRESH_TOKEN
 """
 import json
+import math
 import os
 import sys
 import urllib.request
@@ -35,7 +36,7 @@ def refresh_token():
     }).encode()
 
     req = urllib.request.Request("https://www.strava.com/oauth/token", data=data, method="POST")
-    with urllib.request.urlopen(req) as resp:
+    with urllib.request.urlopen(req, timeout=30) as resp:
         body = json.loads(resp.read())
 
     print(f"Token refreshed. Expires at {datetime.fromtimestamp(body['expires_at'])}")
@@ -48,7 +49,7 @@ def api_get(path, token, params=None):
     if params:
         url += "?" + urllib.parse.urlencode(params)
     req = urllib.request.Request(url, headers={"Authorization": f"Bearer {token}"})
-    with urllib.request.urlopen(req) as resp:
+    with urllib.request.urlopen(req, timeout=30) as resp:
         return json.loads(resp.read())
 
 
@@ -74,21 +75,43 @@ def fetch_athlete_stats(token, athlete_id):
     }
 
 
-def fetch_rides(token, count=10):
+def fetch_rides(token, count=10, all_history=False):
     """Fetch recent ride activities.
 
     The list endpoint usually includes HR and power data, but occasionally
     HR fields are null even when has_heartrate=True. In that case we fetch
     the individual activity detail as a fallback.
     """
-    activities = api_get("/athlete/activities", token, {"per_page": count})
+    activities = []
+    seen = set()
+    before = int(datetime.now(timezone.utc).timestamp()) + 1
+    for page in range(1, 1001):
+        batch = api_get("/athlete/activities", token, {"per_page": 200 if all_history else count, "page": page, "before": before})
+        if not isinstance(batch, list):
+            raise ValueError("Strava returned an invalid activity page")
+        if not batch:
+            break
+        for activity in batch:
+            if not isinstance(activity, dict) or type(activity.get("id")) is not int or activity["id"] <= 0 or activity["id"] in seen:
+                raise ValueError("Strava activity scan was incomplete or duplicated")
+            seen.add(activity["id"])
+        activities.extend(batch)
+        if not all_history:
+            break
+    else:
+        raise ValueError("Strava activity pagination exceeded safety bound; capture not published")
     rides = []
     for a in activities:
         if a.get("type") not in ("Ride", "VirtualRide"):
             continue
 
-        # Fallback: if HR data missing from summary, fetch detailed activity
-        if a.get("has_heartrate") and not a.get("average_heartrate"):
+        # Reject incomplete timing/load evidence instead of turning missing values into zero.
+        datetime.strptime(a.get("start_date_local", "")[:10], "%Y-%m-%d")
+        if any(type(a.get(field)) not in (int, float) or not math.isfinite(a[field]) or a[field] < 0 for field in ("distance", "moving_time")):
+            raise ValueError("Strava returned incomplete ride distance or duration")
+        # Detail enrichment stays bounded to the public recent ten rides. A full
+        # historical scan must not fan out into thousands of optional API calls.
+        if len(rides) < 10 and a.get("has_heartrate") and not a.get("average_heartrate"):
             try:
                 detail = api_get(f"/activities/{a['id']}", token)
                 a.update({k: detail[k] for k in ("average_heartrate", "max_heartrate", "calories") if k in detail})
@@ -129,8 +152,9 @@ def main():
     stats = fetch_athlete_stats(token, athlete["athlete_id"])
     print(f"YTD: {stats['ytd_miles']} mi, {stats['ytd_rides']} rides")
 
-    rides = fetch_rides(token, count=10)
-    print(f"Fetched {len(rides)} rides")
+    all_rides = fetch_rides(token, all_history=True)
+    rides = all_rides[:10]
+    print(f"Fetched {len(all_rides)} rides across complete activity scan")
 
     # Compute days since last ride (UTC-based to match JS Date.now())
     days_since_last_ride = None
@@ -152,6 +176,18 @@ def main():
         "days_since_last_ride": days_since_last_ride,
         "last_updated": datetime.now(timezone.utc).isoformat(),
     }
+
+    # Full history is private: never put it under the statically hosted repo.
+    # A later authenticated publisher uploads it after recommendation generation.
+    capture_path = Path(os.environ["STRAVA_CAPTURE_PATH"]).resolve()
+    if capture_path.is_relative_to(DATA_DIR.parent):
+        raise ValueError("STRAVA_CAPTURE_PATH must be outside the public repository")
+    capture_path.parent.mkdir(parents=True, exist_ok=True)
+    payload = {"rides": all_rides, "athlete": athlete_data, "sourceUpdatedAt": athlete_data["last_updated"], "coverage": "complete"}
+    fd = os.open(capture_path, os.O_WRONLY | os.O_CREAT | os.O_TRUNC, 0o600)
+    with os.fdopen(fd, "w") as output:
+        os.fchmod(output.fileno(), 0o600)
+        json.dump(payload, output)
 
     # Compute weekly totals from rides
     from collections import defaultdict

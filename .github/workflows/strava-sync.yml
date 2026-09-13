@@ -8,9 +8,16 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: strava-data-sync
+  cancel-in-progress: false
+
 jobs:
   sync:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      STRAVA_CAPTURE_PATH: ${{ runner.temp }}/fitness-capture.json
     steps:
       - uses: actions/checkout@v4
 
@@ -33,6 +40,11 @@ jobs:
 
       - name: Generate training recommendation
         run: python scripts/generate-recommendation.py
+
+      - name: Save complete private activity history
+        env:
+          FITNESS_CAPTURE_SECRET: ${{ secrets.FITNESS_CAPTURE_SECRET }}
+        run: python scripts/publish-history.py
 
       - name: Commit and push if changed
         run: |
