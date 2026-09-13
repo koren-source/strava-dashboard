@@ -13,11 +13,11 @@ Strava API  -->  GitHub Actions (every 3hrs)  -->  JSON data files  -->  Static 
 ```
 
 1. **GitHub Actions** runs `scripts/fetch-strava.py` on a cron schedule (every 3 hours)
-2. The script refreshes the Strava OAuth token, fetches recent rides and athlete stats
+2. The script refreshes the Strava OAuth token and completes a paginated activity scan
 3. Data is written to `data/rides.json` and `data/athlete.json`
 4. A second script (`scripts/generate-recommendation.py`) evaluates the last 14 days of load and builds a recovery, endurance, or controlled quality session
 5. The recommendation is written to `data/recommendation.json`
-6. All data files are committed and pushed, triggering a GitHub Pages rebuild
+6. The complete activity scan, athlete observation, and generated recommendation are saved to the private dashboard with a checked storage receipt; only recent-window public data files are committed and pushed
 7. The static `index.html` loads these JSON files at runtime and renders the dashboard
 
 No API keys are exposed client-side. All API calls happen in GitHub Actions.
@@ -55,6 +55,20 @@ In your repo settings (Settings > Secrets and variables > Actions), add:
 | `STRAVA_CLIENT_ID` | Your Strava API client ID |
 | `STRAVA_CLIENT_SECRET` | Your Strava API client secret |
 | `STRAVA_REFRESH_TOKEN` | Your Strava refresh token |
+| `FITNESS_CAPTURE_SECRET` | Narrow private capture credential, matching the dashboard's Vercel environment |
+
+Deploy the dashboard's authenticated `/api/fitness/capture` endpoint before
+enabling the new workflow. Full activity history is staged under
+`STRAVA_CAPTURE_PATH` in the Actions runner's temporary directory, outside the
+public static repository. The workflow sets this path automatically. Local
+collector runs must set it to a private path outside this checkout.
+
+If complete collection or private publication fails, the workflow fails before
+publishing changed public data. A lost response retries the identical capture.
+The dashboard retains each observed version; absence from a completed scan is
+recorded as source absence, without asserting why Strava no longer returns it.
+The first successful full scan backfills available activities. It cannot recover
+versions deleted before collection began.
 
 ### 4. Enable GitHub Pages
 
