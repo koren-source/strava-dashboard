@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.1.0.1] - 2026-09-12
+
+### Fixed
+
+- Set the private temporary capture path in step environments where GitHub exposes the runner context.
+
 ## [0.1.0.0] - 2026-09-12
 
 ### Fixed

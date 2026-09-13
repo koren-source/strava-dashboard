@@ -16,8 +16,6 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     timeout-minutes: 20
-    env:
-      STRAVA_CAPTURE_PATH: ${{ runner.temp }}/fitness-capture.json
     steps:
       - uses: actions/checkout@v4
 
@@ -30,6 +28,7 @@ jobs:
 
       - name: Fetch Strava data
         env:
+          STRAVA_CAPTURE_PATH: ${{ runner.temp }}/fitness-capture.json
           STRAVA_CLIENT_ID: ${{ secrets.STRAVA_CLIENT_ID }}
           STRAVA_CLIENT_SECRET: ${{ secrets.STRAVA_CLIENT_SECRET }}
           STRAVA_REFRESH_TOKEN: ${{ secrets.STRAVA_REFRESH_TOKEN }}
@@ -43,6 +42,7 @@ jobs:
 
       - name: Save complete private activity history
         env:
+          STRAVA_CAPTURE_PATH: ${{ runner.temp }}/fitness-capture.json
           FITNESS_CAPTURE_SECRET: ${{ secrets.FITNESS_CAPTURE_SECRET }}
         run: python scripts/publish-history.py
 
