@@ -1,37 +1,30 @@
 [
   {
+    "rides": 3,
+    "miles": 75.3,
+    "week": "2026-W33",
+    "label": "Aug 17-23",
+    "hours": 5.3
+  },
+  {
+    "rides": 3,
+    "miles": 85.3,
+    "week": "2026-W32",
+    "label": "Aug 10-16",
+    "hours": 4.8
+  },
+  {
+    "rides": 2,
+    "miles": 66.8,
+    "week": "2026-W31",
+    "label": "Aug 3-9",
+    "hours": 4.4
+  },
+  {
     "rides": 2,
     "miles": 36.9,
     "week": "2026-W30",
     "label": "Jul 27 \u2013 Aug 2",
     "hours": 2.2
-  },
-  {
-    "rides": 2,
-    "miles": 45.6,
-    "week": "2026-W29",
-    "label": "Jul 20-26",
-    "hours": 3.2
-  },
-  {
-    "rides": 3,
-    "miles": 110.5,
-    "week": "2026-W28",
-    "label": "Jul 13-19",
-    "hours": 7.2
-  },
-  {
-    "rides": 1,
-    "miles": 16.3,
-    "week": "2026-W27",
-    "label": "Jul 6-12",
-    "hours": 1.1
-  },
-  {
-    "rides": 1,
-    "miles": 76.5,
-    "week": "2026-W26",
-    "label": "Jun 29 \u2013 Jul 5",
-    "hours": 4.3
   }
 ]
