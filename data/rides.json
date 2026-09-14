@@ -1,5 +1,26 @@
 [
   {
+    "id": 20165527495,
+    "name": "Evening Ride",
+    "date": "2026-09-13",
+    "start_date_local": "2026-09-13T18:00:41Z",
+    "type": "Ride",
+    "dist_mi": 19.3,
+    "moving_mins": 71,
+    "elapsed_mins": 76,
+    "elev_ft": 1070,
+    "avg_speed_mph": 16.1,
+    "max_speed_mph": 30.4,
+    "avg_watts": 138.2,
+    "normalized_watts": 182,
+    "max_watts": 869,
+    "avg_hr": 143.3,
+    "max_hr": 183.0,
+    "suffer_score": 69.0,
+    "calories": null,
+    "strava_url": "https://www.strava.com/activities/20165527495"
+  },
+  {
     "id": 19855852149,
     "name": "alpine -> sundance -> tibble",
     "date": "2026-08-22",
@@ -187,26 +208,5 @@
     "suffer_score": 14.0,
     "calories": null,
     "strava_url": "https://www.strava.com/activities/19529661371"
-  },
-  {
-    "id": 19522791887,
-    "name": "Evening Ride",
-    "date": "2026-07-29",
-    "start_date_local": "2026-07-29T18:10:29Z",
-    "type": "Ride",
-    "dist_mi": 16.8,
-    "moving_mins": 59,
-    "elapsed_mins": 63,
-    "elev_ft": 1365,
-    "avg_speed_mph": 17.0,
-    "max_speed_mph": 39.1,
-    "avg_watts": 174.5,
-    "normalized_watts": 197,
-    "max_watts": 804,
-    "avg_hr": 155.1,
-    "max_hr": 183.0,
-    "suffer_score": 89.0,
-    "calories": null,
-    "strava_url": "https://www.strava.com/activities/19522791887"
   }
 ]
