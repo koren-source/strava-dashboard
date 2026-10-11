@@ -1,5 +1,26 @@
 [
   {
+    "id": 20534141630,
+    "name": "OTHER",
+    "date": "2026-10-10",
+    "start_date_local": "2026-10-10T14:33:35Z",
+    "type": "Ride",
+    "dist_mi": 23.0,
+    "moving_mins": 85,
+    "elapsed_mins": 85,
+    "elev_ft": 1532,
+    "avg_speed_mph": 16.2,
+    "max_speed_mph": 32.2,
+    "avg_watts": 138.7,
+    "normalized_watts": 181,
+    "max_watts": 1049,
+    "avg_hr": 136.0,
+    "max_hr": 171.0,
+    "suffer_score": 60.0,
+    "calories": null,
+    "strava_url": "https://www.strava.com/activities/20534141630"
+  },
+  {
     "id": 20496941251,
     "name": "Afternoon Ride",
     "date": "2026-10-07",
@@ -187,26 +208,5 @@
     "suffer_score": 272.0,
     "calories": null,
     "strava_url": "https://www.strava.com/activities/19855852149"
-  },
-  {
-    "id": 19817597901,
-    "name": "racing the sun",
-    "date": "2026-08-19",
-    "start_date_local": "2026-08-19T19:18:56Z",
-    "type": "Ride",
-    "dist_mi": 16.7,
-    "moving_mins": 59,
-    "elapsed_mins": 60,
-    "elev_ft": 1365,
-    "avg_speed_mph": 17.0,
-    "max_speed_mph": 41.7,
-    "avg_watts": 173.6,
-    "normalized_watts": 196,
-    "max_watts": 804,
-    "avg_hr": 161.9,
-    "max_hr": 184.0,
-    "suffer_score": 124.0,
-    "calories": null,
-    "strava_url": "https://www.strava.com/activities/19817597901"
   }
 ]
