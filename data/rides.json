@@ -1,5 +1,26 @@
 [
   {
+    "id": 20639607189,
+    "name": "Morning Ride",
+    "date": "2026-10-18",
+    "start_date_local": "2026-10-18T08:51:06Z",
+    "type": "Ride",
+    "dist_mi": 40.0,
+    "moving_mins": 155,
+    "elapsed_mins": 244,
+    "elev_ft": 2690,
+    "avg_speed_mph": 15.4,
+    "max_speed_mph": 43.2,
+    "avg_watts": 136.8,
+    "normalized_watts": 169,
+    "max_watts": 793,
+    "avg_hr": null,
+    "max_hr": null,
+    "suffer_score": null,
+    "calories": null,
+    "strava_url": "https://www.strava.com/activities/20639607189"
+  },
+  {
     "id": 20534141630,
     "name": "OTHER",
     "date": "2026-10-10",
@@ -187,26 +208,5 @@
     "suffer_score": 69.0,
     "calories": null,
     "strava_url": "https://www.strava.com/activities/20165527495"
-  },
-  {
-    "id": 19855852149,
-    "name": "alpine -> sundance -> tibble",
-    "date": "2026-08-22",
-    "start_date_local": "2026-08-22T10:30:23Z",
-    "type": "Ride",
-    "dist_mi": 41.8,
-    "moving_mins": 197,
-    "elapsed_mins": 228,
-    "elev_ft": 5180,
-    "avg_speed_mph": 12.7,
-    "max_speed_mph": 40.9,
-    "avg_watts": 145.3,
-    "normalized_watts": 176,
-    "max_watts": 646,
-    "avg_hr": 150.4,
-    "max_hr": 176.0,
-    "suffer_score": 272.0,
-    "calories": null,
-    "strava_url": "https://www.strava.com/activities/19855852149"
   }
 ]
