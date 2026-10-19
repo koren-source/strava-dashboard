@@ -1,6 +1,6 @@
 {
   "workout_name": "Post-Ride Recovery Spin",
-  "reasoning": "Your last ride was 155 min \u00b7 2,690 ft climbing, only 0 days ago. <strong>Absorb that work before adding more intensity.</strong> Keep this ride genuinely easy; it should leave the legs better than it found them.",
+  "reasoning": "Your last ride was 155 min \u00b7 2,690 ft climbing, only 1 day ago. <strong>Absorb that work before adding more intensity.</strong> Keep this ride genuinely easy; it should leave the legs better than it found them.",
   "focus": "Recovery and adaptation",
   "duration_minutes": 45,
   "target_power": {
@@ -43,7 +43,7 @@
     "signals": [
       {
         "label": "Recovery",
-        "value": "0 days since last ride"
+        "value": "1 day since last ride"
       },
       {
         "label": "Last ride",
@@ -60,6 +60,6 @@
     ]
   },
   "source": "training-engine-v2",
-  "generated_at": "2026-10-18T22:42:03.182171+00:00",
+  "generated_at": "2026-10-19T02:41:36.622769+00:00",
   "based_on_ride": 20639607189
 }
