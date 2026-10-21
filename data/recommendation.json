@@ -1,6 +1,6 @@
 {
   "workout_name": "Sustained Climbing Power",
-  "reasoning": "You have had 1 recovery days since a low-load ride (61 min \u00b7 961 ft climbing \u00b7 Relative Effort 45). <strong>That supports one controlled sweet-spot session without turning the week into a threshold test.</strong> Two 20-minute blocks build the sustained power and fatigue resistance your current goals require.",
+  "reasoning": "You have had 0 recovery days since a low-load ride (56 min \u00b7 814 ft climbing \u00b7 Relative Effort 45). <strong>That supports one controlled sweet-spot session without turning the week into a threshold test.</strong> Two 20-minute blocks build the sustained power and fatigue resistance your current goals require.",
   "focus": "Sustained climbing power",
   "duration_minutes": 70,
   "target_power": {
@@ -39,11 +39,11 @@
   ],
   "weekly_focus": "This week: one controlled sweet-spot session plus easy Zone 2 volume; do not stack hard days.",
   "plan_basis": {
-    "decision": "1 recovery days after a low-load ride support one controlled sweet-spot session, not a maximal threshold day.",
+    "decision": "0 recovery days after a low-load ride support one controlled sweet-spot session, not a maximal threshold day.",
     "signals": [
       {
         "label": "Recovery",
-        "value": "1 day since last ride"
+        "value": "0 days since last ride"
       },
       {
         "label": "Last ride",
@@ -51,7 +51,7 @@
       },
       {
         "label": "Last 7 days",
-        "value": "176 load \u00b7 2 rides"
+        "value": "221 load \u00b7 3 rides"
       },
       {
         "label": "Load trend",
@@ -60,6 +60,6 @@
     ]
   },
   "source": "training-engine-v2",
-  "generated_at": "2026-10-21T14:16:32.611339+00:00",
-  "based_on_ride": 20669136011
+  "generated_at": "2026-10-21T19:03:32.712737+00:00",
+  "based_on_ride": 20678698670
 }
