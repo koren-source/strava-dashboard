@@ -1,5 +1,11 @@
 import unittest
 from datetime import datetime, timezone
+import json
+from pathlib import Path
+import subprocess
+from unittest.mock import patch
+
+from api import recommend
 
 from training_plan import (
     build_training_plan,
@@ -34,6 +40,100 @@ def ride(
 
 
 class TrainingPlanTests(unittest.TestCase):
+    def test_live_recommendation_api_uses_same_home_day_as_planner(self):
+        class FrozenDateTime(datetime):
+            @classmethod
+            def now(cls, tz=None):
+                return cls(2026, 11, 16, 3, 18, tzinfo=timezone.utc).astimezone(tz)
+
+        with patch.object(recommend, "datetime", FrozenDateTime):
+            context = recommend.compute_context([ride(1, "2026-11-15")], {"ftp": FTP})
+        self.assertEqual(context["days_since_last_ride"], 0)
+
+    def test_browser_dates_match_home_calendar_in_a_different_system_timezone(self):
+        page = Path(__file__).resolve().parents[1] / "index.html"
+        script = r"""
+const fs = require('node:fs');
+const vm = require('node:vm');
+const html = fs.readFileSync(process.argv[1], 'utf8');
+const source = html.match(/<script>([\s\S]*?)<\/script>/)[1];
+const context = vm.createContext({fetch: () => new Promise(() => {})});
+vm.runInContext(source, context);
+const cases = [
+  [{date:'2026-11-15'}, '2026-11-16T03:18:00Z'],
+  [{start_date_local:'2026-11-15T16:11:59Z'}, '2026-11-16T03:18:00Z'],
+  [{date:'2026-11-15'}, '2026-11-16T08:00:00Z'],
+  [{date:'2026-03-08'}, '2026-03-09T06:59:59Z'],
+  [{date:'2026-03-08'}, '2026-03-09T07:00:00Z'],
+  [{date:'2026-11-01'}, '2026-11-02T07:59:59Z'],
+  [{date:'2026-11-01'}, '2026-11-02T08:00:00Z'],
+  [{date:'2026-12-31'}, '2027-01-01T07:59:59Z'],
+  [{date:'2026-12-31'}, '2027-01-01T08:00:00Z'],
+  [{date:'2026-11-17'}, '2026-11-16T03:18:00Z'],
+  [{}, '2026-11-16T03:18:00Z'],
+  [{date:'invalid'}, '2026-11-16T03:18:00Z'],
+  [{date:'2026-02-30'}, '2026-11-16T03:18:00Z'],
+];
+console.log(JSON.stringify(cases.map(([ride, now]) => context.daysSinceRide(ride, new Date(now)))));
+"""
+        import os
+        completed = subprocess.run(
+            ["node", "-e", script, str(page)], check=True, text=True,
+            capture_output=True, env={**os.environ, "TZ": "Asia/Tokyo"},
+        )
+        self.assertEqual(json.loads(completed.stdout), [0, 0, 1, 0, 1, 0, 1, 0, 1, 0, None, None, None])
+
+    def test_evening_ride_uses_las_vegas_day_after_utc_midnight(self):
+        context = compute_training_context(
+            [ride(1, "2026-11-15", suffer=27)],
+            {"ftp": FTP},
+            now=datetime(2026, 11, 16, 3, 18, tzinfo=timezone.utc),
+        )
+        self.assertEqual(context["days_since_last_ride"], 0)
+
+    def test_local_midnight_dst_and_year_boundaries_count_calendar_days(self):
+        cases = [
+            ("2026-11-15", "2026-11-16T07:59:59+00:00", 0),
+            ("2026-11-15", "2026-11-16T08:00:00+00:00", 1),
+            ("2026-03-08", "2026-03-09T06:59:59+00:00", 0),
+            ("2026-03-08", "2026-03-09T07:00:00+00:00", 1),
+            ("2026-11-01", "2026-11-02T07:59:59+00:00", 0),
+            ("2026-11-01", "2026-11-02T08:00:00+00:00", 1),
+            ("2026-12-31", "2027-01-01T07:59:59+00:00", 0),
+            ("2026-12-31", "2027-01-01T08:00:00+00:00", 1),
+        ]
+        for date, instant, expected in cases:
+            with self.subTest(date=date, instant=instant):
+                context = compute_training_context(
+                    [ride(1, date)], {"ftp": FTP},
+                    now=datetime.fromisoformat(instant),
+                )
+                self.assertEqual(context["days_since_last_ride"], expected)
+
+    def test_local_timestamp_label_and_future_date_do_not_add_recovery_days(self):
+        current = datetime(2026, 11, 16, 3, 18, tzinfo=timezone.utc)
+        for value in [
+            {"start_date_local": "2026-11-15T16:11:59Z"},
+            {"date": "2026-11-17"},
+        ]:
+            with self.subTest(value=value):
+                context = compute_training_context([value], {"ftp": FTP}, now=current)
+                self.assertEqual(context["days_since_last_ride"], 0)
+
+    def test_invalid_or_missing_ride_dates_do_not_generate_a_plan(self):
+        for value in [{}, {"date": "bad-date"}, {"date": "2026-02-30"}]:
+            with self.subTest(value=value), self.assertRaises(ValueError):
+                build_training_plan([value], {"ftp": FTP}, now=NOW)
+
+    def test_seven_day_load_window_uses_home_calendar_at_utc_midnight(self):
+        context = compute_training_context(
+            [ride(1, "2026-11-15", suffer=27), ride(2, "2026-11-09", suffer=70)],
+            {"ftp": FTP},
+            now=datetime(2026, 11, 16, 3, 18, tzinfo=timezone.utc),
+        )
+        self.assertEqual(context["recent_7d_load"], 97)
+        self.assertEqual(context["prior_7d_load"], 0)
+
     def test_current_training_history_selects_controlled_quality(self):
         rides = [
             ride(1, "2026-07-25", minutes=131, suffer=164, elevation=3310),

@@ -10,10 +10,12 @@ from __future__ import annotations
 
 from datetime import datetime, timezone
 from typing import Any
+from zoneinfo import ZoneInfo
 
 
 Ride = dict[str, Any]
 Athlete = dict[str, Any]
+TRAINING_TIMEZONE = ZoneInfo("America/Los_Angeles")
 
 
 def _as_number(value: Any) -> float | None:
@@ -29,13 +31,18 @@ def _ride_date(ride: Ride) -> datetime:
     if not raw:
         raise ValueError("Ride is missing a date")
     parsed = datetime.fromisoformat(raw.replace("Z", "+00:00"))
-    if parsed.tzinfo is None:
-        parsed = parsed.replace(tzinfo=timezone.utc)
-    return parsed.astimezone(timezone.utc)
+    # Strava's start_date_local is a wall-clock label, even when suffixed Z.
+    # Converting that label as an instant can change the ride's calendar day.
+    return parsed.replace(tzinfo=None)
 
 
-def _days_since(ride: Ride, now: datetime) -> int:
-    return max((now.date() - _ride_date(ride).date()).days, 0)
+def days_since_ride(ride: Ride, now: datetime | None = None) -> int:
+    """Count home-calendar days, not UTC midnights or elapsed 24-hour blocks."""
+    current = now or datetime.now(timezone.utc)
+    if current.tzinfo is None:
+        current = current.replace(tzinfo=timezone.utc)
+    today = current.astimezone(TRAINING_TIMEZONE).date()
+    return max((today - _ride_date(ride).date()).days, 0)
 
 
 def estimate_ride_load(ride: Ride, ftp: int) -> int:
@@ -88,7 +95,7 @@ def compute_training_context(
     ftp = int(athlete.get("ftp") or 237)
     ordered = sorted(rides, key=_ride_date, reverse=True)
     last_ride = ordered[0]
-    days_since_last_ride = _days_since(last_ride, current_time)
+    days_since_last_ride = days_since_ride(last_ride, current_time)
     last_meaningful_ride = next(
         (
             ride
@@ -98,14 +105,14 @@ def compute_training_context(
         None,
     )
     days_since_last_meaningful_ride = (
-        _days_since(last_meaningful_ride, current_time)
+        days_since_ride(last_meaningful_ride, current_time)
         if last_meaningful_ride is not None
         else None
     )
 
     windows = {"recent": [], "prior": []}
     for ride in ordered:
-        age = _days_since(ride, current_time)
+        age = days_since_ride(ride, current_time)
         if 0 <= age < 7:
             windows["recent"].append(ride)
         elif 7 <= age < 14:

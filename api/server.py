@@ -6,6 +6,7 @@ Rate limited to 30 calls/week.
 """
 import json
 import os
+import sys
 import time
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
@@ -17,6 +18,9 @@ app = Flask(__name__)
 CORS(app, origins=["https://koren-source.github.io"])  # restrict to dashboard only
 
 DATA_DIR = Path(__file__).parent.parent / "data"
+sys.path.insert(0, str(DATA_DIR.parent))
+
+from training_plan import days_since_ride
 RATE_FILE = Path(__file__).parent / "rate_limit.json"
 MAX_CALLS_PER_WEEK = 30
 
@@ -69,8 +73,7 @@ def compute_context(rides, athlete):
         return {"days_since_last_ride": 99, "trend": "unknown", "recent_tss_avg": 0}
 
     last = rides[0]
-    last_date = datetime.fromisoformat(last["date"]).replace(tzinfo=timezone.utc)
-    days_since = (datetime.now(timezone.utc) - last_date).days
+    days_since = days_since_ride(last, datetime.now(timezone.utc))
 
     tss_values = []
     for r in rides[:7]:
