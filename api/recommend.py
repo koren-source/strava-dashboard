@@ -6,10 +6,14 @@ Rate limited to 10 calls/week using Vercel KV (or simple in-memory fallback).
 from http.server import BaseHTTPRequestHandler
 import json
 import os
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
 DATA_DIR = Path(__file__).parent.parent / "data"
+sys.path.insert(0, str(DATA_DIR.parent))
+
+from training_plan import days_since_ride
 MAX_CALLS_PER_WEEK = 30
 
 # In-memory rate limit (Vercel is stateless — upgrade to KV if needed)
@@ -36,8 +40,7 @@ def compute_context(rides, athlete):
     if not rides:
         return {"days_since_last_ride": 99, "trend": "unknown", "recent_tss_avg": 0}
     last = rides[0]
-    last_date = datetime.fromisoformat(last["date"]).replace(tzinfo=timezone.utc)
-    days_since = (datetime.now(timezone.utc) - last_date).days
+    days_since = days_since_ride(last, datetime.now(timezone.utc))
     tss_values = []
     for r in rides[:7]:
         w = r.get("avg_watts")

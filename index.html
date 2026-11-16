@@ -458,6 +458,27 @@
   </main>
 
   <script>
+    // Ride dates are Strava local-calendar labels, not UTC timestamps.
+    function rideDateNumber(ride) {
+      const raw = ride?.date || ride?.start_date_local;
+      if (typeof raw !== 'string') return null;
+      const key = raw.slice(0, 10);
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(key)) return null;
+      const value = Date.parse(`${key}T00:00:00Z`);
+      return Number.isFinite(value) && new Date(value).toISOString().slice(0, 10) === key ? value : null;
+    }
+
+    function daysSinceRide(ride, now = new Date()) {
+      const lastDay = rideDateNumber(ride);
+      if (lastDay === null || !Number.isFinite(now.getTime())) return null;
+      const parts = new Intl.DateTimeFormat('en-US', {
+        timeZone: 'America/Los_Angeles', year: 'numeric', month: '2-digit', day: '2-digit'
+      }).formatToParts(now);
+      const part = type => parts.find(value => value.type === type).value;
+      const today = Date.parse(`${part('year')}-${part('month')}-${part('day')}T00:00:00Z`);
+      return Math.max(0, Math.round((today - lastDay) / 86400000));
+    }
+
     // ── Data Loading ─────────────────────────────────────────────────────────────
     // Load from data/ JSON files (written by GitHub Actions) with inline fallback
     async function loadJSON(path, bustCache = false) {
@@ -522,7 +543,7 @@
         { label: 'YTD Miles', icon: 'blue-accent', value: formatStatValue(athlete.ytd_miles, 1, 157.7), unit: 'mi', emoji: '\ud83d\udccd' },
         { label: 'YTD Rides', icon: 'silver', value: formatStatValue(athlete.ytd_rides, 0, 9), unit: '', emoji: '\ud83d\udeb4' },
         { label: 'YTD Hours', icon: 'blue-accent-bright', value: formatStatValue(athlete.ytd_hours, 1, 9.8), unit: 'h', emoji: '\u23f1\ufe0f' },
-        { label: 'Days Since Last Ride', icon: 'blue-accent-bright', value: athlete.days_since_last_ride != null ? athlete.days_since_last_ride : (rides[0] && rides[0].date ? Math.floor((Date.now() - new Date(rides[0].date)) / 86400000) : '—'), unit: 'd', emoji: '\ud83d\udcc5', dotColor: '#FC4C02' },
+        { label: 'Days Since Last Ride', icon: 'blue-accent-bright', value: daysSinceRide(rides[0]) ?? '—', unit: 'd', emoji: '\ud83d\udcc5', dotColor: '#FC4C02' },
       ];
       statsRow.innerHTML = stats.map((s, i) => `
         <article class="stat-card" style="animation-delay:${40 + i*40}ms">
@@ -587,8 +608,8 @@
       // Use AI recommendation if available and fresh; else rule-based fallback
       const lastRide = rides[0] || {};
       const intensity = (lastRide.avg_watts || 0) / ftp;
-      const daysSince = lastRide.date ? Math.floor((Date.now() - new Date(lastRide.date)) / 86400000) : 99;
-      const tooFatigued = (lastRide.suffer_score || 0) > 120 || daysSince <= 1;
+      const daysSince = daysSinceRide(lastRide);
+      const tooFatigued = (lastRide.suffer_score || 0) > 120 || daysSince === null || daysSince <= 1;
 
       let growthBase;  // base 60-min template
       let isAI = false;
@@ -801,10 +822,9 @@ ${blocks}  </workout>
 
       // ── Format Helpers ─────────────────────────────────────────────────────
       function formatDate(dateStr) {
-        if (!dateStr) return '—';
-        const d = dateStr.includes('T') ? new Date(dateStr) : new Date(dateStr + 'T00:00:00');
-        if (Number.isNaN(d.getTime())) return '—';
-        return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+        const day = rideDateNumber({ date: dateStr });
+        if (day === null) return '—';
+        return new Date(day).toLocaleDateString('en-US', { timeZone: 'UTC', month: 'short', day: 'numeric', year: 'numeric' });
       }
 
       function formatStatValue(value, decimals, fallback) {

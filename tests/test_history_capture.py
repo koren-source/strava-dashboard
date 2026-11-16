@@ -2,7 +2,9 @@ import importlib.util
 import io
 import json
 import os
+from datetime import datetime, timezone
 from pathlib import Path
+import tempfile
 import unittest
 from unittest.mock import patch
 
@@ -19,6 +21,29 @@ publisher = module("strava_publisher", "publish-history.py")
 
 
 class HistoryCaptureTests(unittest.TestCase):
+    def test_collector_publishes_same_day_evening_ride_as_zero_days_ago(self):
+        class FrozenDateTime(datetime):
+            @classmethod
+            def now(cls, tz=None):
+                return cls(2026, 11, 16, 3, 18, tzinfo=timezone.utc).astimezone(tz)
+
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            data = root / "public" / "data"
+            data.parent.mkdir()
+            latest = {"id": 21003923505, "date": "2026-11-15", "dist_mi": 14.2, "moving_mins": 52}
+            with patch.object(collector, "datetime", FrozenDateTime), \
+                 patch.object(collector, "DATA_DIR", data), \
+                 patch.object(collector, "refresh_token", return_value="synthetic"), \
+                 patch.object(collector, "fetch_athlete", return_value={"name": "Synthetic", "ftp": 237, "athlete_id": 1}), \
+                 patch.object(collector, "fetch_athlete_stats", return_value={"ytd_miles": 14.2, "ytd_rides": 1}), \
+                 patch.object(collector, "fetch_rides", return_value=[latest]), \
+                 patch.dict(os.environ, STRAVA_CAPTURE_PATH=str(root / "private.json")), \
+                 patch("sys.stdout", new_callable=io.StringIO):
+                collector.main()
+            self.assertEqual(json.loads((data / "athlete.json").read_text())["days_since_last_ride"], 0)
+            self.assertEqual(json.loads((root / "private.json").read_text())["athlete"]["days_since_last_ride"], 0)
+
     def activity(self, index, kind="Ride"):
         return {"id": index, "type": kind, "start_date_local": "2026-09-01T10:00:00Z", "distance": 1000, "moving_time": 600}
 

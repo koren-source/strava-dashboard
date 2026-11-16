@@ -18,6 +18,9 @@ from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
+sys.path.insert(0, str(DATA_DIR.parent))
+
+from training_plan import days_since_ride  # noqa: E402
 
 
 def refresh_token():
@@ -156,14 +159,8 @@ def main():
     rides = all_rides[:10]
     print(f"Fetched {len(all_rides)} rides across complete activity scan")
 
-    # Compute days since last ride (UTC-based to match JS Date.now())
-    days_since_last_ride = None
-    if rides:
-        try:
-            last_date = datetime.fromisoformat(rides[0]["date"]).replace(tzinfo=timezone.utc)
-            days_since_last_ride = (datetime.now(timezone.utc) - last_date).days
-        except Exception:
-            pass
+    # Same home-calendar day calculation used by the training planner.
+    days_since_last_ride = days_since_ride(rides[0], datetime.now(timezone.utc)) if rides else None
 
     # Merge athlete + stats + goals
     athlete_data = {
